@@ -1,0 +1,25 @@
+hotkeys:
+  terminal: "ctrl+;"  # 唤起终端的快捷键 (macOS)
+  terminal_linux: "ctrl+;"  # Linux快捷键
+  terminal_windows: "ctrl+;"  # Windows快捷键
+
+behavior:
+  auto_focus: true         # 自动聚焦到最后使用的窗口
+  show_window_selection: true  # 多窗口时显示选择界面
+  remember_last_used: true # 记住最后使用的应用
+  window_selection_timeout: 10  # 窗口选择超时时间(秒)
+
+terminal:
+  default: "t"            # 默认终端应用ID
+  startup_command: ""     # 启动时执行的命令
+  work_directory: "~"     # 工作目录
+
+logging:
+  level: "INFO"           # 日志级别
+  file: "terminalController.log"  # 日志文件
+  max_size: "10MB"        # 最大日志文件大小
+  backup_count: 3         # 备份文件数量
+
+daemon:
+  pid_file: "/tmp/terminalController.pid"  # PID文件路径
+  auto_start: false       # 系统启动时自动启动

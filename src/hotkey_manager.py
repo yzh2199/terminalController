@@ -1,0 +1,601 @@
+"""Hotkey management module for Terminal Controller."""
+import platform as std_platform
+import logging
+import threading
+from typing import Dict, Callable, Optional, List
+from dataclasses import dataclass
+
+from .platform import get_platform_adapter, PlatformAdapter
+from .config_manager import ConfigManager
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class HotkeyBinding:
+    """Represents a hotkey binding."""
+    hotkey: str
+    callback: Callable
+    description: str
+    enabled: bool = True
+
+
+class HotkeyManager:
+    """Manages global hotkey registration and handling."""
+    
+    def __init__(self, config_manager: ConfigManager):
+        """Initialize the hotkey manager.
+        
+        Args:
+            config_manager: Configuration manager instance
+        """
+        self.config_manager = config_manager
+        self.platform_adapter: PlatformAdapter = get_platform_adapter()()
+        self.current_platform = std_platform.system().lower()
+        
+        self._bindings: Dict[str, HotkeyBinding] = {}
+        self._active = False
+        self._lock = threading.RLock()  # Use RLock to allow re-entrance
+        
+        logger.info(f"Initialized HotkeyManager for platform: {self.current_platform}")
+    
+    def start(self) -> bool:
+        """Start the hotkey manager and register configured hotkeys.
+        
+        Returns:
+            True if started successfully, False otherwise
+        """
+        try:
+            with self._lock:
+                if self._active:
+                    logger.warning("HotkeyManager is already active")
+                    return True
+                
+                logger.info("Starting HotkeyManager and registering configured hotkeys")
+                
+                # Load and register hotkeys from configuration
+                success = self._register_configured_hotkeys()
+                logger.info(f"Configured hotkeys registration result: {success}")
+                
+                if success:
+                    self._active = True
+                    logger.info("HotkeyManager started successfully")
+                else:
+                    logger.error("Failed to register configured hotkeys")
+                
+                return success
+                
+        except Exception as e:
+            logger.error(f"Error starting HotkeyManager: {e}", exc_info=True)
+            return False
+    
+    def stop(self) -> bool:
+        """Stop the hotkey manager and unregister all hotkeys.
+        
+        Returns:
+            True if stopped successfully, False otherwise
+        """
+        try:
+            with self._lock:
+                if not self._active:
+                    logger.warning("HotkeyManager is not active")
+                    return True
+                
+                # Unregister all hotkeys
+                success = True
+                for binding_id in list(self._bindings.keys()):
+                    if not self.unregister_hotkey(binding_id):
+                        success = False
+                
+                self._active = False
+                logger.info("HotkeyManager stopped")
+                
+                return success
+                
+        except Exception as e:
+            logger.error(f"Error stopping HotkeyManager: {e}")
+            return False
+    
+    def register_hotkey(self, binding_id: str, hotkey: str, 
+                       callback: Callable, description: str = "") -> bool:
+        """Register a new hotkey binding.
+        
+        Args:
+            binding_id: Unique identifier for the binding
+            hotkey: Hotkey string (e.g., "cmd+shift+t")
+            callback: Function to call when hotkey is pressed
+            description: Description of what the hotkey does
+            
+        Returns:
+            True if registration was successful, False otherwise
+        """
+        try:
+            with self._lock:
+                if binding_id in self._bindings:
+                    logger.warning(f"Hotkey binding {binding_id} already exists, replacing")
+                    self.unregister_hotkey(binding_id)
+                
+                # Create wrapper callback for error handling
+                def safe_callback():
+                    try:
+                        callback()
+                    except Exception as e:
+                        logger.error(f"Error in hotkey callback for {binding_id}: {e}")
+                
+                logger.info(f"Registering hotkey binding: id={binding_id}, hotkey={hotkey}, desc='{description}'")
+
+                # Register with platform adapter
+                success = self.platform_adapter.register_hotkey(hotkey, safe_callback)
+                logger.info(f"Platform adapter register_hotkey result for {binding_id}: {success}")
+                
+                if success:
+                    self._bindings[binding_id] = HotkeyBinding(
+                        hotkey=hotkey,
+                        callback=callback,
+                        description=description
+                    )
+                    logger.info(f"Registered hotkey {hotkey} for {binding_id}")
+                else:
+                    logger.error(f"Failed to register hotkey {hotkey} for {binding_id}")
+                
+                return success
+                
+        except Exception as e:
+            logger.error(f"Error registering hotkey {binding_id}: {e}")
+            return False
+    
+    def unregister_hotkey(self, binding_id: str) -> bool:
+        """Unregister a hotkey binding.
+        
+        Args:
+            binding_id: Identifier of the binding to unregister
+            
+        Returns:
+            True if unregistration was successful, False otherwise
+        """
+        try:
+            with self._lock:
+                if binding_id not in self._bindings:
+                    logger.warning(f"Hotkey binding {binding_id} not found")
+                    return False
+                
+                binding = self._bindings[binding_id]
+                success = self.platform_adapter.unregister_hotkey(binding.hotkey)
+                
+                if success:
+                    del self._bindings[binding_id]
+                    logger.info(f"Unregistered hotkey {binding.hotkey} for {binding_id}")
+                else:
+                    logger.error(f"Failed to unregister hotkey {binding.hotkey} for {binding_id}")
+                
+                return success
+                
+        except Exception as e:
+            logger.error(f"Error unregistering hotkey {binding_id}: {e}")
+            return False
+    
+    def enable_hotkey(self, binding_id: str) -> bool:
+        """Enable a disabled hotkey binding.
+        
+        Args:
+            binding_id: Identifier of the binding to enable
+            
+        Returns:
+            True if enabled successfully, False otherwise
+        """
+        try:
+            with self._lock:
+                if binding_id not in self._bindings:
+                    logger.error(f"Hotkey binding {binding_id} not found")
+                    return False
+                
+                binding = self._bindings[binding_id]
+                if binding.enabled:
+                    logger.warning(f"Hotkey binding {binding_id} is already enabled")
+                    return True
+                
+                # Re-register the hotkey
+                success = self.platform_adapter.register_hotkey(
+                    binding.hotkey, 
+                    binding.callback
+                )
+                
+                if success:
+                    binding.enabled = True
+                    logger.info(f"Enabled hotkey binding {binding_id}")
+                
+                return success
+                
+        except Exception as e:
+            logger.error(f"Error enabling hotkey {binding_id}: {e}")
+            return False
+    
+    def disable_hotkey(self, binding_id: str) -> bool:
+        """Disable a hotkey binding without removing it.
+        
+        Args:
+            binding_id: Identifier of the binding to disable
+            
+        Returns:
+            True if disabled successfully, False otherwise
+        """
+        try:
+            with self._lock:
+                if binding_id not in self._bindings:
+                    logger.error(f"Hotkey binding {binding_id} not found")
+                    return False
+                
+                binding = self._bindings[binding_id]
+                if not binding.enabled:
+                    logger.warning(f"Hotkey binding {binding_id} is already disabled")
+                    return True
+                
+                # Unregister from platform
+                success = self.platform_adapter.unregister_hotkey(binding.hotkey)
+                
+                if success:
+                    binding.enabled = False
+                    logger.info(f"Disabled hotkey binding {binding_id}")
+                
+                return success
+                
+        except Exception as e:
+            logger.error(f"Error disabling hotkey {binding_id}: {e}")
+            return False
+    
+    def get_bindings(self) -> Dict[str, HotkeyBinding]:
+        """Get all hotkey bindings.
+        
+        Returns:
+            Dictionary of all hotkey bindings
+        """
+        with self._lock:
+            return self._bindings.copy()
+    
+    def get_binding(self, binding_id: str) -> Optional[HotkeyBinding]:
+        """Get a specific hotkey binding.
+        
+        Args:
+            binding_id: Identifier of the binding
+            
+        Returns:
+            HotkeyBinding object or None if not found
+        """
+        with self._lock:
+            return self._bindings.get(binding_id)
+    
+    def is_active(self) -> bool:
+        """Check if the hotkey manager is active.
+        
+        Returns:
+            True if active, False otherwise
+        """
+        with self._lock:
+            return self._active
+    
+    def reload_configuration(self) -> bool:
+        """Reload hotkey configuration from config manager.
+        
+        Returns:
+            True if reload was successful, False otherwise
+        """
+        try:
+            logger.info("Reloading hotkey configuration")
+            
+            # Unregister existing configured hotkeys
+            configured_bindings = [bid for bid in self._bindings.keys() 
+                                 if bid.startswith('config_')]
+            
+            for binding_id in configured_bindings:
+                self.unregister_hotkey(binding_id)
+            
+            # Re-register configured hotkeys
+            return self._register_configured_hotkeys()
+            
+        except Exception as e:
+            logger.error(f"Error reloading hotkey configuration: {e}")
+            return False
+    
+    def format_bindings_list(self) -> str:
+        """Format all bindings for display.
+        
+        Returns:
+            Formatted string of all hotkey bindings
+        """
+        with self._lock:
+            if not self._bindings:
+                return "No hotkey bindings registered."
+            
+            lines = ["Registered Hotkey Bindings:"]
+            for binding_id, binding in self._bindings.items():
+                status = "enabled" if binding.enabled else "disabled"
+                description = binding.description or "No description"
+                lines.append(f"  {binding_id}: {binding.hotkey} ({status}) - {description}")
+            
+            return "\n".join(lines)
+    
+    def get_platform_hotkey(self, hotkey_type: str) -> str:
+        """Get platform-specific hotkey string.
+        
+        Args:
+            hotkey_type: Type of hotkey (e.g., 'terminal')
+            
+        Returns:
+            Platform-specific hotkey string
+        """
+        settings = self.config_manager.get_settings()
+        
+        if hotkey_type == "terminal":
+            if self.current_platform == "darwin":
+                return settings.hotkeys.terminal
+            elif self.current_platform == "linux":
+                return settings.hotkeys.terminal_linux
+            elif self.current_platform == "windows":
+                return settings.hotkeys.terminal_windows
+        
+        # Fallback to default
+        return getattr(settings.hotkeys, hotkey_type, "")
+    
+    def _register_configured_hotkeys(self) -> bool:
+        """Register hotkeys from configuration.
+        
+        Returns:
+            True if all configured hotkeys were registered successfully
+        """
+        try:
+            settings = self.config_manager.get_settings()
+            success = True
+            
+            # Register terminal hotkey
+            terminal_hotkey = self.get_platform_hotkey("terminal")
+            logger.info(f"Configured terminal hotkey resolved to: '{terminal_hotkey}' for platform {self.current_platform}")
+            if terminal_hotkey:
+                logger.info(f"Creating terminal callback and registering hotkey...")
+                terminal_callback = self._create_terminal_callback()
+                register_result = self.register_hotkey(
+                    "config_terminal", 
+                    terminal_hotkey, 
+                    terminal_callback,
+                    "Launch terminal application"
+                )
+                logger.info(f"Terminal hotkey registration result: {register_result}")
+                if not register_result:
+                    success = False
+            else:
+                logger.warning("No terminal hotkey configured")
+            
+            # TODO: Add more configured hotkeys here
+            # For example, hotkeys for specific applications or actions
+            
+            logger.info(f"Configured hotkeys registration completed. Overall success: {success}")
+            return success
+            
+        except Exception as e:
+            logger.error(f"Error registering configured hotkeys: {e}", exc_info=True)
+            return False
+    
+    def _create_terminal_callback(self) -> Callable:
+        """Create callback function for terminal hotkey.
+        
+        Returns:
+            Callback function that toggles terminal visibility
+        """
+        logger.info("Creating terminal callback function")
+        def terminal_callback():
+            try:
+                # Import here to avoid circular imports
+                from .terminal_manager import TerminalManager
+                from .window_manager import WindowManager
+                
+                terminal_manager = TerminalManager(self.config_manager)
+                window_manager = WindowManager(self.config_manager)
+                
+                # Get current active window
+                current_window = window_manager.get_active_window()
+                
+                # Check if current window is a terminal
+                if current_window and self._is_terminal_window(current_window, terminal_manager):
+                    # Current window is terminal, switch back to previous non-terminal window
+                    success = self._return_to_previous_window(window_manager)
+                    if success:
+                        logger.info("Returned to previous window via hotkey")
+                    else:
+                        logger.warning("Could not return to previous window, no previous window found")
+                else:
+                    # Current window is not terminal, open/focus terminal
+                    # First save current window as previous window
+                    if current_window:
+                        self._save_previous_window(current_window)
+                    
+                    # Try to focus existing terminal first
+                    settings = self.config_manager.get_settings()
+                    default_terminal_id = settings.terminal.default
+                    
+                    if terminal_manager.is_terminal_running(default_terminal_id):
+                        success = window_manager.focus_most_recent_window(default_terminal_id)
+                        if success:
+                            logger.info("Focused existing terminal via hotkey")
+                            return
+                    
+                    # Launch new terminal if no existing one or focus failed
+                    success = terminal_manager.launch_terminal()
+                    if success:
+                        logger.info("Terminal launched via hotkey")
+                    else:
+                        logger.error("Failed to launch terminal via hotkey")
+                    
+            except Exception as e:
+                logger.error(f"Error in terminal hotkey callback: {e}")
+        
+        logger.info("Terminal callback function created successfully")
+        return terminal_callback
+    
+    def _create_app_callback(self, app_id: str) -> Callable:
+        """Create callback function for application launch hotkey.
+        
+        Args:
+            app_id: Application identifier
+            
+        Returns:
+            Callback function that launches the application
+        """
+        def app_callback():
+            try:
+                # Import here to avoid circular imports
+                from .app_manager import AppManager
+                
+                app_manager = AppManager(self.config_manager)
+                success = app_manager.launch_app(app_id)
+                
+                if success:
+                    logger.info(f"Application {app_id} launched via hotkey")
+                else:
+                    logger.error(f"Failed to launch application {app_id} via hotkey")
+                    
+            except Exception as e:
+                logger.error(f"Error in app hotkey callback for {app_id}: {e}")
+        
+        return app_callback
+    
+    def register_app_hotkey(self, app_id: str, hotkey: str) -> bool:
+        """Register a hotkey for launching a specific application.
+        
+        Args:
+            app_id: Application identifier
+            hotkey: Hotkey string
+            
+        Returns:
+            True if registration was successful, False otherwise
+        """
+        try:
+            app_config = self.config_manager.get_app_config(app_id)
+            if not app_config:
+                logger.error(f"Unknown application: {app_id}")
+                return False
+            
+            callback = self._create_app_callback(app_id)
+            description = f"Launch {app_config.name}"
+            
+            return self.register_hotkey(f"app_{app_id}", hotkey, callback, description)
+            
+        except Exception as e:
+            logger.error(f"Error registering app hotkey for {app_id}: {e}")
+            return False
+    
+    def unregister_app_hotkey(self, app_id: str) -> bool:
+        """Unregister a hotkey for an application.
+        
+        Args:
+            app_id: Application identifier
+            
+        Returns:
+            True if unregistration was successful, False otherwise
+        """
+        return self.unregister_hotkey(f"app_{app_id}")
+    
+    def _is_terminal_window(self, window_info, terminal_manager) -> bool:
+        """Check if a window belongs to a terminal application.
+        
+        Args:
+            window_info: WindowInfo object
+            terminal_manager: TerminalManager instance
+            
+        Returns:
+            True if window is a terminal, False otherwise
+        """
+        try:
+            # Get list of available terminal applications
+            available_terminals = terminal_manager.get_available_terminals()
+            
+            for terminal_id in available_terminals:
+                terminal_config = self.config_manager.get_app_config(terminal_id)
+                if terminal_config and terminal_config.name.lower() in window_info.app_name.lower():
+                    return True
+            
+            # Also check common terminal application names
+            terminal_names = [
+                'terminal', 'iterm', 'konsole', 'gnome-terminal', 
+                'xfce4-terminal', 'cmd', 'powershell', 'windows terminal'
+            ]
+            
+            for term_name in terminal_names:
+                if term_name in window_info.app_name.lower():
+                    return True
+                    
+            return False
+            
+        except Exception as e:
+            logger.error(f"Error checking if window is terminal: {e}")
+            return False
+    
+    def _save_previous_window(self, window_info) -> None:
+        """Save the current window as the previous window.
+        
+        Args:
+            window_info: WindowInfo object of current window
+        """
+        try:
+            # Store the previous window info in a simple way
+            # We'll use a special key to store non-terminal window info
+            self.config_manager.set_last_used_window("_previous_window", window_info.window_id)
+            # Also store the app name for easier retrieval
+            self.config_manager.set_last_used_window("_previous_app", window_info.app_name)
+            logger.debug(f"Saved previous window: {window_info.app_name} ({window_info.window_id})")
+            
+        except Exception as e:
+            logger.error(f"Error saving previous window: {e}")
+    
+    def _return_to_previous_window(self, window_manager) -> bool:
+        """Return to the previously active non-terminal window.
+        
+        Args:
+            window_manager: WindowManager instance
+            
+        Returns:
+            True if successfully returned to previous window, False otherwise
+        """
+        try:
+            # Get stored previous window ID
+            previous_window_id = self.config_manager.get_last_used_window("_previous_window")
+            previous_app_name = self.config_manager.get_last_used_window("_previous_app")
+            
+            if not previous_window_id:
+                logger.debug("No previous window stored")
+                return False
+            
+            # Try to activate the previous window
+            window = window_manager.find_window_by_id(previous_window_id)
+            if window and window.app_name == previous_app_name:
+                success = window_manager.activate_window_by_id(previous_window_id)
+                if success:
+                    logger.debug(f"Successfully returned to previous window: {previous_app_name}")
+                    return True
+            
+            # If exact window not found, try to find any window of the same app
+            if previous_app_name:
+                all_windows = window_manager.list_all_windows()
+                for window in all_windows:
+                    if window.app_name == previous_app_name and not window.is_minimized:
+                        success = window_manager.activate_window_by_id(window.window_id)
+                        if success:
+                            # Update the stored window ID to the new one
+                            self.config_manager.set_last_used_window("_previous_window", window.window_id)
+                            logger.debug(f"Returned to alternative window of same app: {previous_app_name}")
+                            return True
+            
+            logger.debug("Could not find previous window to return to")
+            return False
+            
+        except Exception as e:
+            logger.error(f"Error returning to previous window: {e}")
+            return False
+
+    def cleanup(self):
+        """Clean up resources used by the hotkey manager."""
+        try:
+            self.stop()
+            logger.info("HotkeyManager cleanup completed")
+            
+        except Exception as e:
+            logger.error(f"Error during HotkeyManager cleanup: {e}")

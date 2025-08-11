@@ -1,0 +1,1457 @@
+2025-08-10 22:54:22,096 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 22:54:36,725 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 22:54:41,738 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 22:54:41,738 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 22:54:41,738 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 22:54:41,738 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 22:54:41,738 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 22:54:50,276 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 22:54:50,467 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 22:54:50,467 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 22:54:50,467 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 22:54:50,467 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 22:54:50,467 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 22:54:56,493 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 22:54:56,632 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 22:54:56,633 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 22:54:56,633 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 22:54:56,633 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 22:54:56,633 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:20,268 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:21:25,625 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:21:25,625 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:21:25,625 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:21:25,625 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:21:25,625 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:26,173 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:21:26,316 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:21:26,316 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:21:26,316 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:21:26,316 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:21:26,316 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:32,981 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:21:33,118 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:21:33,118 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:21:33,118 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:21:33,118 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:21:33,118 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:38,701 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:21:38,843 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:21:38,844 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:21:38,844 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:21:38,844 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:21:38,844 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:44,933 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:21:45,160 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:21:45,160 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:21:45,160 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:21:45,160 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:21:45,160 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:45,161 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:21:52,022 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:21:52,158 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:21:52,158 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:21:52,158 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:21:52,158 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:21:52,158 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:21:57,168 - src.platform.macos - ERROR - Failed to get windows for Google Chrome: Command '['osascript', '-e', '\n            tell application "System Events"\n                try\n                    set appProcess to first process whose name is "Google Chrome"\n                    set windowList to windows of appProcess\n                    set windowInfo to {}\n                    repeat with w in windowList\n                        set windowTitle to name of w\n                        set windowID to id of w\n                        set end of windowInfo to (windowID as string) & "|" & windowTitle\n                    end repeat\n                    return windowInfo\n                on error\n                    return {}\n                end try\n            end tell\n            ']' timed out after 5 seconds
+2025-08-10 23:22:11,579 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:22:11,743 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:22:11,743 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:22:11,743 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:22:11,743 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:22:11,743 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:22:17,764 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:22:17,908 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:22:17,908 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:22:17,908 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:22:17,908 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:22:17,908 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:22:17,908 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-10 23:23:38,575 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:23:45,282 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:23:50,300 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:24:37,515 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:24:45,717 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-10 23:24:45,717 - __main__ - INFO - Stopping Terminal Controller
+2025-08-10 23:24:45,717 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-10 23:24:45,717 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-10 23:24:45,717 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-10 23:24:45,717 - __main__ - INFO - Terminal Controller stopped
+2025-08-10 23:27:35,604 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:27:35,778 - src.app_manager - INFO - Initialized AppManager for platform: macos
+2025-08-10 23:27:35,779 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:27:35,779 - src.terminal_manager - INFO - Initialized TerminalManager for platform: macos
+2025-08-10 23:27:35,779 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: macos
+2025-08-10 23:27:35,779 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:27:35,782 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-10 23:27:42,719 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:27:42,883 - src.app_manager - INFO - Initialized AppManager for platform: macos
+2025-08-10 23:27:42,883 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:27:42,883 - src.terminal_manager - INFO - Initialized TerminalManager for platform: macos
+2025-08-10 23:27:42,883 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: macos
+2025-08-10 23:27:42,884 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:27:42,887 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-10 23:27:49,290 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:27:49,440 - src.app_manager - INFO - Initialized AppManager for platform: macos
+2025-08-10 23:27:49,440 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:27:49,440 - src.terminal_manager - INFO - Initialized TerminalManager for platform: macos
+2025-08-10 23:27:49,440 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: macos
+2025-08-10 23:27:49,441 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:27:49,443 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-10 23:27:56,862 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:27:57,012 - src.app_manager - INFO - Initialized AppManager for platform: macos
+2025-08-10 23:27:57,012 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:27:57,012 - src.terminal_manager - INFO - Initialized TerminalManager for platform: macos
+2025-08-10 23:27:57,012 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: macos
+2025-08-10 23:27:57,012 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:28:44,803 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-10 23:29:40,480 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-10 23:29:40,481 - __main__ - INFO - Stopping Terminal Controller
+2025-08-10 23:29:40,481 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-10 23:29:40,482 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-10 23:29:40,482 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-10 23:29:40,482 - __main__ - INFO - Terminal Controller stopped
+2025-08-10 23:29:55,965 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:29:56,129 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:29:56,129 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:29:56,129 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:29:56,129 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:29:56,129 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:29:59,117 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:30:00,972 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:30:29,955 - src.app_manager - ERROR - No executable found for c on darwin
+2025-08-10 23:32:23,514 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:32:23,752 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:32:23,753 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:32:23,753 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:32:23,753 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:32:23,753 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:32:23,756 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-10 23:32:29,717 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:32:29,856 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:32:29,856 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:32:29,856 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:32:29,857 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:32:29,857 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:32:29,860 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-10 23:42:28,788 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-10 23:42:28,790 - __main__ - INFO - Stopping Terminal Controller
+2025-08-10 23:42:28,790 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-10 23:42:28,790 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-10 23:42:28,790 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-10 23:42:28,790 - __main__ - INFO - Terminal Controller stopped
+2025-08-10 23:42:45,278 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:43:58,644 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:43:58,813 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:43:58,813 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:43:58,813 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:43:58,813 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:43:58,813 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:44:18,593 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-10 23:44:28,012 - src.app_manager - INFO - Successfully launched Postman
+2025-08-10 23:44:34,109 - src.app_manager - INFO - Successfully launched Postman
+2025-08-10 23:47:26,148 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-10 23:47:26,524 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-10 23:47:26,524 - src.window_manager - INFO - Initialized WindowManager
+2025-08-10 23:47:26,524 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-10 23:47:26,524 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-10 23:47:26,524 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-10 23:47:26,524 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-10 23:57:52,430 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-10 23:57:52,431 - __main__ - INFO - Stopping Terminal Controller
+2025-08-10 23:57:52,431 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-10 23:57:52,431 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-10 23:57:52,431 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-10 23:57:52,432 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 00:12:46,322 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:12:46,492 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:12:46,492 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:12:46,492 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:12:46,492 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:12:46,492 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:16:56,949 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:16:57,119 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:16:57,119 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:16:57,119 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:16:57,120 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:16:57,120 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:16:57,120 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:17:01,597 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:17:01,739 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:17:01,739 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:17:01,739 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:17:01,739 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:17:01,739 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:17:23,188 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:17:23,188 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:21:03,593 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:21:03,594 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:24:59,189 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:24:59,189 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:31:18,685 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:31:18,871 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:31:18,871 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:31:18,871 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:31:18,871 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:31:18,871 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:31:18,875 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 00:31:49,274 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:31:49,454 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:31:49,455 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:31:49,455 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:31:49,455 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:31:49,455 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:31:49,459 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 00:41:35,904 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:41:36,104 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:41:36,104 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:41:36,104 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:41:36,104 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:41:36,104 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:41:36,104 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:42:06,502 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:42:06,645 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:42:06,645 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:42:06,645 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:42:06,645 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:42:06,645 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:42:27,449 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:42:27,449 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:42:32,685 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 00:42:32,687 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 00:42:32,688 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 00:42:32,688 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:42:32,853 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:42:32,853 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:42:32,853 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:42:32,853 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:42:32,853 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:42:32,853 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:44:31,334 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 00:44:31,335 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:44:37,159 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 00:44:37,159 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 00:44:37,160 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:44:37,160 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:44:37,163 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 00:44:37,164 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:45:19,567 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:45:19,745 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:45:19,745 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:45:19,746 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:45:19,746 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:45:19,746 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:45:26,285 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:45:26,434 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:45:26,434 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:45:26,434 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:45:26,434 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:45:26,434 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:45:26,434 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:45:33,335 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:45:33,487 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:45:33,488 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:45:33,488 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:45:33,488 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:45:33,488 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:46:11,813 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:46:11,813 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:46:11,813 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:46:11,813 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:46:15,073 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:46:15,228 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:46:15,229 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:46:15,229 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:46:15,229 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:46:15,229 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:46:15,229 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:46:32,240 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 00:46:32,242 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:46:43,386 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 00:46:43,388 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:47:12,820 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 00:47:12,821 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:47:38,387 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 00:47:38,389 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:56:00,281 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:56:00,462 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:56:00,462 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:56:00,462 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:56:00,462 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:56:00,462 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:56:00,462 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:56:00,462 - src.hotkey_manager - INFO - Attempting to register terminal hotkey: ctrl+;
+2025-08-11 00:56:39,506 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 00:56:39,507 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 00:56:45,442 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:56:45,659 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:56:45,659 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:56:45,659 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:56:45,659 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:56:45,659 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 00:56:45,659 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 00:56:54,505 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 00:56:54,644 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 00:56:54,644 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 00:56:54,644 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 00:56:54,644 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 00:56:54,644 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:15:17,799 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:15:17,801 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:15:17,802 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:15:17,802 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:15:18,001 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:15:18,001 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:15:18,001 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:15:18,001 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:15:18,001 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:15:18,001 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:15:27,476 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:15:27,476 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:15:39,628 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:15:39,629 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:15:40,447 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:15:40,447 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:15:41,109 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:15:41,109 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:15:47,131 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:15:47,132 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:15:47,135 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:15:47,136 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:16:45,391 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:16:45,565 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:16:45,566 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:16:45,566 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:16:45,566 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:16:45,566 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:17:10,885 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 01:18:11,489 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:18:11,491 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:18:11,491 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 01:18:11,491 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:18:11,491 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:18:11,491 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:20:36,119 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:20:36,121 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:20:36,122 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:20:36,122 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:20:42,059 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:20:42,059 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:20:42,059 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:20:42,059 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:20:42,059 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:20:42,059 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:20:42,059 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:21:01,953 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:21:01,953 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:21:23,241 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:21:23,244 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:21:23,247 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:21:23,247 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:21:23,471 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:21:23,471 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:21:23,471 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:21:23,471 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:21:23,471 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:21:23,471 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:21:23,471 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:22:08,441 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:22:08,442 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:23:08,570 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:23:08,571 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:24:54,304 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 01:24:54,305 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:28:44,652 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:28:44,655 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:28:44,657 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:28:44,657 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:28:44,877 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:28:44,877 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:28:44,877 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:28:44,877 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:28:44,877 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:28:44,877 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:28:44,877 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:29:36,055 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:29:36,232 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:29:36,232 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:29:36,232 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:29:36,232 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:29:36,232 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:30:33,345 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:30:33,346 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:30:33,347 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:30:33,347 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:30:33,512 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:30:33,512 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:30:33,512 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:30:33,512 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:30:33,512 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:30:33,512 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:30:33,512 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:30:33,512 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:31:15,758 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:31:15,993 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:31:15,993 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:31:15,993 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:31:15,993 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:31:15,993 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:31:35,716 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:31:35,717 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:31:35,716 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:31:35,716 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:31:35,716 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:31:35,718 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:31:35,718 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:31:35,716 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:31:35,718 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:31:35,718 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:31:38,008 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:31:38,009 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:31:38,011 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:31:38,011 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:31:38,177 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:31:38,177 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:31:38,177 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:31:38,177 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:31:38,177 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:31:38,177 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:31:38,177 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:31:38,177 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:31:38,177 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:34:48,175 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:34:48,357 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:34:48,357 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:34:48,357 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:34:48,357 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:34:48,357 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:34:48,357 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:34:48,357 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:34:48,357 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:34:48,357 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:36:08,515 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:36:08,722 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:36:08,722 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:36:08,722 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:36:08,722 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:36:08,722 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:36:08,722 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:36:08,722 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:36:08,722 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:36:08,722 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:36:44,450 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:36:44,632 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:36:44,632 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:36:44,632 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:36:44,632 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:36:44,632 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:36:44,633 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:36:44,633 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:36:44,633 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:36:44,633 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:37:38,511 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:37:38,694 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:37:38,694 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:37:38,694 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:37:38,694 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:37:38,694 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:37:38,694 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:37:38,694 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:37:38,694 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:37:38,694 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:37:38,694 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:37:38,694 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:38:39,615 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:38:39,774 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:38:39,774 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:38:39,774 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:38:39,774 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:38:39,775 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:38:39,775 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:38:39,775 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:38:39,775 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:38:39,775 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:38:39,775 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:38:39,775 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:38:39,775 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x10c6c6e80>
+2025-08-11 01:40:16,986 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:40:17,156 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:40:17,157 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:40:17,157 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:40:17,157 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:40:17,157 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:40:17,157 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x107e22e80>
+2025-08-11 01:43:59,197 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:43:59,381 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:43:59,381 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:43:59,381 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:43:59,381 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:43:59,381 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:43:59,381 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x108b1ef20>
+2025-08-11 01:44:26,009 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,010 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,009 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,011 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,010 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,010 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,012 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,011 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,012 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,012 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,011 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,012 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,011 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,012 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,012 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,012 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,010 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,013 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,012 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,013 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,012 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,013 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,013 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,013 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:44:26,012 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:44:26,013 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:21,067 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:45:21,069 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:45:21,070 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:45:21,071 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:45:21,239 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:45:21,240 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:45:21,240 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:45:21,240 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:45:21,240 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:45:21,240 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x1071cee80>
+2025-08-11 01:45:36,471 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,471 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,471 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,471 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,471 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,471 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,471 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,471 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,471 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:45:36,472 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:45:36,474 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:23,991 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:47:23,994 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:47:23,995 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:47:23,996 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:47:24,198 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:47:24,198 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:47:24,198 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:47:24,198 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:47:24,198 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:47:24,198 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x107342f20>
+2025-08-11 01:47:45,466 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,467 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,466 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,466 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,467 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,467 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,467 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,467 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,466 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,468 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,468 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,468 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,467 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,468 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,468 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,469 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,466 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,468 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,468 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,469 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,469 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,469 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,469 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,469 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,470 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,470 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,469 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,470 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:45,470 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:47:45,471 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:47:58,212 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:47:58,215 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:47:58,219 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:47:58,219 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:47:58,569 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:47:58,569 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:47:58,569 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:47:58,569 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:47:58,569 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:47:58,570 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x108adaf20>
+2025-08-11 01:47:58,570 - src.hotkey_manager - INFO - register_hotkey method: <bound method HotkeyManager.register_hotkey of <src.hotkey_manager.HotkeyManager object at 0x1023bd2b0>>
+2025-08-11 01:47:58,571 - src.hotkey_manager - INFO - Calling self.register_hotkey(...)
+2025-08-11 01:48:26,883 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,883 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,883 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,884 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,885 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,885 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,885 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:26,885 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:40,945 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:48:40,947 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:48:40,948 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:48:40,949 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:48:41,131 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:48:41,131 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:48:41,131 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:48:41,131 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:48:41,132 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:48:41,132 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x1182c6f20>
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - === ENTERED register_hotkey method ===
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - binding_id: config_terminal, hotkey: ctrl+;
+2025-08-11 01:48:41,132 - src.hotkey_manager - INFO - Attempting to acquire lock...
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,943 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,943 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,943 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,943 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,943 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,945 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,944 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:48:57,945 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:48:57,945 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:20,139 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:49:20,142 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:49:20,143 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:49:20,143 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:49:20,319 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:49:20,319 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:49:20,320 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:49:20,320 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:49:20,320 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x107f6efc0>
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - === ENTERED register_hotkey method ===
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - binding_id: config_terminal, hotkey: ctrl+;
+2025-08-11 01:49:20,320 - src.hotkey_manager - INFO - Attempting to acquire lock...
+2025-08-11 01:49:39,446 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,447 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,447 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,448 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,449 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,449 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,449 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,449 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,451 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,450 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,451 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,451 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,453 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,453 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,457 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,457 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,458 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,460 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,460 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,461 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,458 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,462 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,462 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,462 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,463 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,463 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,463 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,463 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,452 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,456 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,464 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,464 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,457 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,464 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:39,464 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:49:39,465 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:49:50,197 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:49:50,200 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:49:50,202 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:49:50,202 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:49:50,396 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:49:50,396 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:49:50,396 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:49:50,396 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:49:50,396 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:49:50,396 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:49:50,396 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x109d96f20>
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - === ENTERED register_hotkey method ===
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - binding_id: config_terminal, hotkey: ctrl+;
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Attempting to acquire lock...
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Lock acquisition bypassed for testing
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - About to call platform_adapter.register_hotkey with hotkey='ctrl+;'
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Platform adapter type: <class 'src.platform.macos.MacOSAdapter'>
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Platform adapter method: <bound method MacOSAdapter.register_hotkey of <src.platform.macos.MacOSAdapter object at 0x102993360>>
+2025-08-11 01:49:50,397 - src.hotkey_manager - INFO - Starting platform adapter call at 1754848190.397412
+2025-08-11 01:49:50,397 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:49:50,587 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x109d96fc0>}
+2025-08-11 01:49:50,588 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:49:50,588 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:49:50,588 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - Platform adapter call completed in 0.19 seconds
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:49:50,588 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:49:50,588 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:49:50,678 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:50:27,514 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,514 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,514 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,514 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,514 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,516 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,515 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:50:27,516 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:27,516 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:50:54,450 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:50:54,452 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:50:54,454 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:50:54,454 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:50:54,638 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:50:54,638 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:50:54,638 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:50:54,638 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:50:54,638 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - About to call register_hotkey with terminal_callback: <function HotkeyManager._create_terminal_callback.<locals>.terminal_callback at 0x107ceaf20>
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - === ENTERED register_hotkey method ===
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - binding_id: config_terminal, hotkey: ctrl+;
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Attempting to acquire lock...
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Lock acquired successfully
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - About to call platform_adapter.register_hotkey with hotkey='ctrl+;'
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Platform adapter type: <class 'src.platform.macos.MacOSAdapter'>
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Platform adapter method: <bound method MacOSAdapter.register_hotkey of <src.platform.macos.MacOSAdapter object at 0x100907230>>
+2025-08-11 01:50:54,638 - src.hotkey_manager - INFO - Starting platform adapter call at 1754848254.6389198
+2025-08-11 01:50:54,638 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:50:54,825 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:50:54,826 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x107ceafc0>}
+2025-08-11 01:50:54,827 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:50:54,827 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:50:54,827 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - Platform adapter call completed in 0.19 seconds
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:50:54,827 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:50:54,827 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:50:54,922 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:51:17,322 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,322 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,322 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,322 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,322 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,322 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 01:51:17,323 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,324 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,323 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:51:17,324 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,324 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:51:17,324 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:04,619 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:52:04,798 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:52:04,798 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:52:04,798 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:52:04,799 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:52:04,799 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:52:04,799 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:52:04,799 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:52:04,967 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10802b1a0>}
+2025-08-11 01:52:04,968 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:52:04,968 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:52:04,968 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:52:04,968 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:52:04,968 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:52:04,968 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:52:04,968 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:52:04,968 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:52:04,968 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:52:04,968 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:52:05,062 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:52:11,090 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:52:11,091 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:52:11,092 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:52:11,092 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:52:11,093 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:52:11,093 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:52:11,666 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:52:11,706 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:52:12,514 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:12,514 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:12,515 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 01:52:12,515 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 01:52:12,515 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:52:12,516 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:52:12,516 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:52:12,516 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:12,516 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 01:52:12,516 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:52:12,516 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:52:12,516 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:52:34,823 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:52:35,030 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:52:35,030 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:52:35,030 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:52:35,031 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:52:35,031 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:52:35,031 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:52:35,031 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:52:35,239 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10bbdb100>}
+2025-08-11 01:52:35,240 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:52:35,240 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:52:35,240 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:52:35,240 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:52:35,240 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:52:35,240 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:52:35,240 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:52:35,240 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:52:35,240 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:52:35,240 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:52:35,329 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:52:53,294 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,294 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,294 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,294 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,295 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 01:52:53,295 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 01:52:53,295 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:52:53,295 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:52:53,295 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:52:53,295 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,295 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 01:52:53,295 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:52:53,295 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:52:53,295 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:52:53,295 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,295 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,295 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,295 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,296 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,296 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,295 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,295 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,296 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,296 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,298 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,297 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,298 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,298 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,297 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,299 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,299 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,299 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,296 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,300 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,297 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,300 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,300 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,300 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,297 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,300 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,296 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,301 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,300 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,301 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,300 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,301 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,301 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:52:53,302 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,302 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:52:53,302 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:47,037 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:47,039 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:47,242 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:47,243 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:47,245 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:47,246 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:47,547 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:47,548 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:47,561 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:47,562 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,081 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,082 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,084 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,084 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,308 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,309 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,311 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,311 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,517 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,517 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,521 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,521 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,748 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,748 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:48,751 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:48,751 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:49,112 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:49,113 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:49,115 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:49,116 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:49,473 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:49,473 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:49,476 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:49,476 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:49,815 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:49,815 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:49,818 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:49,818 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:50,110 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:50,110 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:50,113 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:50,113 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:50,463 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:50,463 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:50,466 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:50,466 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,330 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,330 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,333 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,333 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,515 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,516 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,518 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,518 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,698 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,699 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,702 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,702 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,906 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,907 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:51,909 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:51,909 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:52,107 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:52,108 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:52,168 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 01:53:52,240 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:53:56,873 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:53:57,039 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:53:57,039 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:53:57,039 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:53:57,039 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:53:57,039 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:53:57,039 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:53:57,039 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:53:57,229 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10a01b1a0>}
+2025-08-11 01:53:57,230 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:53:57,230 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:53:57,230 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:53:57,230 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:53:57,230 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:53:57,230 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:53:57,230 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:53:57,230 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:53:57,230 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:53:57,230 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:53:57,320 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:54:00,605 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:00,605 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:00,605 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:00,605 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:00,605 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:00,605 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:01,328 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:54:01,372 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:54:01,450 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:01,450 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:01,451 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:01,451 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:01,451 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:01,452 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:02,257 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:54:02,267 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:54:05,215 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:05,215 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:05,215 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:05,215 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:05,215 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:05,216 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:05,617 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:54:05,663 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 01:54:17,073 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,073 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,073 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:17,074 - __main__ - INFO - Received signal 15, shutting down gracefully
+2025-08-11 01:54:17,074 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 01:54:51,334 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:54:51,490 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:54:51,490 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:51,490 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:54:51,490 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:54:51,490 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:54:51,490 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:54:51,490 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:54:51,668 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:54:51,668 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x108257100>}
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:54:51,669 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:54:51,670 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:54:51,670 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:54:51,670 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:54:51,670 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:54:51,670 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:54:51,670 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:54:51,670 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:54:51,670 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:54:51,762 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:54:54,171 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:54:54,171 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:54:54,171 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:54:54,529 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:57:26,995 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 01:57:26,997 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 01:57:26,998 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 01:57:26,998 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 01:57:31,635 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 01:57:31,635 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:57:31,635 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 01:57:31,635 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 01:57:31,635 - __main__ - INFO - Starting Terminal Controller daemon
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 01:57:31,635 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 01:57:31,635 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 01:57:31,824 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 01:57:31,825 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 01:57:31,825 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10c4d77e0>}
+2025-08-11 01:57:31,825 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 01:57:31,826 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 01:57:31,826 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 01:57:31,826 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 01:57:31,826 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 01:57:31,826 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 01:57:31,826 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 01:57:31,826 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 01:57:31,826 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 01:57:31,826 - __main__ - INFO - Terminal Controller daemon started successfully
+2025-08-11 01:57:31,917 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 01:57:37,472 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:57:37,472 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:57:37,473 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:57:37,887 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:57:40,548 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:57:40,549 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:57:40,549 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:57:40,921 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:57:42,409 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:57:42,409 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:57:42,409 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:57:42,802 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:57:47,879 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:57:47,879 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:57:47,880 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:57:48,264 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:58:00,430 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:58:00,431 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:58:00,431 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:58:00,843 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:58:46,597 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:58:46,598 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:58:46,598 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:58:46,991 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 01:58:57,140 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 01:58:57,140 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 01:58:57,140 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 01:58:57,516 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:02:34,178 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 02:02:34,358 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 02:02:34,359 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:02:34,359 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:02:34,359 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 02:02:34,359 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 02:03:44,681 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:03:44,684 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:03:44,685 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:03:45,078 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:03:52,700 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:03:52,701 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:03:52,701 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:03:53,061 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:04:01,905 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:04:01,905 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:04:01,906 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:04:02,269 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:04:14,350 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:04:14,351 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:04:14,351 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:04:14,737 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:05:44,449 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:05:44,450 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:05:44,451 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:05:44,837 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:06:03,038 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:06:03,040 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:06:03,040 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:06:03,418 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:06:24,717 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:06:24,718 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:06:24,718 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:06:25,119 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:06:35,686 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:06:35,686 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:06:35,687 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:06:36,057 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:06:39,387 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:06:39,389 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:06:39,389 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:06:39,761 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:07:09,559 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 02:07:09,714 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 02:07:09,714 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:07:09,714 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:07:09,714 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 02:07:09,714 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 02:07:09,717 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 02:07:11,084 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:07:11,084 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:07:11,085 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:07:11,472 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:08:48,801 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-11 02:08:48,804 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 02:08:48,804 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 02:08:49,209 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-11 02:09:01,437 - __main__ - INFO - Received signal 1, shutting down gracefully
+2025-08-11 02:09:01,438 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 02:09:01,439 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 02:09:01,439 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 02:09:01,439 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 02:09:01,439 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 02:09:01,440 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 02:09:01,440 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 02:09:01,440 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 02:09:01,440 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 02:09:01,440 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 02:09:01,440 - __main__ - INFO - Terminal Controller stopped

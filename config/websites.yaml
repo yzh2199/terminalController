@@ -1,0 +1,35 @@
+websites:
+  g:
+    name: "Google"
+    url: "https://www.google.com"
+    description: "Google search engine"
+  
+  gh:
+    name: "GitHub"
+    url: "https://github.com"
+    description: "GitHub code repository"
+  
+  gpt:
+    name: "ChatGPT"
+    url: "https://chat.openai.com"
+    description: "OpenAI ChatGPT"
+  
+  yt:
+    name: "YouTube"
+    url: "https://www.youtube.com"
+    description: "YouTube video platform"
+  
+  tw:
+    name: "Twitter"
+    url: "https://twitter.com"
+    description: "Twitter social media"
+  
+  l:
+    name: "LinkedIn"
+    url: "https://www.linkedin.com"
+    description: "LinkedIn professional network"
+  
+  r:
+    name: "Reddit"
+    url: "https://www.reddit.com"
+    description: "Reddit community platform"

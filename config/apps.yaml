@@ -1,0 +1,47 @@
+apps:
+  c:
+    name: "Google Chrome"
+    executable:
+      darwin: "/Applications/Google Chrome.app"
+      linux: "google-chrome"
+      windows: "chrome.exe"
+    args:
+      - "--new-window"
+    type: "browser"
+    description: "Google Chrome browser"
+  
+  cur:
+    name: "Cursor"
+    executable:
+      darwin: "/Applications/Cursor.app"
+      linux: "cursor"
+      windows: "cursor.exe"
+    type: "editor"
+    description: "Cursor code editor"
+  
+  t:
+    name: "iTerm"
+    executable:
+      darwin: "/Applications/iTerm.app"
+      linux: "gnome-terminal"
+      windows: "cmd.exe"
+    type: "terminal"
+    description: "Terminal application"
+  
+  p:
+    name: "Postman"
+    executable:
+      darwin: "/Applications/Postman.app"
+      linux: "postman"
+      windows: "postman.exe"
+    type: "api"
+    description: "Postman API testing tool"
+
+  vs:
+    name: "Visual Studio Code"
+    executable:
+      darwin: "/Applications/Visual Studio Code.app"
+      linux: "code"
+      windows: "code.exe"
+    type: "editor"
+    description: "Visual Studio Code editor"
