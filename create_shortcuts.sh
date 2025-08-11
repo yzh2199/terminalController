@@ -24,23 +24,23 @@ fi
 LOCAL_BIN="$HOME/.local/bin"
 mkdir -p "$LOCAL_BIN"
 
-# Create Chrome shortcut (c)
-print_status "Creating Chrome shortcut 'c'..."
-cat > "$LOCAL_BIN/c" << 'EOF'
+# Create Chrome shortcut (b)
+print_status "Creating Chrome shortcut 'b'..."
+cat > "$LOCAL_BIN/b" << 'EOF'
 #!/bin/bash
 # Quick Chrome launcher
 exec "$HOME/.local/bin/tc" run c "$@"
 EOF
-chmod +x "$LOCAL_BIN/c"
+chmod +x "$LOCAL_BIN/b"
 
-# Create Cursor shortcut (cur -> e for editor)
-print_status "Creating Cursor shortcut 'e'..."
-cat > "$LOCAL_BIN/e" << 'EOF'
+# Create Cursor shortcut (cur -> c for cursor)
+print_status "Creating Cursor shortcut 'c'..."
+cat > "$LOCAL_BIN/c" << 'EOF'
 #!/bin/bash
 # Quick Cursor launcher
 exec "$HOME/.local/bin/tc" run cur "$@"
 EOF
-chmod +x "$LOCAL_BIN/e"
+chmod +x "$LOCAL_BIN/c"
 
 # Create terminal shortcut (t)
 print_status "Creating terminal shortcut 't'..."
@@ -56,33 +56,64 @@ print_status "Creating Postman shortcut 'p'..."
 cat > "$LOCAL_BIN/p" << 'EOF'
 #!/bin/bash
 # Quick Postman launcher
-exec "$HOME/.local/bin/tc" run p "$@"
+exec "$HOME/.local/bin/tc" run postman "$@"
 EOF
 chmod +x "$LOCAL_BIN/p"
 
-# Create VS Code shortcut (v)
-print_status "Creating VS Code shortcut 'v'..."
-cat > "$LOCAL_BIN/v" << 'EOF'
+# Create WeChat shortcut (w)
+print_status "Creating WeChat shortcut 'w'..."
+cat > "$LOCAL_BIN/w" << 'EOF'
 #!/bin/bash
-# Quick VS Code launcher
-exec "$HOME/.local/bin/tc" run vs "$@"
+# Quick WeChat launcher
+exec "$HOME/.local/bin/tc" run wechat "$@"
 EOF
-chmod +x "$LOCAL_BIN/v"
+chmod +x "$LOCAL_BIN/w"
+
+# Create Kim shortcut (k)
+print_status "Creating Kim shortcut 'k'..."
+cat > "$LOCAL_BIN/k" << 'EOF'
+#!/bin/bash
+# Quick Kim launcher
+exec "$HOME/.local/bin/tc" run kim "$@"
+EOF
+chmod +x "$LOCAL_BIN/k"
+
+# Create PyCharm shortcut (py) 
+print_status "Creating PyCharm shortcut 'py'..."
+cat > "$LOCAL_BIN/py" << 'EOF'
+#!/bin/bash
+# Quick PyCharm launcher
+exec "$HOME/.local/bin/tc" run py "$@"
+EOF
+chmod +x "$LOCAL_BIN/py"
+
+# Create IntelliJ IDEA shortcut (i)
+print_status "Creating IntelliJ IDEA shortcut 'i'..."
+cat > "$LOCAL_BIN/i" << 'EOF'
+#!/bin/bash
+# Quick IntelliJ IDEA launcher
+exec "$HOME/.local/bin/tc" run idea "$@"
+EOF
+chmod +x "$LOCAL_BIN/i"
+
 
 print_success "Single-letter shortcuts created!"
 echo ""
 echo "Available shortcuts:"
-echo "  c   - Google Chrome"
-echo "  e   - Cursor"
+echo "  b   - Google Chrome"
+echo "  c   - Cursor"
 echo "  t   - Terminal"
 echo "  p   - Postman"
-echo "  v   - VS Code"
+echo "  w   - WeChat"
+echo "  k   - Kim"
+echo "  py  - PyCharm"
+echo "  i   - IntelliJ IDEA"
 echo ""
 echo "Usage examples:"
-echo "  c              # Open Chrome"
-echo "  c g            # Open Chrome with Google"
-echo "  c --new        # Open Chrome in new window"
-echo "  e              # Open Cursor"
+echo "  b              # Open Chrome"
+echo "  b g            # Open Chrome with Google"
+echo "  b -n           # Open Chrome in new window"
+echo "  c              # Open Cursor"
 echo ""
 echo "Make sure $LOCAL_BIN is in your PATH"
 

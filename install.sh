@@ -239,21 +239,21 @@ EOF
 create_shortcuts() {
     print_status "Creating single-letter shortcuts..."
     
-    # Create Chrome shortcut (c)
-    cat > "$LOCAL_BIN/c" << 'EOF'
+    # Create Chrome shortcut (b)
+    cat > "$LOCAL_BIN/b" << 'EOF'
 #!/bin/bash
 # Quick Chrome launcher
 exec "$HOME/.local/bin/tc" run c "$@"
 EOF
-    chmod +x "$LOCAL_BIN/c"
+    chmod +x "$LOCAL_BIN/b"
     
-    # Create Cursor shortcut (e for editor)
-    cat > "$LOCAL_BIN/e" << 'EOF'
+    # Create Cursor shortcut (c for cursor)
+    cat > "$LOCAL_BIN/c" << 'EOF'
 #!/bin/bash
 # Quick Cursor launcher
 exec "$HOME/.local/bin/tc" run cur "$@"
 EOF
-    chmod +x "$LOCAL_BIN/e"
+    chmod +x "$LOCAL_BIN/c"
     
     # Create terminal shortcut (t)
     cat > "$LOCAL_BIN/t" << 'EOF'
@@ -267,19 +267,43 @@ EOF
     cat > "$LOCAL_BIN/p" << 'EOF'
 #!/bin/bash
 # Quick Postman launcher
-exec "$HOME/.local/bin/tc" run p "$@"
+exec "$HOME/.local/bin/tc" run postman "$@"
 EOF
     chmod +x "$LOCAL_BIN/p"
     
-    # Create VS Code shortcut (v)
-    cat > "$LOCAL_BIN/v" << 'EOF'
+    # Create Kim shortcut (k)
+    cat > "$LOCAL_BIN/k" << 'EOF'
 #!/bin/bash
-# Quick VS Code launcher
-exec "$HOME/.local/bin/tc" run vs "$@"
+# Quick Kim launcher
+exec "$HOME/.local/bin/tc" run kim "$@"
 EOF
-    chmod +x "$LOCAL_BIN/v"
+    chmod +x "$LOCAL_BIN/k"
+
+    # Create PyCharm shortcut (py)
+    cat > "$LOCAL_BIN/py" << 'EOF'
+#!/bin/bash
+# Quick PyCharm launcher
+exec "$HOME/.local/bin/tc" run py "$@"
+EOF
+    chmod +x "$LOCAL_BIN/py"
+
+    # Create IntelliJ IDEA shortcut (i)
+    cat > "$LOCAL_BIN/i" << 'EOF'
+#!/bin/bash
+# Quick IntelliJ IDEA launcher
+exec "$HOME/.local/bin/tc" run idea "$@"
+EOF
+    chmod +x "$LOCAL_BIN/i"
+
+    # Create WeChat shortcut (w)
+    cat > "$LOCAL_BIN/w" << 'EOF'
+#!/bin/bash
+# Quick WeChat launcher
+exec "$HOME/.local/bin/tc" run wechat "$@"
+EOF
+    chmod +x "$LOCAL_BIN/w"
     
-    print_success "Single-letter shortcuts created: c, e, t, p, v"
+    print_success "Single-letter shortcuts created: b, c, t, p, k, py, i, w"
 }
 
 # Function to test installation
@@ -316,17 +340,20 @@ show_instructions() {
     echo "4. Start using Terminal Controller:"
     echo "   tc                    # Interactive mode"
     echo "   tc daemon            # Start as daemon"
-    echo "   tc run c g           # Launch Chrome with Google"
+    echo "   tc run b g           # Launch Chrome with Google"
     echo "   tc status            # Show status"
     echo
     echo "5. Use single-letter shortcuts (faster!):"
-    echo "   c                     # Launch Chrome"
-    echo "   c g                   # Open Chrome with Google"
-    echo "   c --new              # Chrome in new window"
-    echo "   e                     # Launch Cursor"
+    echo "   b                     # Launch Chrome"
+    echo "   b g                   # Open Chrome with Google"
+    echo "   b -n                  # Chrome in new window"
+    echo "   c                     # Launch Cursor"
     echo "   t                     # Launch Terminal"
     echo "   p                     # Launch Postman"
-    echo "   v                     # Launch VS Code"
+    echo "   w                     # Launch WeChat"
+    echo "   k                     # Launch Kim"
+    echo "   py                    # Launch PyCharm"
+    echo "   i                     # Launch IntelliJ IDEA"
     echo
     echo "6. For hotkey support, start the daemon:"
     echo "   tc daemon &"

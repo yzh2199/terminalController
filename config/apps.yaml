@@ -6,7 +6,7 @@ apps:
       linux: "google-chrome"
       windows: "chrome.exe"
     args:
-      - "--new-window"
+      - "-n" # 新窗口打开
     type: "browser"
     description: "Google Chrome browser"
   
@@ -28,7 +28,7 @@ apps:
     type: "terminal"
     description: "Terminal application"
   
-  p:
+  postman:
     name: "Postman"
     executable:
       darwin: "/Applications/Postman.app"
@@ -37,11 +37,38 @@ apps:
     type: "api"
     description: "Postman API testing tool"
 
-  vs:
-    name: "Visual Studio Code"
+  wechat:
+    name: "WeChat"
     executable:
-      darwin: "/Applications/Visual Studio Code.app"
-      linux: "code"
-      windows: "code.exe"
+      darwin: "/Applications/WeChat.app"
+      linux: "wechat"
+      windows: "wechat.exe"
+    type: "chat"
+    description: "WeChat"
+ 
+  idea:
+    name: "IntelliJ IDEA"
+    executable:
+      darwin: "/Applications/IntelliJ IDEA.app"
+      linux: "idea"
+      windows: "idea.exe"
     type: "editor"
-    description: "Visual Studio Code editor"
+    description: "IntelliJ IDEA code editor"
+
+  py:
+    name: "PyCharm"
+    executable:
+      darwin: "/Applications/PyCharm CE.app"
+      linux: "pycharm"
+      windows: "pycharm.exe"
+    type: "editor"
+    description: "PyCharm code editor"
+
+  kim:
+    name: "Kim"
+    executable:
+      darwin: "/Applications/Kim.app"
+      linux: "kim"
+      windows: "kim.exe"
+    type: "chat"
+    description: "Kim"
