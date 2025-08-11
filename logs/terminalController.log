@@ -1455,3 +1455,512 @@
 2025-08-11 02:09:01,440 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
 2025-08-11 02:09:01,440 - src.window_manager - INFO - WindowManager cleanup completed
 2025-08-11 02:09:01,440 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 22:57:19,129 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 22:57:19,131 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 22:57:19,132 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 22:57:19,132 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:57:19,270 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:57:19,270 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 22:57:19,270 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 22:57:19,270 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 22:57:19,270 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 22:57:21,705 - src.app_manager - INFO - Successfully launched Postman
+2025-08-11 22:57:25,510 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:57:32,262 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 22:57:32,263 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 22:57:32,263 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 22:57:32,263 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 22:57:32,263 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 22:57:32,264 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 22:58:52,254 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:58:52,428 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:58:52,429 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 22:58:52,429 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 22:58:52,429 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 22:58:52,429 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 22:58:52,433 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:58:58,094 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:58:58,243 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:58:58,243 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 22:58:58,243 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 22:58:58,243 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 22:58:58,243 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 22:58:58,247 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:59:04,250 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:59:04,390 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:59:04,390 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 22:59:04,390 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 22:59:04,390 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 22:59:04,390 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 22:59:04,394 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:59:10,582 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 22:59:10,583 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 22:59:10,584 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 22:59:10,584 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:59:10,752 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:59:10,752 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 22:59:10,752 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 22:59:10,752 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 22:59:10,752 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 22:59:13,073 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:59:58,630 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:59:58,806 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:59:58,806 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 22:59:58,806 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 22:59:58,806 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 22:59:58,807 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 23:00:00,649 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 23:00:06,608 - src.app_manager - INFO - Successfully launched Postman
+2025-08-11 23:00:25,392 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 23:00:37,657 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-11 23:03:15,786 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-11 23:03:15,790 - __main__ - INFO - Stopping Terminal Controller
+2025-08-11 23:03:15,791 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-11 23:03:15,791 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 23:03:15,791 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 23:03:15,791 - __main__ - INFO - Terminal Controller stopped
+2025-08-11 23:32:50,959 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:32:51,127 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:32:51,127 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:32:51,127 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:32:51,127 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:32:51,128 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:34:40,405 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:34:40,581 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:34:40,581 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:34:40,581 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:34:40,581 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:34:40,581 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:35:45,966 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 23:35:45,968 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 23:35:45,969 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 23:35:45,969 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:35:46,125 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:35:46,126 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:35:46,126 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:35:46,126 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:35:46,126 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 23:35:46,126 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 23:35:46,126 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 23:35:46,455 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 23:35:46,456 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x1083dd580>}
+2025-08-11 23:35:46,457 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 23:35:46,457 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 23:35:46,457 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 23:35:46,457 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 23:35:46,457 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 23:35:46,457 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 23:35:46,457 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 23:35:46,457 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 23:35:46,457 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 23:35:46,457 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-11 23:35:46,467 - __main__ - ERROR - ❌ Error starting daemon server: attempted relative import with no known parent package
+2025-08-11 23:35:46,467 - __main__ - ERROR - ❌ Failed to start daemon IPC server
+2025-08-11 23:35:46,467 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-11 23:35:46,467 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 23:35:46,467 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 23:35:46,468 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 23:35:46,468 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 23:35:46,468 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-11 23:36:02,421 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 23:36:02,423 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 23:36:02,424 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 23:36:02,424 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:36:02,588 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:36:02,588 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:36:02,589 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:36:02,589 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:36:02,589 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 23:36:02,589 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 23:36:02,589 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 23:36:02,789 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 23:36:02,789 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 23:36:02,789 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 23:36:02,790 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10ca11580>}
+2025-08-11 23:36:02,791 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 23:36:02,791 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 23:36:02,791 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 23:36:02,791 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 23:36:02,791 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 23:36:02,791 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 23:36:02,791 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 23:36:02,791 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 23:36:02,791 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 23:36:02,791 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-11 23:36:02,797 - __main__ - ERROR - ❌ Error starting daemon server: attempted relative import with no known parent package
+2025-08-11 23:36:02,798 - __main__ - ERROR - ❌ Failed to start daemon IPC server
+2025-08-11 23:36:02,798 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-11 23:36:02,798 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 23:36:02,798 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 23:36:02,798 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 23:36:02,798 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 23:36:02,798 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-11 23:37:03,659 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 23:37:03,661 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 23:37:03,662 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 23:37:03,662 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:37:03,839 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:37:03,839 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:37:03,839 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:37:03,839 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:37:03,839 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 23:37:03,839 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 23:37:03,839 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 23:37:04,057 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10a5cd580>}
+2025-08-11 23:37:04,058 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 23:37:04,058 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 23:37:04,058 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 23:37:04,059 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 23:37:04,059 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 23:37:04,059 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 23:37:04,059 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 23:37:04,059 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 23:37:04,059 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 23:37:04,059 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-11 23:37:04,073 - __main__ - ERROR - ❌ Error starting daemon server: attempted relative import with no known parent package
+2025-08-11 23:37:04,073 - __main__ - ERROR - ❌ Failed to start daemon IPC server
+2025-08-11 23:37:04,073 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-11 23:37:04,073 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 23:37:04,073 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 23:37:04,073 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 23:37:04,073 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 23:37:04,073 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-11 23:38:18,318 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 23:38:18,320 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 23:38:18,321 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 23:38:18,321 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:38:18,498 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:38:18,499 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:38:18,499 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:38:18,499 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:38:18,499 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 23:38:18,499 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 23:38:18,499 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 23:38:18,700 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 23:38:18,700 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 23:38:18,700 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 23:38:18,700 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 23:38:18,700 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x1081899e0>}
+2025-08-11 23:38:18,701 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 23:38:18,702 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 23:38:18,702 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 23:38:18,702 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 23:38:18,702 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 23:38:18,702 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 23:38:18,702 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 23:38:18,702 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 23:38:18,702 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 23:38:18,702 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-11 23:38:18,703 - __main__ - INFO - ✅ Simplified daemon server listening on /tmp/terminal_controller.sock
+2025-08-11 23:38:18,703 - __main__ - INFO - ✅ Simplified daemon server stopped
+2025-08-11 23:38:18,801 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 23:38:19,207 - __main__ - ERROR - ❌ Daemon server failed to create socket
+2025-08-11 23:38:19,208 - __main__ - ERROR - ❌ Failed to start daemon IPC server
+2025-08-11 23:38:19,208 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-11 23:38:19,208 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-11 23:38:19,208 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-11 23:38:19,208 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-11 23:38:19,208 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-11 23:38:19,208 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-11 23:38:32,017 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:38:32,964 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:38:32,965 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:38:32,965 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:38:32,965 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:38:32,965 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:39:28,853 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 23:39:28,855 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 23:39:28,857 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 23:39:28,857 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:39:29,032 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:39:29,032 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:39:29,032 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:39:29,032 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:39:29,032 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-11 23:39:29,032 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-11 23:39:29,032 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Accessibility permissions check passed
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Parsing hotkey: 'ctrl+;'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Parsing hotkey string: 'ctrl+;'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Split keys: ['ctrl', ';']
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Processing key: 'ctrl'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Mapped 'ctrl' to '<ctrl>'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Processing key: ';'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Added single character key: ';'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Final parsed hotkey result: '<ctrl>+;'
+2025-08-11 23:39:29,227 - src.platform.macos - INFO - Parsed hotkey 'ctrl+;' -> '<ctrl>+;'
+2025-08-11 23:39:29,228 - src.platform.macos - INFO - Creating GlobalHotKeys with mapping: {'<ctrl>+;': <function MacOSAdapter.register_hotkey.<locals>.on_hotkey at 0x10c0e59e0>}
+2025-08-11 23:39:29,228 - src.platform.macos - INFO - GlobalHotKeys object created successfully
+2025-08-11 23:39:29,228 - src.platform.macos - INFO - GlobalHotKeys listener started successfully
+2025-08-11 23:39:29,228 - src.platform.macos - INFO - Hotkey registration completed for: 'ctrl+;'
+2025-08-11 23:39:29,228 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-11 23:39:29,228 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-11 23:39:29,228 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-11 23:39:29,229 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-11 23:39:29,229 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-11 23:39:29,229 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-11 23:39:29,229 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-11 23:39:29,229 - __main__ - INFO - ✅ Simplified daemon server listening on /tmp/terminal_controller.sock
+2025-08-11 23:39:29,314 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-11 23:39:29,734 - __main__ - INFO - ✅ Daemon IPC server started successfully
+2025-08-11 23:39:29,734 - __main__ - INFO - 🎯 Enhanced Terminal Controller daemon started successfully
+2025-08-11 23:39:39,060 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:39:39,201 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:39:39,201 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:39:39,201 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:39:39,201 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:39:39,201 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:39:39,202 - __main__ - INFO - 📥 Processing command: 'help' (request #0)
+2025-08-11 23:39:39,202 - __main__ - INFO - 📤 Command completed: 0.25ms (request #0)
+2025-08-11 23:39:39,202 - __main__ - INFO - 📥 Processing command: 'help' (request #1)
+2025-08-11 23:39:39,203 - __main__ - INFO - 📤 Command completed: 0.04ms (request #1)
+2025-08-11 23:39:39,203 - __main__ - INFO - 📥 Processing command: 'config' (request #2)
+2025-08-11 23:39:39,203 - __main__ - INFO - 📤 Command completed: 0.11ms (request #2)
+2025-08-11 23:39:56,027 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:39:56,206 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:39:56,206 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:39:56,206 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:39:56,206 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:39:56,206 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:39:56,206 - __main__ - INFO - 📥 Processing command: 'help' (request #3)
+2025-08-11 23:39:56,207 - __main__ - INFO - 📤 Command completed: 0.07ms (request #3)
+2025-08-11 23:39:56,207 - __main__ - INFO - 📥 Processing command: 'help' (request #4)
+2025-08-11 23:39:56,207 - __main__ - INFO - 📤 Command completed: 0.03ms (request #4)
+2025-08-11 23:40:03,745 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:40:03,900 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:40:03,900 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:40:03,900 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:40:03,900 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:40:03,900 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:40:03,900 - __main__ - INFO - 📥 Processing command: 'help' (request #5)
+2025-08-11 23:40:03,901 - __main__ - INFO - 📤 Command completed: 0.05ms (request #5)
+2025-08-11 23:40:03,901 - __main__ - INFO - 📥 Processing command: 'config list apps' (request #6)
+2025-08-11 23:40:03,906 - __main__ - INFO - 📤 Command completed: 4.95ms (request #6)
+2025-08-11 23:40:11,396 - __main__ - INFO - 📥 Processing command: 'help' (request #7)
+2025-08-11 23:40:11,396 - __main__ - INFO - 📤 Command completed: 0.08ms (request #7)
+2025-08-11 23:40:11,397 - __main__ - INFO - 📥 Processing command: 'help' (request #8)
+2025-08-11 23:40:11,397 - __main__ - INFO - 📤 Command completed: 0.04ms (request #8)
+2025-08-11 23:40:11,502 - __main__ - INFO - 📥 Processing command: 'help' (request #9)
+2025-08-11 23:40:11,502 - __main__ - INFO - 📤 Command completed: 0.06ms (request #9)
+2025-08-11 23:40:11,606 - __main__ - INFO - 📥 Processing command: 'help' (request #10)
+2025-08-11 23:40:11,606 - __main__ - INFO - 📤 Command completed: 0.05ms (request #10)
+2025-08-11 23:40:11,710 - __main__ - INFO - 📥 Processing command: 'help' (request #11)
+2025-08-11 23:40:11,711 - __main__ - INFO - 📤 Command completed: 0.08ms (request #11)
+2025-08-11 23:40:11,833 - __main__ - INFO - 📥 Processing command: 'help' (request #12)
+2025-08-11 23:40:11,833 - __main__ - INFO - 📤 Command completed: 0.11ms (request #12)
+2025-08-11 23:40:11,938 - __main__ - INFO - 📥 Processing command: 'config' (request #13)
+2025-08-11 23:40:11,938 - __main__ - INFO - 📤 Command completed: 0.13ms (request #13)
+2025-08-11 23:40:12,043 - __main__ - INFO - 📥 Processing command: 'config' (request #14)
+2025-08-11 23:40:12,044 - __main__ - INFO - 📤 Command completed: 0.12ms (request #14)
+2025-08-11 23:40:12,148 - __main__ - INFO - 📥 Processing command: 'config' (request #15)
+2025-08-11 23:40:12,148 - __main__ - INFO - 📤 Command completed: 0.07ms (request #15)
+2025-08-11 23:40:12,250 - __main__ - INFO - 📥 Processing command: 'config' (request #16)
+2025-08-11 23:40:12,250 - __main__ - INFO - 📤 Command completed: 0.06ms (request #16)
+2025-08-11 23:40:12,352 - __main__ - INFO - 📥 Processing command: 'config' (request #17)
+2025-08-11 23:40:12,352 - __main__ - INFO - 📤 Command completed: 0.13ms (request #17)
+2025-08-11 23:40:12,458 - __main__ - INFO - 📥 Processing command: 'config list apps' (request #18)
+2025-08-11 23:40:12,459 - __main__ - INFO - 📤 Command completed: 0.64ms (request #18)
+2025-08-11 23:40:12,564 - __main__ - INFO - 📥 Processing command: 'config list apps' (request #19)
+2025-08-11 23:40:12,565 - __main__ - INFO - 📤 Command completed: 0.64ms (request #19)
+2025-08-11 23:40:12,669 - __main__ - INFO - 📥 Processing command: 'config list apps' (request #20)
+2025-08-11 23:40:12,670 - __main__ - INFO - 📤 Command completed: 0.79ms (request #20)
+2025-08-11 23:40:12,771 - __main__ - INFO - 📥 Processing command: 'config list apps' (request #21)
+2025-08-11 23:40:12,772 - __main__ - INFO - 📤 Command completed: 1.07ms (request #21)
+2025-08-11 23:40:12,876 - __main__ - INFO - 📥 Processing command: 'config list apps' (request #22)
+2025-08-11 23:40:12,877 - __main__ - INFO - 📤 Command completed: 0.94ms (request #22)
+2025-08-11 23:40:22,868 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:40:23,023 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:40:23,023 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:40:23,023 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:40:23,023 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:40:23,023 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-11 23:40:23,143 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:40:23,280 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:40:23,280 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:40:23,280 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:40:23,280 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:40:23,280 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:40:30,887 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:40:31,048 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:40:31,049 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:40:31,049 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:40:31,049 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:40:31,049 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:40:31,049 - __main__ - INFO - 📥 Processing command: 'help' (request #23)
+2025-08-11 23:40:31,049 - __main__ - INFO - 📤 Command completed: 0.06ms (request #23)
+2025-08-11 23:40:31,049 - __main__ - INFO - 📥 Processing command: 'help' (request #24)
+2025-08-11 23:40:31,049 - __main__ - INFO - 📤 Command completed: 0.02ms (request #24)
+2025-08-11 23:48:38,611 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:48:38,804 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:48:38,805 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:48:38,805 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:48:38,805 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:48:38,805 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:48:38,806 - __main__ - INFO - 📥 Processing command: 'help' (request #25)
+2025-08-11 23:48:38,806 - __main__ - INFO - 📤 Command completed: 0.29ms (request #25)
+2025-08-11 23:48:38,806 - __main__ - INFO - 📥 Processing command: 'help' (request #26)
+2025-08-11 23:48:38,807 - __main__ - INFO - 📤 Command completed: 0.02ms (request #26)
+2025-08-11 23:48:38,807 - __main__ - INFO - 📥 Processing command: 'config' (request #27)
+2025-08-11 23:48:38,807 - __main__ - INFO - 📤 Command completed: 0.13ms (request #27)
+2025-08-11 23:48:38,957 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:48:39,144 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:48:39,144 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:48:39,144 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:48:39,144 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:48:39,144 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:48:39,145 - __main__ - INFO - 📥 Processing command: 'help' (request #28)
+2025-08-11 23:48:39,145 - __main__ - INFO - 📤 Command completed: 0.07ms (request #28)
+2025-08-11 23:48:39,145 - __main__ - INFO - 📥 Processing command: 'c' (request #29)
+2025-08-11 23:48:39,151 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 23:48:39,152 - __main__ - INFO - 📤 Command completed: 6.49ms (request #29)
+2025-08-11 23:48:40,295 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 23:48:40,486 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 23:48:40,486 - src.window_manager - INFO - Initialized WindowManager
+2025-08-11 23:48:40,486 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-11 23:48:40,486 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-11 23:48:40,487 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-11 23:48:40,487 - __main__ - INFO - 📥 Processing command: 'help' (request #30)
+2025-08-11 23:48:40,487 - __main__ - INFO - 📤 Command completed: 0.19ms (request #30)
+2025-08-11 23:48:40,487 - __main__ - INFO - 📥 Processing command: 'config' (request #31)
+2025-08-11 23:48:40,488 - __main__ - INFO - 📤 Command completed: 0.07ms (request #31)
+2025-08-12 00:04:30,363 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-12 00:04:30,365 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:04:30,366 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:04:30,847 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-12 00:04:38,749 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 00:04:38,919 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 00:04:38,919 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:04:38,919 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:04:38,919 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 00:04:38,919 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-12 00:04:38,923 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-12 00:04:40,553 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-12 00:04:40,555 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:04:40,555 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:04:40,997 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-12 00:04:45,579 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 00:04:45,711 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 00:04:45,711 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:04:45,711 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:04:45,711 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 00:04:45,711 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-12 00:04:45,714 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-12 00:04:47,800 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-12 00:04:47,801 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:04:47,801 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:04:48,175 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-12 00:04:49,191 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 00:04:49,335 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 00:04:49,335 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:04:49,335 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:04:49,335 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 00:04:49,335 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-12 00:04:49,339 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-12 00:05:03,824 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-12 00:05:03,825 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:05:03,826 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:05:04,190 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-12 00:05:08,009 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 00:05:08,142 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 00:05:08,142 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:05:08,142 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:05:08,142 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 00:05:08,142 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-12 00:05:11,792 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-12 00:05:12,899 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-12 00:05:12,900 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:05:12,900 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:05:13,273 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-12 00:05:22,841 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-12 00:05:23,716 - src.platform.macos - INFO - Hotkey fired: '<ctrl>+;'
+2025-08-12 00:05:23,717 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 00:05:23,717 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 00:05:24,075 - src.hotkey_manager - INFO - Terminal launched via hotkey
+2025-08-12 00:05:29,004 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-12 00:05:29,005 - __main__ - INFO - Stopping Terminal Controller
+2025-08-12 00:05:29,005 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 00:05:29,005 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 00:05:29,005 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 00:05:29,005 - __main__ - INFO - Terminal Controller stopped
+2025-08-12 00:24:11,048 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-12 00:24:11,051 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-12 00:24:11,636 - __main__ - INFO - ✅ Simplified daemon server stopped
+2025-08-12 00:24:11,636 - __main__ - INFO - ✅ Daemon IPC server stopped
+2025-08-12 00:24:11,637 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-12 00:24:11,637 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-12 00:24:11,639 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 00:24:11,639 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 00:24:11,639 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-12 00:24:11,639 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-12 00:24:11,639 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 00:24:11,639 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 00:24:11,639 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 00:24:11,639 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-12 00:24:31,689 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-12 00:24:31,697 - __main__ - INFO - Stopping Terminal Controller
+2025-08-12 00:24:31,700 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 00:24:31,700 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 00:24:31,700 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 00:24:31,700 - __main__ - INFO - Terminal Controller stopped

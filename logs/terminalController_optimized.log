@@ -1,0 +1,61 @@
+2025-08-11 22:51:29,533 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:51:29,538 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:51:29,756 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-11 22:51:29,756 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:51:29,756 - src.app_manager - ERROR - Unknown application: window
+2025-08-11 22:51:36,210 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:51:36,215 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:51:44,586 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:51:44,591 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:51:44,731 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-11 22:51:44,731 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:51:44,731 - src.app_manager - ERROR - Unknown application: window
+2025-08-11 22:51:52,590 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:51:52,595 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:51:52,738 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-11 22:51:52,738 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:51:52,739 - src.app_manager - ERROR - Unknown application: window
+2025-08-11 22:51:57,968 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:51:57,973 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:52:04,918 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:52:10,608 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:52:10,612 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:52:10,752 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-11 22:52:10,752 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:52:18,186 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:52:25,141 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 22:52:25,143 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 22:52:25,144 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 22:52:25,145 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:52:25,145 - __main__ - DEBUG - 配置管理器加载耗时: 7.51ms
+2025-08-11 22:52:25,392 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-11 22:52:25,392 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:52:25,392 - __main__ - DEBUG - 应用管理器加载耗时: 254.37ms
+2025-08-11 22:52:25,398 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:52:25,399 - __main__ - DEBUG - 总执行时间: 261.41ms
+2025-08-11 22:52:37,363 - src.app_manager - INFO - Successfully launched Postman
+2025-08-11 22:52:37,364 - __main__ - DEBUG - 总执行时间: 5.15ms
+2025-08-11 22:53:44,324 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:53:44,324 - __main__ - DEBUG - 总执行时间: 5.67ms
+2025-08-11 22:54:05,191 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:54:05,192 - __main__ - DEBUG - 总执行时间: 6.63ms
+2025-08-11 22:56:11,669 - __main__ - INFO - 收到信号 2，正常关闭
+2025-08-11 22:56:11,670 - __main__ - INFO - 停止Terminal Controller
+2025-08-11 22:56:11,670 - __main__ - INFO - Terminal Controller已停止
+2025-08-11 22:56:41,798 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-11 22:56:46,683 - src.config_manager - DEBUG - Loaded 5 applications
+2025-08-11 22:56:46,686 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-11 22:56:46,688 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-11 22:56:46,689 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-11 22:56:46,689 - __main__ - DEBUG - 配置管理器加载耗时: 13.56ms
+2025-08-11 22:56:46,884 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-11 22:56:46,884 - __main__ - DEBUG - 应用管理器加载耗时: 208.95ms
+2025-08-11 22:56:46,888 - src.app_manager - INFO - Successfully launched Postman
+2025-08-11 22:56:46,889 - __main__ - DEBUG - 总执行时间: 213.90ms
+2025-08-11 22:56:50,017 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-11 22:56:50,018 - __main__ - DEBUG - 总执行时间: 5.33ms
+2025-08-11 22:56:56,033 - src.app_manager - INFO - Successfully launched Postman
+2025-08-11 22:56:56,034 - __main__ - DEBUG - 总执行时间: 4.85ms
+2025-08-11 22:57:10,210 - __main__ - INFO - 收到信号 2，正常关闭
+2025-08-11 22:57:10,210 - __main__ - INFO - 停止Terminal Controller
+2025-08-11 22:57:10,210 - __main__ - INFO - Terminal Controller已停止
