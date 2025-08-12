@@ -1,6 +1,6 @@
 """Terminal management module for Terminal Controller."""
 import os
-import platform as std_platform
+import sys
 import subprocess
 import logging
 from typing import Optional, List, Dict, Any
@@ -24,7 +24,15 @@ class TerminalManager:
         """
         self.config_manager = config_manager
         self.platform_adapter: PlatformAdapter = get_platform_adapter()()
-        self.current_platform = std_platform.system().lower()
+        p = sys.platform.lower()
+        if p.startswith("darwin") or p in ("mac", "macos"):
+            self.current_platform = "darwin"
+        elif p.startswith("linux"):
+            self.current_platform = "linux"
+        elif p.startswith("win"):
+            self.current_platform = "windows"
+        else:
+            self.current_platform = p
         
         logger.info(f"Initialized TerminalManager for platform: {self.current_platform}")
     

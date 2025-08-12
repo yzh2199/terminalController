@@ -2,8 +2,8 @@
 
 # Terminal Controller Enhanced Daemon 安装脚本
 # 基于原版main.py实现的高性能守护进程版本
-# todo 当前脚本有问题，安装的tc没有像install.sh那样安装到~/.local/bin，导致需要在.bashrc或者.zshrc中添加PATH，否则无法使用tc命令，后续修改脚本
-# todo 让tc安装到~/.local/bin中
+# 现在与 install.sh 保持一致的目录结构和命令位置
+# 所有命令安装到 ~/.local/bin 目录下
 
 set -e
 
@@ -221,39 +221,65 @@ install_dependencies() {
 create_cli_tools() {
     print_step "创建命令行工具"
     
-    # 创建主命令 tc (terminal-controller)
-    cat > "$INSTALL_DIR/bin/tc" << 'EOF'
+    # 确保 ~/.local/bin 目录存在
+    LOCAL_BIN="$HOME/.local/bin"
+    mkdir -p "$LOCAL_BIN"
+    
+    # 创建主命令包装器
+    cat > "$INSTALL_DIR/tc" << 'EOF'
 #!/bin/bash
-# Terminal Controller Enhanced - 主命令
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" "$@"
-EOF
+# Terminal Controller Enhanced wrapper script
 
-    # 创建守护进程命令 tcd (terminal-controller daemon)
-    cat > "$INSTALL_DIR/bin/tcd" << 'EOF'
-#!/bin/bash
-# Terminal Controller Daemon - 守护进程管理
+# Activate virtual environment
 INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
+if [[ -f "$INSTALL_DIR/venv/bin/activate" ]]; then
+    source "$INSTALL_DIR/venv/bin/activate"
+elif [[ -f "$INSTALL_DIR/venv/Scripts/activate" ]]; then
+    source "$INSTALL_DIR/venv/Scripts/activate"
+fi
+
+# Run Terminal Controller Enhanced
+exec "$INSTALL_DIR/venv/bin/python" "$INSTALL_DIR/bin/main_enhanced.py" "$@"
+EOF
+    
+    chmod +x "$INSTALL_DIR/tc"
+    
+    # 创建符号链接到 ~/.local/bin
+    if [[ -L "$LOCAL_BIN/tc" ]] || [[ -f "$LOCAL_BIN/tc" ]]; then
+        rm -f "$LOCAL_BIN/tc"
+    fi
+    ln -s "$INSTALL_DIR/tc" "$LOCAL_BIN/tc"
+    
+    # 创建守护进程管理命令
+    cat > "$INSTALL_DIR/tcd" << 'EOF'
+#!/bin/bash
+# Terminal Controller Daemon Management
+INSTALL_DIR="$HOME/.terminal-controller"
+
+# Activate virtual environment
+if [[ -f "$INSTALL_DIR/venv/bin/activate" ]]; then
+    source "$INSTALL_DIR/venv/bin/activate"
+elif [[ -f "$INSTALL_DIR/venv/Scripts/activate" ]]; then
+    source "$INSTALL_DIR/venv/Scripts/activate"
+fi
 
 case "$1" in
     start)
         echo "🚀 启动 Terminal Controller 守护进程..."
-        python3 "$INSTALL_DIR/bin/main_enhanced.py" daemon
+        "$INSTALL_DIR/venv/bin/python" "$INSTALL_DIR/bin/main_enhanced.py" daemon
         ;;
     stop)
         echo "🛑 停止 Terminal Controller 守护进程..."
-        python3 "$INSTALL_DIR/bin/main_enhanced.py" stop
+        "$INSTALL_DIR/venv/bin/python" "$INSTALL_DIR/bin/main_enhanced.py" stop
         ;;
     status)
-        python3 "$INSTALL_DIR/bin/main_enhanced.py" daemon-status
+        "$INSTALL_DIR/venv/bin/python" "$INSTALL_DIR/bin/main_enhanced.py" daemon-status
         ;;
     restart)
         echo "🔄 重启 Terminal Controller 守护进程..."
-        python3 "$INSTALL_DIR/bin/main_enhanced.py" stop
+        "$INSTALL_DIR/venv/bin/python" "$INSTALL_DIR/bin/main_enhanced.py" stop
         sleep 2
-        python3 "$INSTALL_DIR/bin/main_enhanced.py" daemon
+        "$INSTALL_DIR/venv/bin/python" "$INSTALL_DIR/bin/main_enhanced.py" daemon
         ;;
     *)
         echo "用法: tcd {start|stop|status|restart}"
@@ -267,146 +293,34 @@ case "$1" in
         ;;
 esac
 EOF
-
-    # 创建快速命令 t (快速发送命令到守护进程)
-    cat > "$INSTALL_DIR/bin/t" << 'EOF'
-#!/bin/bash
-# Terminal Controller Quick Command - 快速命令
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-
-if [ $# -eq 0 ]; then
-    echo "用法: t <命令>"
-    echo ""
-    echo "示例:"
-    echo "  t g              # 打开Chrome"
-    echo "  t c              # 打开Cursor"
-    echo "  t p              # 打开Postman"
-    echo "  t i              # 打开IntelliJ IDEA"
-    echo "  t py             # 打开PyCharm"
-    echo "  t w              # 打开WeChat"
-    echo "  t k              # 打开Kim"
-    echo "  t g list         # 列出Chrome窗口"
-    echo "  t g activate     # 激活Chrome窗口"
-    echo "  t help           # 显示帮助"
-    echo ""
-    echo "提示: 使用 'tcd start' 先启动守护进程"
-    exit 1
-fi
-
-# 检查守护进程是否运行
-if ! python3 "$INSTALL_DIR/bin/main_enhanced.py" daemon-status >/dev/null 2>&1; then
-    echo "❌ 守护进程未运行，请先执行: tcd start"
-    exit 1
-fi
-
-# 发送命令到守护进程
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send "$@"
-EOF
-
-    # 创建基准测试命令
-    cat > "$INSTALL_DIR/bin/tc-benchmark" << 'EOF'
-#!/bin/bash
-# Terminal Controller Benchmark - 性能测试
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/daemon_client.py" --benchmark
-EOF
-
-    # 创建超短应用启动命令，这部分没啥用，创建之后用命令模式会很慢，因为每次使用命令都需要启动python
-    # print_info "创建超短应用启动命令..."
-    # 
-    # # Chrome (g)
-    # cat > "$INSTALL_DIR/bin/g" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send g "$@"
-# EOF
-# 
-    # # Cursor (c)
-    # cat > "$INSTALL_DIR/bin/c" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send c "$@"
-# EOF
-# 
-    # # Postman (p)
-    # cat > "$INSTALL_DIR/bin/p" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send p "$@"
-# EOF
-# 
-    # # IntelliJ IDEA (i)
-    # cat > "$INSTALL_DIR/bin/i" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send i "$@"
-# EOF
-# 
-    # # PyCharm (py)
-    # cat > "$INSTALL_DIR/bin/py" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send py "$@"
-# EOF
-# 
-    # # WeChat (w)
-    # cat > "$INSTALL_DIR/bin/w" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send w "$@"
-# EOF
-# 
-    # # Kim (k)
-    # cat > "$INSTALL_DIR/bin/k" << 'EOF'
-# #!/bin/bash
-# INSTALL_DIR="$HOME/.terminal-controller"
-# source "$INSTALL_DIR/venv/bin/activate"
-# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send k "$@"
-# EOF
-# 
-    # # 设置执行权限
-    # chmod +x "$INSTALL_DIR/bin/"*
-    # 
-    # print_success "命令行工具创建完成 (包括超短命令: g, c, p, i, py, w, k)"
+    
+    chmod +x "$INSTALL_DIR/tcd"
+    
+    # 创建符号链接
+    if [[ -L "$LOCAL_BIN/tcd" ]] || [[ -f "$LOCAL_BIN/tcd" ]]; then
+        rm -f "$LOCAL_BIN/tcd"
+    fi
+    ln -s "$INSTALL_DIR/tcd" "$LOCAL_BIN/tcd"
+    
+    print_success "主命令创建完成: tc, tcd"
 }
 
-# 设置环境变量
-setup_environment() {
-    print_step "设置环境变量"
+# 检查环境变量
+check_environment() {
+    print_step "检查环境变量"
     
-    # 检查shell类型 - 使用更可靠的方法
-    if [ -n "$ZSH_VERSION" ] || [[ "$SHELL" == *"zsh"* ]]; then
-        SHELL_RC="$HOME/.zshrc"
-        print_info "检测到 ZSH shell，使用 .zshrc"
-    elif [ -n "$BASH_VERSION" ] || [[ "$SHELL" == *"bash"* ]]; then
-        SHELL_RC="$HOME/.bashrc"
-        print_info "检测到 BASH shell，使用 .bashrc"
+    # 检查 ~/.local/bin 是否在 PATH 中
+    if [[ ":$PATH:" == *":$HOME/.local/bin:"* ]]; then
+        print_success "~/.local/bin 已在 PATH 中"
     else
-        # 默认尝试zsh，因为这在macOS上更常见
-        SHELL_RC="$HOME/.zshrc"
-        print_info "使用默认 .zshrc 配置"
+        print_warning "~/.local/bin 不在 PATH 中"
+        print_info "请将以下行添加到你的 shell 配置文件中："
+        echo ""
+        echo "    export PATH=\"\$HOME/.local/bin:\$PATH\""
+        echo ""
+        print_info "然后重新加载配置文件："
+        echo "    source ~/.bashrc  # 或 source ~/.zshrc"
     fi
-    
-    # 添加到PATH
-    if ! grep -q "terminal-controller/bin" "$SHELL_RC" 2>/dev/null; then
-        echo "" >> "$SHELL_RC"
-        echo "# Terminal Controller Enhanced" >> "$SHELL_RC"
-        echo "export PATH=\"\$HOME/.terminal-controller/bin:\$PATH\"" >> "$SHELL_RC"
-        print_success "已添加到 $SHELL_RC"
-    else
-        print_info "PATH 已配置"
-    fi
-    
-    # 导出当前会话
-    export PATH="$HOME/.terminal-controller/bin:$PATH"
 }
 
 # 创建启动脚本
@@ -467,47 +381,41 @@ test_installation() {
 show_usage() {
     print_success "🎉 Terminal Controller Enhanced 安装完成！"
     echo ""
-    echo -e "${CYAN}快速开始:${NC}"
-    echo "  1. 重新加载shell环境:"
-    echo "     source ~/.zshrc    # 或 source ~/.bashrc"
+    echo -e "${CYAN}后续步骤:${NC}"
     echo ""
-    echo "  2. 启动守护进程:"
-    echo -e "     ${GREEN}tcd start${NC}"
+    echo "1. 确保 ~/.local/bin 在你的 PATH 中："
+    echo "   export PATH=\"\$HOME/.local/bin:\$PATH\""
+    echo "   (如果需要，添加到 ~/.bashrc, ~/.zshrc, 等配置文件中)"
     echo ""
-    echo "  3. 测试超短命令 (无需't'前缀):"
-     echo -e "     ${GREEN}b${NC}             # 直接打开Chrome"
-     echo -e "     ${GREEN}c${NC}             # 直接打开Cursor"
-     echo -e "     ${GREEN}p${NC}             # 直接打开Postman"
-     echo -e "     ${GREEN}k${NC}             # 直接打开Kim"
-     echo -e "     ${GREEN}py${NC}             # 直接打开PyCharm"
-     echo -e "     ${GREEN}i${NC}             # 直接打开IntelliJ IDEA"
-     echo -e "     ${GREEN}w${NC}             # 直接打开WeChat"
-     echo ""
-     echo "  4. 传统命令 (如果习惯):"
-     echo -e "     ${GREEN}t help${NC}        # 显示帮助"
-     echo -e "     ${GREEN}t g${NC}           # 打开Chrome"
-     echo -e "     ${GREEN}t c${NC}           # 打开Cursor"
+    echo "2. 重新加载 shell 或执行："
+    echo "   source ~/.bashrc  # 或 ~/.zshrc"
     echo ""
-    echo -e "${CYAN}命令说明:${NC}"
-    echo -e "  ${YELLOW}超短命令${NC}     - 单字母启动: g, c, p, i, py, w, k"
-    echo -e "  ${YELLOW}tc${NC}           - 完整命令行工具"
-    echo -e "  ${YELLOW}tcd${NC}          - 守护进程管理 (start/stop/status/restart)"
-    echo -e "  ${YELLOW}t${NC}            - 快速命令 (需要守护进程运行)"
-    echo -e "  ${YELLOW}tc-benchmark${NC} - 性能测试"
+    echo "3. 配置应用程序，编辑："
+    echo "   $INSTALL_DIR/config/apps.yaml"
+    echo "   $INSTALL_DIR/config/websites.yaml"
+    echo "   $INSTALL_DIR/config/settings.yaml"
     echo ""
-    echo -e "${CYAN}配置文件位置:${NC}"
-    echo "  $INSTALL_DIR/config/"
+    echo "4. 开始使用 Terminal Controller Enhanced:"
+    echo "   tc                    # 交互模式"
+    echo "   tc daemon            # 启动守护进程"
+    echo "   tc run c g           # 启动 Chrome 访问 Google"
+    echo "   tc status            # 显示状态"
     echo ""
-    echo -e "${CYAN}日志文件位置:${NC}"
-    echo "  $INSTALL_DIR/logs/"
+    echo "5. 守护进程管理 (高性能模式):"
+    echo "   tcd start            # 启动守护进程"
+    echo "   tcd stop             # 停止守护进程"
+    echo "   tcd status           # 检查状态"
+    echo "   tcd restart          # 重启守护进程"
     echo ""
     if [ "$OS" = "macos" ]; then
-        echo -e "${CYAN}开机自启动:${NC}"
-        echo "  launchctl load ~/Library/LaunchAgents/com.terminalcontroller.daemon.plist"
-        echo "  launchctl unload ~/Library/LaunchAgents/com.terminalcontroller.daemon.plist"
+        echo "7. 开机自启动 (可选):"
+        echo "   launchctl load ~/Library/LaunchAgents/com.terminalcontroller.daemon.plist"
         echo ""
     fi
-    echo -e "${GREEN}享受超快的应用程序切换体验！⚡${NC}"
+    echo -e "${CYAN}配置文件位置:${NC} $INSTALL_DIR/config/"
+    echo -e "${CYAN}日志文件位置:${NC} $INSTALL_DIR/logs/"
+    echo ""
+    print_info "获取帮助: tc help"
 }
 
 # 主安装流程
@@ -531,7 +439,7 @@ EOF
     copy_files
     install_dependencies
     create_cli_tools
-    setup_environment
+    check_environment
     create_launcher
     test_installation
     show_usage

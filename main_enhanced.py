@@ -218,6 +218,23 @@ class TerminalController:
         print(f"Type '{Fore.CYAN}help{Style.RESET_ALL}' for available commands, '{Fore.CYAN}quit{Style.RESET_ALL}' to exit")
         print()
         
+        # Ensure terminal context is registered for interactive mode
+        self._register_terminal_context()
+        
+        # Start hotkey manager for interactive mode
+        hotkey_started = False
+        try:
+            if self.hotkey_manager.start():
+                hotkey_started = True
+                print(f"{Fore.GREEN}✅ Hotkeys enabled (Ctrl+; available){Style.RESET_ALL}")
+                self.logger.info("Hotkey manager started in interactive mode")
+            else:
+                print(f"{Fore.YELLOW}⚠️  Hotkeys not available (may require permissions){Style.RESET_ALL}")
+                self.logger.warning("Failed to start hotkey manager in interactive mode")
+        except Exception as e:
+            print(f"{Fore.YELLOW}⚠️  Hotkeys not available: {e}{Style.RESET_ALL}")
+            self.logger.error(f"Error starting hotkey manager: {e}")
+        
         try:
             while True:
                 try:
@@ -240,6 +257,17 @@ class TerminalController:
         except Exception as e:
             self.logger.error(f"Error in interactive mode: {e}")
             print(f"{Fore.RED}Error in interactive mode: {e}{Style.RESET_ALL}")
+        finally:
+            # Stop hotkey manager if it was started
+            if hotkey_started:
+                try:
+                    self.hotkey_manager.stop()
+                    self.logger.info("Hotkey manager stopped")
+                except Exception as e:
+                    self.logger.error(f"Error stopping hotkey manager: {e}")
+            
+            # Clear terminal context when exiting interactive mode
+            self._clear_terminal_context()
         
         print(f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
     
@@ -716,6 +744,26 @@ class TerminalController:
             return response.get('success', False)
         except:
             return False
+    
+    def _register_terminal_context(self):
+        """Register the current terminal window as TC context if applicable."""
+        try:
+            terminal_window_id = self.window_manager.get_current_terminal_window_id()
+            if terminal_window_id:
+                self.config_manager.set_tc_context_window(terminal_window_id)
+                self.logger.debug(f"Registered TC context terminal: {terminal_window_id}")
+            else:
+                self.logger.debug("TC not running in a terminal, no context to register")
+        except Exception as e:
+            self.logger.error(f"Error registering terminal context: {e}")
+    
+    def _clear_terminal_context(self):
+        """Clear the TC context when TC exits."""
+        try:
+            self.config_manager.clear_tc_context_window()
+            self.logger.debug("Cleared TC context")
+        except Exception as e:
+            self.logger.error(f"Error clearing terminal context: {e}")
 
 
 # CLI Interface using Click，yz这一行很关键，能够保证读取的是安装目录的文件，原因待学习

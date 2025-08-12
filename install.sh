@@ -229,82 +229,9 @@ EOF
     
     print_success "Command-line tool 'tc' created"
     
-    # Create single-letter shortcuts
-    create_shortcuts
-    
     print_status "Make sure $LOCAL_BIN is in your PATH"
 }
 
-# Function to create single-letter shortcuts
-create_shortcuts() {
-    print_status "Creating single-letter shortcuts..."
-    
-    # Create Chrome shortcut (b)
-    cat > "$LOCAL_BIN/b" << 'EOF'
-#!/bin/bash
-# Quick Chrome launcher
-exec "$HOME/.local/bin/tc" run c "$@"
-EOF
-    chmod +x "$LOCAL_BIN/b"
-    
-    # Create Cursor shortcut (c for cursor)
-    cat > "$LOCAL_BIN/c" << 'EOF'
-#!/bin/bash
-# Quick Cursor launcher
-exec "$HOME/.local/bin/tc" run cur "$@"
-EOF
-    chmod +x "$LOCAL_BIN/c"
-    
-    # Create terminal shortcut (t)
-    cat > "$LOCAL_BIN/t" << 'EOF'
-#!/bin/bash
-# Quick terminal launcher
-exec "$HOME/.local/bin/tc" run t "$@"
-EOF
-    chmod +x "$LOCAL_BIN/t"
-    
-    # Create Postman shortcut (p)
-    cat > "$LOCAL_BIN/p" << 'EOF'
-#!/bin/bash
-# Quick Postman launcher
-exec "$HOME/.local/bin/tc" run postman "$@"
-EOF
-    chmod +x "$LOCAL_BIN/p"
-    
-    # Create Kim shortcut (k)
-    cat > "$LOCAL_BIN/k" << 'EOF'
-#!/bin/bash
-# Quick Kim launcher
-exec "$HOME/.local/bin/tc" run kim "$@"
-EOF
-    chmod +x "$LOCAL_BIN/k"
-
-    # Create PyCharm shortcut (py)
-    cat > "$LOCAL_BIN/py" << 'EOF'
-#!/bin/bash
-# Quick PyCharm launcher
-exec "$HOME/.local/bin/tc" run py "$@"
-EOF
-    chmod +x "$LOCAL_BIN/py"
-
-    # Create IntelliJ IDEA shortcut (i)
-    cat > "$LOCAL_BIN/i" << 'EOF'
-#!/bin/bash
-# Quick IntelliJ IDEA launcher
-exec "$HOME/.local/bin/tc" run idea "$@"
-EOF
-    chmod +x "$LOCAL_BIN/i"
-
-    # Create WeChat shortcut (w)
-    cat > "$LOCAL_BIN/w" << 'EOF'
-#!/bin/bash
-# Quick WeChat launcher
-exec "$HOME/.local/bin/tc" run wechat "$@"
-EOF
-    chmod +x "$LOCAL_BIN/w"
-    
-    print_success "Single-letter shortcuts created: b, c, t, p, k, py, i, w"
-}
 
 # Function to test installation
 test_installation() {
@@ -343,19 +270,7 @@ show_instructions() {
     echo "   tc run b g           # Launch Chrome with Google"
     echo "   tc status            # Show status"
     echo
-    echo "5. Use single-letter shortcuts (faster!):"
-    echo "   b                     # Launch Chrome"
-    echo "   b g                   # Open Chrome with Google"
-    echo "   b -n                  # Chrome in new window"
-    echo "   c                     # Launch Cursor"
-    echo "   t                     # Launch Terminal"
-    echo "   p                     # Launch Postman"
-    echo "   w                     # Launch WeChat"
-    echo "   k                     # Launch Kim"
-    echo "   py                    # Launch PyCharm"
-    echo "   i                     # Launch IntelliJ IDEA"
-    echo
-    echo "6. For hotkey support, start the daemon:"
+    echo "5. For hotkey support, start the daemon:"
     echo "   tc daemon &"
     echo
     print_status "For help and documentation, run: tc help"

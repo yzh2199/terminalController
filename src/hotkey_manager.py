@@ -2,6 +2,7 @@
 import platform as std_platform
 import logging
 import threading
+import time
 from typing import Dict, Callable, Optional, List
 from dataclasses import dataclass
 
@@ -10,6 +11,16 @@ from .config_manager import ConfigManager
 
 
 logger = logging.getLogger(__name__)
+
+# 统一的性能日志前缀
+PERF_LOG_PREFIX = "[PERF]"
+
+def log_perf(msg: str, duration_ms: Optional[float] = None):
+    """统一的性能日志记录函数"""
+    if duration_ms is not None:
+        logger.info(f"{PERF_LOG_PREFIX} {msg} - {duration_ms:.2f}ms")
+    else:
+        logger.info(f"{PERF_LOG_PREFIX} {msg}")
 
 
 @dataclass

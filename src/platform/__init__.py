@@ -5,15 +5,29 @@ from typing import Type
 from .base import PlatformAdapter
 
 
+def _normalize_sys_platform() -> str:
+    """Normalize sys.platform to 'darwin' | 'linux' | 'windows'."""
+    p = sys.platform.lower()
+    if p.startswith("darwin") or p == "mac" or p == "macos":
+        return "darwin"
+    if p.startswith("linux"):
+        return "linux"
+    if p.startswith("win"):
+        return "windows"
+    return p
+
+
 def get_platform_adapter() -> Type[PlatformAdapter]:
-    """Get the appropriate platform adapter based on the current OS."""
-    # Import platform module carefully to avoid conflicts
-    import platform as std_platform
-    system = std_platform.system().lower()
+    """Get the appropriate platform adapter based on the current OS.
+
+    Avoid importing stdlib 'platform' to prevent name collision with local package 'platform'.
+    """
+    system = _normalize_sys_platform()
     
     if system == "darwin":
-        from .macos import MacOSAdapter
-        return MacOSAdapter
+        # Use optimized macOS adapter globally for better performance
+        from .macos_optimized import OptimizedMacOSAdapter
+        return OptimizedMacOSAdapter
     elif system == "linux":
         from .linux import LinuxAdapter
         return LinuxAdapter

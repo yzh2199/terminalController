@@ -59,3 +59,1661 @@
 2025-08-11 22:57:10,210 - __main__ - INFO - 收到信号 2，正常关闭
 2025-08-11 22:57:10,210 - __main__ - INFO - 停止Terminal Controller
 2025-08-11 22:57:10,210 - __main__ - INFO - Terminal Controller已停止
+2025-08-12 17:46:08,585 - __main__ - INFO - 优化版Terminal Controller初始化完成 (Darwin)
+2025-08-12 17:46:08,881 - src.config_manager - DEBUG - Loaded 9 applications
+2025-08-12 17:46:08,883 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-12 17:46:08,884 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-12 17:46:08,884 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 17:46:08,884 - __main__ - DEBUG - 配置管理器加载耗时: 6.15ms
+2025-08-12 17:46:08,884 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 17:46:08,884 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 17:46:08,884 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 17:46:08,884 - __main__ - INFO - 使用优化版macOS适配器
+2025-08-12 17:46:08,884 - __main__ - DEBUG - 窗口管理器加载耗时: 299.54ms
+2025-08-12 17:46:08,884 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:46:08,887 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 2.92ms
+2025-08-12 17:46:08,887 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 3.03ms
+2025-08-12 17:46:08,887 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 17:46:08,887 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 17:46:08,888 - __main__ - DEBUG - TC not running in a terminal, no context to register
+2025-08-12 17:46:08,888 - __main__ - INFO - 启动Terminal Controller守护进程
+2025-08-12 17:46:08,888 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-12 17:46:08,888 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-12 17:46:08,888 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-12 17:46:09,160 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-12 17:46:09,161 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-12 17:46:09,161 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-12 17:46:09,161 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-12 17:46:09,161 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-12 17:46:09,161 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-12 17:46:09,161 - __main__ - INFO - Terminal Controller守护进程启动成功
+2025-08-12 17:46:35,323 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:46:35,326 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 17:46:35,326 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 17:46:35,326 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 17:46:35,326 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 17:46:35,326 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.83ms
+2025-08-12 17:46:35,326 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:46:35,327 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.31ms
+2025-08-12 17:46:35,327 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.63ms
+2025-08-12 17:46:35,327 - src.hotkey_manager - INFO - [PERF] Get active window - 0.73ms
+2025-08-12 17:46:35,327 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 17:46:35,327 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:46:35,335 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:46:35,335 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.04ms
+2025-08-12 17:46:35,335 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:46:35,345 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 9.63ms
+2025-08-12 17:46:36,365 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1019.28ms
+2025-08-12 17:46:36,365 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1019.57ms
+2025-08-12 17:46:36,365 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:46:36,365 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1029.63ms
+2025-08-12 17:46:36,365 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:46:36,365 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1042.21ms
+2025-08-12 17:46:39,657 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:46:39,658 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 17:46:39,658 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:46:39,658 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 17:46:39,658 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.11ms
+2025-08-12 17:46:39,658 - src.hotkey_manager - INFO - [PERF] Get active window - 0.14ms
+2025-08-12 17:46:39,658 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 17:46:39,658 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:46:39,663 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:46:39,663 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.99ms
+2025-08-12 17:46:39,663 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:46:39,663 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.18ms
+2025-08-12 17:46:40,669 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.14ms
+2025-08-12 17:46:40,670 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.46ms
+2025-08-12 17:46:40,670 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:46:40,670 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.89ms
+2025-08-12 17:46:40,670 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:46:40,670 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1012.84ms
+2025-08-12 17:46:47,664 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:46:47,666 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 17:46:47,666 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:46:47,666 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.04ms
+2025-08-12 17:46:47,666 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.13ms
+2025-08-12 17:46:47,666 - src.hotkey_manager - INFO - [PERF] Get active window - 0.17ms
+2025-08-12 17:46:47,666 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 17:46:47,666 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:46:47,678 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:46:47,678 - src.hotkey_manager - INFO - [PERF] Save previous window - 12.37ms
+2025-08-12 17:46:47,678 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:46:47,679 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.25ms
+2025-08-12 17:46:48,681 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1001.74ms
+2025-08-12 17:46:48,681 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1002.01ms
+2025-08-12 17:46:48,681 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:46:48,681 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1002.46ms
+2025-08-12 17:46:48,681 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:46:48,681 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1016.61ms
+2025-08-12 17:47:36,015 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:47:36,019 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.04ms
+2025-08-12 17:47:36,019 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:47:36,019 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.41ms
+2025-08-12 17:47:36,020 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.72ms
+2025-08-12 17:47:36,020 - src.hotkey_manager - INFO - [PERF] Get active window - 0.80ms
+2025-08-12 17:47:36,020 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.05ms
+2025-08-12 17:47:36,020 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:47:36,024 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:47:36,024 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.60ms
+2025-08-12 17:47:36,024 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:47:36,025 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.34ms
+2025-08-12 17:47:37,031 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.48ms
+2025-08-12 17:47:37,031 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.74ms
+2025-08-12 17:47:37,032 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:47:37,032 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.28ms
+2025-08-12 17:47:37,032 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:47:37,032 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1024.61ms
+2025-08-12 17:50:02,770 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:50:02,776 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 17:50:02,776 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:50:02,776 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.31ms
+2025-08-12 17:50:02,777 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.59ms
+2025-08-12 17:50:02,777 - src.hotkey_manager - INFO - [PERF] Get active window - 0.70ms
+2025-08-12 17:50:02,777 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 17:50:02,777 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:50:02,781 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:50:02,781 - src.hotkey_manager - INFO - [PERF] Save previous window - 3.98ms
+2025-08-12 17:50:02,781 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:50:02,781 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.20ms
+2025-08-12 17:50:03,792 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.66ms
+2025-08-12 17:50:03,793 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1011.43ms
+2025-08-12 17:50:03,793 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:50:03,793 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1011.87ms
+2025-08-12 17:50:03,793 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:50:03,793 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1024.36ms
+2025-08-12 17:58:50,446 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:58:50,447 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 17:58:50,447 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:58:50,447 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.13ms
+2025-08-12 17:58:50,447 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.25ms
+2025-08-12 17:58:50,447 - src.hotkey_manager - INFO - [PERF] Get active window - 0.29ms
+2025-08-12 17:58:50,447 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 17:58:50,447 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:58:50,453 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:58:50,453 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.39ms
+2025-08-12 17:58:50,453 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:58:50,454 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.24ms
+2025-08-12 17:58:51,465 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1011.24ms
+2025-08-12 17:58:51,465 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1011.63ms
+2025-08-12 17:58:51,465 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:58:51,466 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1012.24ms
+2025-08-12 17:58:51,466 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:58:51,466 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1019.89ms
+2025-08-12 17:58:58,941 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:58:58,941 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 17:58:58,941 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:58:58,942 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.13ms
+2025-08-12 17:58:58,942 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.32ms
+2025-08-12 17:58:58,942 - src.hotkey_manager - INFO - [PERF] Get active window - 0.48ms
+2025-08-12 17:58:58,942 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 17:58:58,942 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:58:58,951 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:58:58,951 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.61ms
+2025-08-12 17:58:58,951 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:58:58,951 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.45ms
+2025-08-12 17:58:59,963 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1009.93ms
+2025-08-12 17:58:59,965 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1011.73ms
+2025-08-12 17:58:59,965 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:58:59,966 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1014.78ms
+2025-08-12 17:58:59,966 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:58:59,967 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1025.85ms
+2025-08-12 17:59:01,825 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:59:01,831 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 17:59:01,831 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:59:01,831 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.10ms
+2025-08-12 17:59:01,831 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.27ms
+2025-08-12 17:59:01,831 - src.hotkey_manager - INFO - [PERF] Get active window - 0.33ms
+2025-08-12 17:59:01,831 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 17:59:01,832 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:59:01,836 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:59:01,836 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.24ms
+2025-08-12 17:59:01,836 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:59:01,836 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.33ms
+2025-08-12 17:59:02,841 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1004.75ms
+2025-08-12 17:59:02,841 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.87ms
+2025-08-12 17:59:02,841 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:59:02,841 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.37ms
+2025-08-12 17:59:02,841 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:59:02,841 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1016.43ms
+2025-08-12 17:59:05,065 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 17:59:05,066 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 17:59:05,067 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 17:59:05,068 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.04ms
+2025-08-12 17:59:05,068 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.18ms
+2025-08-12 17:59:05,068 - src.hotkey_manager - INFO - [PERF] Get active window - 0.21ms
+2025-08-12 17:59:05,068 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 17:59:05,068 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 17:59:05,078 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 17:59:05,078 - src.hotkey_manager - INFO - [PERF] Save previous window - 10.34ms
+2025-08-12 17:59:05,079 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 17:59:05,079 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.20ms
+2025-08-12 17:59:06,082 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.42ms
+2025-08-12 17:59:06,083 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1003.89ms
+2025-08-12 17:59:06,083 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 17:59:06,083 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1004.33ms
+2025-08-12 17:59:06,083 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 17:59:06,083 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1017.80ms
+2025-08-12 18:00:01,520 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 18:00:01,525 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 18:00:01,525 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 18:00:01,525 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.11ms
+2025-08-12 18:00:01,525 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.23ms
+2025-08-12 18:00:01,525 - src.hotkey_manager - INFO - [PERF] Get active window - 0.28ms
+2025-08-12 18:00:01,525 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 18:00:01,525 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 18:00:01,528 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 18:00:01,528 - src.hotkey_manager - INFO - [PERF] Save previous window - 2.85ms
+2025-08-12 18:00:01,528 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 18:00:01,528 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.25ms
+2025-08-12 18:00:02,534 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.94ms
+2025-08-12 18:00:02,535 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.46ms
+2025-08-12 18:00:02,535 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 18:00:02,535 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.98ms
+2025-08-12 18:00:02,535 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 18:00:02,535 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.31ms
+2025-08-12 18:54:31,551 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 18:54:31,554 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 18:54:31,554 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 18:54:31,555 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.50ms
+2025-08-12 18:54:31,555 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.80ms
+2025-08-12 18:54:31,555 - src.hotkey_manager - INFO - [PERF] Get active window - 0.94ms
+2025-08-12 18:54:31,555 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.08ms
+2025-08-12 18:54:31,555 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 18:54:31,575 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 18:54:31,575 - src.hotkey_manager - INFO - [PERF] Save previous window - 19.64ms
+2025-08-12 18:54:31,575 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 18:54:31,576 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.62ms
+2025-08-12 18:54:32,595 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1018.84ms
+2025-08-12 18:54:32,595 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1019.00ms
+2025-08-12 18:54:32,595 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 18:54:32,595 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1019.82ms
+2025-08-12 18:54:32,595 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 18:54:32,595 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1044.21ms
+2025-08-12 18:55:34,475 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 18:55:34,477 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 18:55:34,477 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 18:55:34,477 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.12ms
+2025-08-12 18:55:34,477 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.24ms
+2025-08-12 18:55:34,478 - src.hotkey_manager - INFO - [PERF] Get active window - 0.29ms
+2025-08-12 18:55:34,478 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 18:55:34,478 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 18:55:34,481 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 18:55:34,481 - src.hotkey_manager - INFO - [PERF] Save previous window - 3.20ms
+2025-08-12 18:55:34,481 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 18:55:34,481 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.20ms
+2025-08-12 18:55:35,490 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1008.88ms
+2025-08-12 18:55:35,491 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1009.48ms
+2025-08-12 18:55:35,491 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 18:55:35,491 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1009.89ms
+2025-08-12 18:55:35,491 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 18:55:35,491 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1016.13ms
+2025-08-12 18:55:39,549 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 18:55:39,549 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 18:55:39,549 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 18:55:39,549 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 18:55:39,549 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.09ms
+2025-08-12 18:55:39,549 - src.hotkey_manager - INFO - [PERF] Get active window - 0.11ms
+2025-08-12 18:55:39,549 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 18:55:39,549 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 18:55:39,554 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 18:55:39,554 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.26ms
+2025-08-12 18:55:39,554 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 18:55:39,555 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.12ms
+2025-08-12 18:55:40,557 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1002.36ms
+2025-08-12 18:55:40,558 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1003.49ms
+2025-08-12 18:55:40,558 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 18:55:40,558 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1003.76ms
+2025-08-12 18:55:40,558 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 18:55:40,558 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1009.48ms
+2025-08-12 18:55:48,615 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 18:55:48,620 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 18:55:48,620 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 18:55:48,620 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.05ms
+2025-08-12 18:55:48,620 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.13ms
+2025-08-12 18:55:48,620 - src.hotkey_manager - INFO - [PERF] Get active window - 0.15ms
+2025-08-12 18:55:48,620 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 18:55:48,620 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 18:55:48,624 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 18:55:48,624 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.18ms
+2025-08-12 18:55:48,624 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 18:55:48,625 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.16ms
+2025-08-12 18:55:49,630 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.56ms
+2025-08-12 18:55:49,630 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.72ms
+2025-08-12 18:55:49,630 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 18:55:49,630 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.01ms
+2025-08-12 18:55:49,630 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 18:55:49,630 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.53ms
+2025-08-12 18:57:04,712 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 18:57:04,713 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 18:57:04,713 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 18:57:04,714 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.24ms
+2025-08-12 18:57:04,714 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.52ms
+2025-08-12 18:57:04,714 - src.hotkey_manager - INFO - [PERF] Get active window - 0.60ms
+2025-08-12 18:57:04,714 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 18:57:04,714 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 18:57:04,722 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 18:57:04,722 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.75ms
+2025-08-12 18:57:04,722 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 18:57:04,722 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.29ms
+2025-08-12 18:57:05,735 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1012.95ms
+2025-08-12 18:57:05,736 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1013.72ms
+2025-08-12 18:57:05,736 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 18:57:05,736 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1014.34ms
+2025-08-12 18:57:05,736 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 18:57:05,736 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1024.63ms
+2025-08-12 19:00:54,177 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:00:54,179 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:00:54,180 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:00:54,180 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.66ms
+2025-08-12 19:00:54,181 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.09ms
+2025-08-12 19:00:54,181 - src.hotkey_manager - INFO - [PERF] Get active window - 1.23ms
+2025-08-12 19:00:54,181 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.12ms
+2025-08-12 19:00:54,181 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:00:54,205 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:00:54,205 - src.hotkey_manager - INFO - [PERF] Save previous window - 23.74ms
+2025-08-12 19:00:54,205 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:00:54,206 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.65ms
+2025-08-12 19:00:55,210 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1004.36ms
+2025-08-12 19:00:55,211 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.42ms
+2025-08-12 19:00:55,211 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:00:55,212 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.62ms
+2025-08-12 19:00:55,212 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:00:55,212 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1036.62ms
+2025-08-12 19:00:58,549 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:00:58,551 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:00:58,552 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:00:58,553 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.13ms
+2025-08-12 19:00:58,553 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.06ms
+2025-08-12 19:00:58,553 - src.hotkey_manager - INFO - [PERF] Get active window - 1.14ms
+2025-08-12 19:00:58,553 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 19:00:58,553 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:00:58,561 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:00:58,561 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.03ms
+2025-08-12 19:00:58,561 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:00:58,562 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.55ms
+2025-08-12 19:00:59,570 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.33ms
+2025-08-12 19:00:59,570 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.59ms
+2025-08-12 19:00:59,570 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:00:59,570 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.46ms
+2025-08-12 19:00:59,570 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:00:59,570 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1020.67ms
+2025-08-12 19:01:24,600 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:01:24,603 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:01:24,603 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:01:24,603 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.22ms
+2025-08-12 19:01:24,603 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.47ms
+2025-08-12 19:01:24,603 - src.hotkey_manager - INFO - [PERF] Get active window - 0.52ms
+2025-08-12 19:01:24,603 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 19:01:24,603 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:01:24,612 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:01:24,612 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.41ms
+2025-08-12 19:01:24,612 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:01:24,612 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.35ms
+2025-08-12 19:01:25,621 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1008.56ms
+2025-08-12 19:01:25,621 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.96ms
+2025-08-12 19:01:25,621 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:01:25,622 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1009.67ms
+2025-08-12 19:01:25,622 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:01:25,622 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1023.07ms
+2025-08-12 19:01:45,055 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:01:45,057 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.04ms
+2025-08-12 19:01:45,058 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:01:45,058 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.21ms
+2025-08-12 19:01:45,058 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.40ms
+2025-08-12 19:01:45,058 - src.hotkey_manager - INFO - [PERF] Get active window - 0.47ms
+2025-08-12 19:01:45,058 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 19:01:45,058 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:01:45,077 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:01:45,077 - src.hotkey_manager - INFO - [PERF] Save previous window - 18.67ms
+2025-08-12 19:01:45,077 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:01:45,077 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.38ms
+2025-08-12 19:01:46,084 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.45ms
+2025-08-12 19:01:46,084 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.92ms
+2025-08-12 19:01:46,084 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:01:46,085 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.58ms
+2025-08-12 19:01:46,085 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:01:46,085 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1031.11ms
+2025-08-12 19:01:52,581 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:01:52,581 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:01:52,581 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:01:52,582 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.05ms
+2025-08-12 19:01:52,582 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.21ms
+2025-08-12 19:01:52,582 - src.hotkey_manager - INFO - [PERF] Get active window - 0.28ms
+2025-08-12 19:01:52,582 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:01:52,582 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:01:52,596 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:01:52,596 - src.hotkey_manager - INFO - [PERF] Save previous window - 13.82ms
+2025-08-12 19:01:52,596 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:01:52,596 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.13ms
+2025-08-12 19:01:53,602 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.18ms
+2025-08-12 19:01:53,602 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.32ms
+2025-08-12 19:01:53,602 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:01:53,602 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.57ms
+2025-08-12 19:01:53,602 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:01:53,602 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.52ms
+2025-08-12 19:02:13,244 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:02:13,246 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:02:13,246 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:02:13,247 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.43ms
+2025-08-12 19:02:13,247 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.85ms
+2025-08-12 19:02:13,247 - src.hotkey_manager - INFO - [PERF] Get active window - 1.15ms
+2025-08-12 19:02:13,247 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:02:13,248 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:02:13,257 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:02:13,257 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.95ms
+2025-08-12 19:02:13,257 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:02:13,258 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.73ms
+2025-08-12 19:02:14,267 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1008.97ms
+2025-08-12 19:02:14,270 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1011.55ms
+2025-08-12 19:02:14,270 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:02:14,270 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1012.62ms
+2025-08-12 19:02:14,270 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:02:14,270 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1026.72ms
+2025-08-12 19:02:43,836 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:02:43,836 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 19:02:43,836 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:02:43,837 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.17ms
+2025-08-12 19:02:43,837 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.30ms
+2025-08-12 19:02:43,837 - src.hotkey_manager - INFO - [PERF] Get active window - 0.35ms
+2025-08-12 19:02:43,837 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 19:02:43,837 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:02:43,843 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:02:43,843 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.05ms
+2025-08-12 19:02:43,843 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:02:43,843 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.34ms
+2025-08-12 19:02:44,847 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.51ms
+2025-08-12 19:02:44,847 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1003.86ms
+2025-08-12 19:02:44,847 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:02:44,847 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1004.42ms
+2025-08-12 19:02:44,847 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:02:44,847 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1011.94ms
+2025-08-12 19:03:02,199 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:03:02,200 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:03:02,201 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:03:02,203 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.25ms
+2025-08-12 19:03:02,203 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 2.88ms
+2025-08-12 19:03:02,204 - src.hotkey_manager - INFO - [PERF] Get active window - 3.03ms
+2025-08-12 19:03:02,204 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:03:02,204 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:03:02,212 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:03:02,212 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.48ms
+2025-08-12 19:03:02,213 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:03:02,213 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.31ms
+2025-08-12 19:03:03,219 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.00ms
+2025-08-12 19:03:03,219 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.38ms
+2025-08-12 19:03:03,219 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:03:03,220 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.00ms
+2025-08-12 19:03:03,220 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:03:03,220 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.85ms
+2025-08-12 19:03:42,246 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:03:42,248 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 19:03:42,249 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:03:42,249 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.17ms
+2025-08-12 19:03:42,249 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.44ms
+2025-08-12 19:03:42,249 - src.hotkey_manager - INFO - [PERF] Get active window - 0.52ms
+2025-08-12 19:03:42,249 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 19:03:42,249 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:03:42,265 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:03:42,265 - src.hotkey_manager - INFO - [PERF] Save previous window - 16.12ms
+2025-08-12 19:03:42,266 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:03:42,266 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.70ms
+2025-08-12 19:03:43,290 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1022.98ms
+2025-08-12 19:03:43,290 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1023.57ms
+2025-08-12 19:03:43,291 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:03:43,291 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1025.12ms
+2025-08-12 19:03:43,291 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:03:43,291 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1044.42ms
+2025-08-12 19:04:22,476 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:04:22,478 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:04:22,479 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:04:22,479 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.38ms
+2025-08-12 19:04:22,480 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.20ms
+2025-08-12 19:04:22,480 - src.hotkey_manager - INFO - [PERF] Get active window - 1.36ms
+2025-08-12 19:04:22,480 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.07ms
+2025-08-12 19:04:22,480 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:04:22,498 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:04:22,499 - src.hotkey_manager - INFO - [PERF] Save previous window - 18.39ms
+2025-08-12 19:04:22,499 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:04:22,499 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.52ms
+2025-08-12 19:04:23,506 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.12ms
+2025-08-12 19:04:23,507 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.14ms
+2025-08-12 19:04:23,508 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:04:23,510 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1011.07ms
+2025-08-12 19:04:23,510 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:04:23,510 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1035.67ms
+2025-08-12 19:06:27,720 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:06:27,723 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:06:27,724 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:06:27,724 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.30ms
+2025-08-12 19:06:27,724 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.63ms
+2025-08-12 19:06:27,724 - src.hotkey_manager - INFO - [PERF] Get active window - 0.76ms
+2025-08-12 19:06:27,725 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.07ms
+2025-08-12 19:06:27,725 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:06:27,733 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:06:27,733 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.37ms
+2025-08-12 19:06:27,733 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:06:27,734 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.65ms
+2025-08-12 19:06:28,739 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.41ms
+2025-08-12 19:06:28,740 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.75ms
+2025-08-12 19:06:28,740 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:06:28,740 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.74ms
+2025-08-12 19:06:28,740 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:06:28,740 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1020.48ms
+2025-08-12 19:07:04,252 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:04,255 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:07:04,255 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:04,256 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.33ms
+2025-08-12 19:07:04,256 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.89ms
+2025-08-12 19:07:04,256 - src.hotkey_manager - INFO - [PERF] Get active window - 0.99ms
+2025-08-12 19:07:04,256 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 19:07:04,256 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:04,266 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:04,266 - src.hotkey_manager - INFO - [PERF] Save previous window - 9.64ms
+2025-08-12 19:07:04,266 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:04,267 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.38ms
+2025-08-12 19:07:05,270 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.47ms
+2025-08-12 19:07:05,271 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.52ms
+2025-08-12 19:07:05,271 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:05,271 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.22ms
+2025-08-12 19:07:05,272 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:05,272 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1019.26ms
+2025-08-12 19:07:34,232 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:34,237 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:07:34,238 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:34,238 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.35ms
+2025-08-12 19:07:34,238 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.74ms
+2025-08-12 19:07:34,239 - src.hotkey_manager - INFO - [PERF] Get active window - 0.91ms
+2025-08-12 19:07:34,239 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.07ms
+2025-08-12 19:07:34,239 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:34,244 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:34,244 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.44ms
+2025-08-12 19:07:34,244 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:34,245 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.67ms
+2025-08-12 19:07:35,252 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.00ms
+2025-08-12 19:07:35,252 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.17ms
+2025-08-12 19:07:35,252 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:35,252 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.06ms
+2025-08-12 19:07:35,252 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:35,252 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.01ms
+2025-08-12 19:07:38,580 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:38,581 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 19:07:38,581 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:38,581 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.07ms
+2025-08-12 19:07:38,581 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.15ms
+2025-08-12 19:07:38,581 - src.hotkey_manager - INFO - [PERF] Get active window - 0.19ms
+2025-08-12 19:07:38,581 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:07:38,581 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:38,589 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:38,589 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.29ms
+2025-08-12 19:07:38,589 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:38,589 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.12ms
+2025-08-12 19:07:39,597 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.46ms
+2025-08-12 19:07:39,597 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.84ms
+2025-08-12 19:07:39,597 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:39,597 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.11ms
+2025-08-12 19:07:39,597 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:39,597 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1017.04ms
+2025-08-12 19:07:45,560 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:45,562 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:07:45,563 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:45,563 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.07ms
+2025-08-12 19:07:45,563 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.32ms
+2025-08-12 19:07:45,563 - src.hotkey_manager - INFO - [PERF] Get active window - 0.37ms
+2025-08-12 19:07:45,563 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:07:45,563 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:45,571 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:45,572 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.29ms
+2025-08-12 19:07:45,572 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:45,573 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.50ms
+2025-08-12 19:07:46,581 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1008.29ms
+2025-08-12 19:07:46,582 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1009.04ms
+2025-08-12 19:07:46,582 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:46,582 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.19ms
+2025-08-12 19:07:46,582 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:46,582 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1022.53ms
+2025-08-12 19:07:47,678 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:47,678 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:07:47,679 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:47,679 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.06ms
+2025-08-12 19:07:47,679 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.31ms
+2025-08-12 19:07:47,679 - src.hotkey_manager - INFO - [PERF] Get active window - 0.38ms
+2025-08-12 19:07:47,679 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:07:47,679 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:47,686 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:47,686 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.73ms
+2025-08-12 19:07:47,686 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:47,686 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.32ms
+2025-08-12 19:07:48,692 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.09ms
+2025-08-12 19:07:48,692 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.40ms
+2025-08-12 19:07:48,692 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:48,692 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.09ms
+2025-08-12 19:07:48,692 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:48,692 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1013.94ms
+2025-08-12 19:07:51,643 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:51,644 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:07:51,644 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:51,644 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.09ms
+2025-08-12 19:07:51,644 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.34ms
+2025-08-12 19:07:51,644 - src.hotkey_manager - INFO - [PERF] Get active window - 0.50ms
+2025-08-12 19:07:51,644 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 19:07:51,647 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:51,654 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:51,654 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.58ms
+2025-08-12 19:07:51,654 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:51,655 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.59ms
+2025-08-12 19:07:52,662 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.60ms
+2025-08-12 19:07:52,663 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.58ms
+2025-08-12 19:07:52,663 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:52,664 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1009.65ms
+2025-08-12 19:07:52,664 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:52,664 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1020.59ms
+2025-08-12 19:07:54,321 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:54,321 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:07:54,321 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:54,321 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.07ms
+2025-08-12 19:07:54,321 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.18ms
+2025-08-12 19:07:54,321 - src.hotkey_manager - INFO - [PERF] Get active window - 0.22ms
+2025-08-12 19:07:54,322 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:07:54,322 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:54,328 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:54,328 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.48ms
+2025-08-12 19:07:54,328 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:54,328 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.20ms
+2025-08-12 19:07:55,338 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1009.45ms
+2025-08-12 19:07:55,339 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1010.08ms
+2025-08-12 19:07:55,339 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:55,339 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.53ms
+2025-08-12 19:07:55,339 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:55,339 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1017.90ms
+2025-08-12 19:07:56,799 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:07:56,799 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:07:56,799 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:07:56,799 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 19:07:56,800 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.12ms
+2025-08-12 19:07:56,800 - src.hotkey_manager - INFO - [PERF] Get active window - 0.14ms
+2025-08-12 19:07:56,800 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.00ms
+2025-08-12 19:07:56,800 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:07:56,806 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:07:56,806 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.04ms
+2025-08-12 19:07:56,806 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:07:56,806 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.12ms
+2025-08-12 19:07:57,811 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.31ms
+2025-08-12 19:07:57,811 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.52ms
+2025-08-12 19:07:57,811 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:07:57,811 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.82ms
+2025-08-12 19:07:57,812 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:07:57,812 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1012.31ms
+2025-08-12 19:08:02,170 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:08:02,172 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:08:02,175 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:08:02,175 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.16ms
+2025-08-12 19:08:02,176 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.48ms
+2025-08-12 19:08:02,176 - src.hotkey_manager - INFO - [PERF] Get active window - 0.68ms
+2025-08-12 19:08:02,176 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 19:08:02,176 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:08:02,181 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:08:02,182 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.66ms
+2025-08-12 19:08:02,182 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:08:02,182 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.56ms
+2025-08-12 19:08:03,192 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1009.16ms
+2025-08-12 19:08:03,195 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1012.44ms
+2025-08-12 19:08:03,195 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:08:03,195 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1013.54ms
+2025-08-12 19:08:03,195 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:08:03,195 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1025.03ms
+2025-08-12 19:08:05,087 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:08:05,088 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 19:08:05,089 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:08:05,089 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.22ms
+2025-08-12 19:08:05,089 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.49ms
+2025-08-12 19:08:05,089 - src.hotkey_manager - INFO - [PERF] Get active window - 0.59ms
+2025-08-12 19:08:05,090 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 19:08:05,090 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:08:05,104 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:08:05,105 - src.hotkey_manager - INFO - [PERF] Save previous window - 14.83ms
+2025-08-12 19:08:05,105 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:08:05,105 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.43ms
+2025-08-12 19:08:06,115 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1009.19ms
+2025-08-12 19:08:06,115 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1009.83ms
+2025-08-12 19:08:06,115 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:08:06,115 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.75ms
+2025-08-12 19:08:06,116 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:08:06,116 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1028.43ms
+2025-08-12 19:08:56,922 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:08:56,926 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:08:56,926 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:08:56,926 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.12ms
+2025-08-12 19:08:56,927 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.30ms
+2025-08-12 19:08:56,927 - src.hotkey_manager - INFO - [PERF] Get active window - 0.38ms
+2025-08-12 19:08:56,927 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:08:56,927 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:08:56,939 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:08:56,939 - src.hotkey_manager - INFO - [PERF] Save previous window - 12.03ms
+2025-08-12 19:08:56,939 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:08:56,939 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.32ms
+2025-08-12 19:08:57,945 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.63ms
+2025-08-12 19:08:57,945 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.78ms
+2025-08-12 19:08:57,945 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:08:57,945 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.31ms
+2025-08-12 19:08:57,945 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:08:57,945 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1023.00ms
+2025-08-12 19:09:16,614 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:09:16,615 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 19:09:16,616 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:09:16,616 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.24ms
+2025-08-12 19:09:16,616 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.69ms
+2025-08-12 19:09:16,616 - src.hotkey_manager - INFO - [PERF] Get active window - 0.76ms
+2025-08-12 19:09:16,616 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 19:09:16,616 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:09:16,620 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:09:16,620 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.04ms
+2025-08-12 19:09:16,620 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:09:16,621 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.25ms
+2025-08-12 19:09:17,627 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.11ms
+2025-08-12 19:09:17,627 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.31ms
+2025-08-12 19:09:17,627 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:09:17,627 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.68ms
+2025-08-12 19:09:17,627 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:09:17,627 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1013.61ms
+2025-08-12 19:10:01,864 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:10:01,867 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.08ms
+2025-08-12 19:10:01,867 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:10:01,868 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.46ms
+2025-08-12 19:10:01,868 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.96ms
+2025-08-12 19:10:01,868 - src.hotkey_manager - INFO - [PERF] Get active window - 1.10ms
+2025-08-12 19:10:01,868 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.08ms
+2025-08-12 19:10:01,868 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:10:01,875 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:10:01,875 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.38ms
+2025-08-12 19:10:01,875 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:10:01,875 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.59ms
+2025-08-12 19:10:02,882 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.14ms
+2025-08-12 19:10:02,882 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.64ms
+2025-08-12 19:10:02,882 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:10:02,882 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.52ms
+2025-08-12 19:10:02,882 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:10:02,882 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.72ms
+2025-08-12 19:10:31,565 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:10:31,567 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 19:10:31,567 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:10:31,568 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.17ms
+2025-08-12 19:10:31,568 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.43ms
+2025-08-12 19:10:31,568 - src.hotkey_manager - INFO - [PERF] Get active window - 0.60ms
+2025-08-12 19:10:31,568 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 19:10:31,571 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:10:31,578 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:10:31,578 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.49ms
+2025-08-12 19:10:31,578 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:10:31,579 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.58ms
+2025-08-12 19:10:32,587 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.08ms
+2025-08-12 19:10:32,588 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.16ms
+2025-08-12 19:10:32,588 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:10:32,588 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1009.97ms
+2025-08-12 19:10:32,588 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:10:32,589 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1023.28ms
+2025-08-12 19:12:49,120 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:12:49,122 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.04ms
+2025-08-12 19:12:49,122 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:12:49,122 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.39ms
+2025-08-12 19:12:49,123 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.94ms
+2025-08-12 19:12:49,123 - src.hotkey_manager - INFO - [PERF] Get active window - 1.08ms
+2025-08-12 19:12:49,123 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:12:49,123 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:12:49,150 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:12:49,150 - src.hotkey_manager - INFO - [PERF] Save previous window - 27.02ms
+2025-08-12 19:12:49,150 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:12:49,151 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.84ms
+2025-08-12 19:12:50,157 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1004.95ms
+2025-08-12 19:12:50,157 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.86ms
+2025-08-12 19:12:50,158 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:12:50,158 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.42ms
+2025-08-12 19:12:50,158 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:12:50,158 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1038.61ms
+2025-08-12 19:12:52,362 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:12:52,362 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:12:52,362 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:12:52,362 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.07ms
+2025-08-12 19:12:52,363 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.15ms
+2025-08-12 19:12:52,363 - src.hotkey_manager - INFO - [PERF] Get active window - 0.18ms
+2025-08-12 19:12:52,363 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:12:52,363 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:12:52,375 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:12:52,375 - src.hotkey_manager - INFO - [PERF] Save previous window - 12.22ms
+2025-08-12 19:12:52,375 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:12:52,375 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.21ms
+2025-08-12 19:12:53,390 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1014.65ms
+2025-08-12 19:12:53,390 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1014.80ms
+2025-08-12 19:12:53,390 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:12:53,390 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1015.12ms
+2025-08-12 19:12:53,390 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:12:53,390 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1027.99ms
+2025-08-12 19:12:54,699 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:12:54,700 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:12:54,700 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:12:54,700 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.04ms
+2025-08-12 19:12:54,700 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.12ms
+2025-08-12 19:12:54,700 - src.hotkey_manager - INFO - [PERF] Get active window - 0.16ms
+2025-08-12 19:12:54,700 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:12:54,700 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:12:54,706 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:12:54,706 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.12ms
+2025-08-12 19:12:54,706 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:12:54,706 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.16ms
+2025-08-12 19:12:55,712 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.01ms
+2025-08-12 19:12:55,713 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.43ms
+2025-08-12 19:12:55,713 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:12:55,713 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.79ms
+2025-08-12 19:12:55,713 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:12:55,713 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1013.62ms
+2025-08-12 19:12:56,872 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:12:56,872 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:12:56,872 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:12:56,872 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 19:12:56,872 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.11ms
+2025-08-12 19:12:56,872 - src.hotkey_manager - INFO - [PERF] Get active window - 0.14ms
+2025-08-12 19:12:56,872 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:12:56,872 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:12:56,880 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:12:56,880 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.94ms
+2025-08-12 19:12:56,880 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:12:56,880 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.14ms
+2025-08-12 19:12:57,884 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.87ms
+2025-08-12 19:12:57,884 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.10ms
+2025-08-12 19:12:57,885 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:12:57,885 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1004.39ms
+2025-08-12 19:12:57,885 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:12:57,885 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1012.86ms
+2025-08-12 19:13:00,680 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:13:00,681 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:13:00,681 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:13:00,681 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.12ms
+2025-08-12 19:13:00,681 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.30ms
+2025-08-12 19:13:00,682 - src.hotkey_manager - INFO - [PERF] Get active window - 0.38ms
+2025-08-12 19:13:00,682 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 19:13:00,682 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:13:00,686 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:13:00,686 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.26ms
+2025-08-12 19:13:00,686 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:13:00,686 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.18ms
+2025-08-12 19:13:01,694 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.07ms
+2025-08-12 19:13:01,695 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.15ms
+2025-08-12 19:13:01,695 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:13:01,695 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.61ms
+2025-08-12 19:13:01,695 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:13:01,695 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1014.96ms
+2025-08-12 19:13:02,421 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:13:02,421 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:13:02,421 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:13:02,421 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 19:13:02,421 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.11ms
+2025-08-12 19:13:02,421 - src.hotkey_manager - INFO - [PERF] Get active window - 0.15ms
+2025-08-12 19:13:02,421 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:13:02,421 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:13:02,423 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:13:02,423 - src.hotkey_manager - INFO - [PERF] Save previous window - 2.38ms
+2025-08-12 19:13:02,423 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:13:02,424 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.11ms
+2025-08-12 19:13:03,429 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.24ms
+2025-08-12 19:13:03,429 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.48ms
+2025-08-12 19:13:03,429 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:13:03,429 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.76ms
+2025-08-12 19:13:03,429 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:13:03,429 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1008.73ms
+2025-08-12 19:13:04,267 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:13:04,267 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:13:04,267 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:13:04,267 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.04ms
+2025-08-12 19:13:04,267 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.12ms
+2025-08-12 19:13:04,267 - src.hotkey_manager - INFO - [PERF] Get active window - 0.15ms
+2025-08-12 19:13:04,267 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:13:04,267 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:13:04,271 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:13:04,271 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.27ms
+2025-08-12 19:13:04,271 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:13:04,272 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.68ms
+2025-08-12 19:13:05,279 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.76ms
+2025-08-12 19:13:05,279 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.05ms
+2025-08-12 19:13:05,279 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:13:05,279 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.02ms
+2025-08-12 19:13:05,279 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:13:05,280 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1012.96ms
+2025-08-12 19:13:06,087 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:13:06,088 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:13:06,088 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:13:06,089 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.09ms
+2025-08-12 19:13:06,089 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.34ms
+2025-08-12 19:13:06,089 - src.hotkey_manager - INFO - [PERF] Get active window - 0.43ms
+2025-08-12 19:13:06,089 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:13:06,089 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:13:06,098 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:13:06,098 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.98ms
+2025-08-12 19:13:06,098 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:13:06,098 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.26ms
+2025-08-12 19:13:07,106 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.08ms
+2025-08-12 19:13:07,106 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.45ms
+2025-08-12 19:13:07,106 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:13:07,107 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.84ms
+2025-08-12 19:13:07,107 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:13:07,107 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1019.88ms
+2025-08-12 19:15:11,402 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:15:11,408 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:15:11,409 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:15:11,409 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.40ms
+2025-08-12 19:15:11,409 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.72ms
+2025-08-12 19:15:11,409 - src.hotkey_manager - INFO - [PERF] Get active window - 0.83ms
+2025-08-12 19:15:11,409 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:15:11,410 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:15:11,417 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:15:11,417 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.81ms
+2025-08-12 19:15:11,417 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:15:11,418 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.49ms
+2025-08-12 19:15:12,425 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.76ms
+2025-08-12 19:15:12,425 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.09ms
+2025-08-12 19:15:12,425 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:15:12,425 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.85ms
+2025-08-12 19:15:12,425 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:15:12,425 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1023.70ms
+2025-08-12 19:21:21,726 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:21:21,729 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:21:21,729 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:21:21,729 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.28ms
+2025-08-12 19:21:21,729 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.51ms
+2025-08-12 19:21:21,729 - src.hotkey_manager - INFO - [PERF] Get active window - 0.61ms
+2025-08-12 19:21:21,729 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:21:21,729 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:21:21,749 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:21:21,749 - src.hotkey_manager - INFO - [PERF] Save previous window - 19.68ms
+2025-08-12 19:21:21,749 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:21:21,750 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.65ms
+2025-08-12 19:21:22,761 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1010.90ms
+2025-08-12 19:21:22,762 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1012.02ms
+2025-08-12 19:21:22,762 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:21:22,763 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1013.40ms
+2025-08-12 19:21:22,763 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:21:22,763 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1037.24ms
+2025-08-12 19:22:11,859 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:22:11,860 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:22:11,860 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:22:11,860 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.17ms
+2025-08-12 19:22:11,861 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.38ms
+2025-08-12 19:22:11,861 - src.hotkey_manager - INFO - [PERF] Get active window - 0.47ms
+2025-08-12 19:22:11,861 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.05ms
+2025-08-12 19:22:11,861 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:22:11,865 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:22:11,865 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.54ms
+2025-08-12 19:22:11,865 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:22:11,866 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.39ms
+2025-08-12 19:22:12,869 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.29ms
+2025-08-12 19:22:12,871 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.62ms
+2025-08-12 19:22:12,871 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:22:12,871 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.33ms
+2025-08-12 19:22:12,871 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:22:12,871 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1012.70ms
+2025-08-12 19:25:16,387 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:25:16,391 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 19:25:16,391 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:25:16,391 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.41ms
+2025-08-12 19:25:16,392 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.68ms
+2025-08-12 19:25:16,392 - src.hotkey_manager - INFO - [PERF] Get active window - 0.80ms
+2025-08-12 19:25:16,392 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:25:16,392 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:25:16,404 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:25:16,405 - src.hotkey_manager - INFO - [PERF] Save previous window - 12.93ms
+2025-08-12 19:25:16,405 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:25:16,405 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.58ms
+2025-08-12 19:25:17,409 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.34ms
+2025-08-12 19:25:17,413 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.29ms
+2025-08-12 19:25:17,413 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:25:17,413 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.37ms
+2025-08-12 19:25:17,413 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:25:17,413 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1027.63ms
+2025-08-12 19:51:25,603 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:51:25,609 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:51:25,609 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:51:25,609 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.25ms
+2025-08-12 19:51:25,609 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.49ms
+2025-08-12 19:51:25,609 - src.hotkey_manager - INFO - [PERF] Get active window - 0.58ms
+2025-08-12 19:51:25,609 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.05ms
+2025-08-12 19:51:25,609 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:51:25,629 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:51:25,629 - src.hotkey_manager - INFO - [PERF] Save previous window - 19.71ms
+2025-08-12 19:51:25,629 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:51:25,631 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 1.05ms
+2025-08-12 19:51:26,637 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.71ms
+2025-08-12 19:51:26,637 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.04ms
+2025-08-12 19:51:26,637 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:51:26,637 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.65ms
+2025-08-12 19:51:26,637 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:51:26,637 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1035.01ms
+2025-08-12 19:51:29,623 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:51:29,623 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:51:29,623 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:51:29,623 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.05ms
+2025-08-12 19:51:29,623 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.10ms
+2025-08-12 19:51:29,623 - src.hotkey_manager - INFO - [PERF] Get active window - 0.12ms
+2025-08-12 19:51:29,623 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.00ms
+2025-08-12 19:51:29,624 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:51:29,627 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:51:29,627 - src.hotkey_manager - INFO - [PERF] Save previous window - 3.12ms
+2025-08-12 19:51:29,627 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:51:29,627 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.11ms
+2025-08-12 19:51:30,637 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1010.47ms
+2025-08-12 19:51:30,638 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1010.84ms
+2025-08-12 19:51:30,638 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:51:30,638 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1011.15ms
+2025-08-12 19:51:30,638 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:51:30,638 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1014.77ms
+2025-08-12 19:51:32,508 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:51:32,509 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:51:32,509 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:51:32,509 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.06ms
+2025-08-12 19:51:32,509 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.22ms
+2025-08-12 19:51:32,509 - src.hotkey_manager - INFO - [PERF] Get active window - 0.30ms
+2025-08-12 19:51:32,509 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:51:32,509 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:51:32,522 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:51:32,525 - src.hotkey_manager - INFO - [PERF] Save previous window - 15.48ms
+2025-08-12 19:51:32,525 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:51:32,525 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.21ms
+2025-08-12 19:51:33,532 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.46ms
+2025-08-12 19:51:33,533 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.98ms
+2025-08-12 19:51:33,533 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:51:33,533 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.94ms
+2025-08-12 19:51:33,533 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:51:33,533 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1025.27ms
+2025-08-12 19:51:34,911 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:51:34,912 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:51:34,913 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:51:34,914 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.06ms
+2025-08-12 19:51:34,914 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.96ms
+2025-08-12 19:51:34,914 - src.hotkey_manager - INFO - [PERF] Get active window - 1.04ms
+2025-08-12 19:51:34,914 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:51:34,914 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:51:34,920 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:51:34,920 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.07ms
+2025-08-12 19:51:34,922 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:51:34,927 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.96ms
+2025-08-12 19:51:35,931 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.93ms
+2025-08-12 19:51:35,932 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.38ms
+2025-08-12 19:51:35,932 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:51:35,932 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.00ms
+2025-08-12 19:51:35,932 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:51:35,932 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.10ms
+2025-08-12 19:53:14,796 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:53:14,797 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:53:14,797 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:53:14,798 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.58ms
+2025-08-12 19:53:14,798 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.10ms
+2025-08-12 19:53:14,798 - src.hotkey_manager - INFO - [PERF] Get active window - 1.18ms
+2025-08-12 19:53:14,798 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 19:53:14,798 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:53:14,801 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:53:14,801 - src.hotkey_manager - INFO - [PERF] Save previous window - 2.99ms
+2025-08-12 19:53:14,801 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:53:14,802 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.23ms
+2025-08-12 19:53:15,806 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.97ms
+2025-08-12 19:53:15,809 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.16ms
+2025-08-12 19:53:15,809 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:53:15,809 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.69ms
+2025-08-12 19:53:15,809 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:53:15,809 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.82ms
+2025-08-12 19:53:20,250 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:53:20,251 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:53:20,251 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:53:20,251 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.09ms
+2025-08-12 19:53:20,251 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.17ms
+2025-08-12 19:53:20,251 - src.hotkey_manager - INFO - [PERF] Get active window - 0.20ms
+2025-08-12 19:53:20,251 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:53:20,251 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:53:20,257 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:53:20,258 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.27ms
+2025-08-12 19:53:20,258 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:53:20,258 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.21ms
+2025-08-12 19:53:21,267 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.28ms
+2025-08-12 19:53:21,268 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1010.12ms
+2025-08-12 19:53:21,268 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:53:21,268 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.51ms
+2025-08-12 19:53:21,268 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:53:21,268 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.05ms
+2025-08-12 19:56:20,895 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:56:20,899 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.04ms
+2025-08-12 19:56:20,899 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:56:20,900 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.22ms
+2025-08-12 19:56:20,900 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.87ms
+2025-08-12 19:56:20,900 - src.hotkey_manager - INFO - [PERF] Get active window - 0.99ms
+2025-08-12 19:56:20,900 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.09ms
+2025-08-12 19:56:20,900 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:56:20,906 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:56:20,906 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.96ms
+2025-08-12 19:56:20,906 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:56:20,907 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.32ms
+2025-08-12 19:56:21,909 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1001.86ms
+2025-08-12 19:56:21,909 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1002.14ms
+2025-08-12 19:56:21,909 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:56:21,909 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1002.71ms
+2025-08-12 19:56:21,909 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:56:21,909 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1016.51ms
+2025-08-12 19:56:23,741 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:56:23,742 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 19:56:23,742 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:56:23,742 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 19:56:23,742 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.12ms
+2025-08-12 19:56:23,742 - src.hotkey_manager - INFO - [PERF] Get active window - 0.15ms
+2025-08-12 19:56:23,742 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 19:56:23,742 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:56:23,750 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:56:23,751 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.12ms
+2025-08-12 19:56:23,751 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:56:23,751 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.14ms
+2025-08-12 19:56:24,757 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.87ms
+2025-08-12 19:56:24,757 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.05ms
+2025-08-12 19:56:24,757 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:56:24,757 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.31ms
+2025-08-12 19:56:24,757 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:56:24,757 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.95ms
+2025-08-12 19:58:46,624 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 19:58:46,628 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 19:58:46,628 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 19:58:46,628 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.28ms
+2025-08-12 19:58:46,628 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.58ms
+2025-08-12 19:58:46,628 - src.hotkey_manager - INFO - [PERF] Get active window - 0.71ms
+2025-08-12 19:58:46,628 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 19:58:46,629 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 19:58:46,636 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 19:58:46,637 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.96ms
+2025-08-12 19:58:46,637 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 19:58:46,637 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.56ms
+2025-08-12 19:58:47,645 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.17ms
+2025-08-12 19:58:47,645 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.36ms
+2025-08-12 19:58:47,645 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 19:58:47,645 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.22ms
+2025-08-12 19:58:47,645 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 19:58:47,645 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.33ms
+2025-08-12 20:02:54,835 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:02:54,836 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:02:54,836 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:02:54,836 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.12ms
+2025-08-12 20:02:54,836 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.41ms
+2025-08-12 20:02:54,837 - src.hotkey_manager - INFO - [PERF] Get active window - 0.46ms
+2025-08-12 20:02:54,837 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 20:02:54,837 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:02:54,840 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:02:54,840 - src.hotkey_manager - INFO - [PERF] Save previous window - 3.02ms
+2025-08-12 20:02:54,840 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:02:54,840 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.25ms
+2025-08-12 20:02:55,847 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.57ms
+2025-08-12 20:02:55,847 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.98ms
+2025-08-12 20:02:55,847 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:02:55,847 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.46ms
+2025-08-12 20:02:55,847 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:02:55,847 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1012.71ms
+2025-08-12 20:09:14,786 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:09:14,789 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:09:14,789 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:09:14,790 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.37ms
+2025-08-12 20:09:14,790 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.69ms
+2025-08-12 20:09:14,790 - src.hotkey_manager - INFO - [PERF] Get active window - 0.80ms
+2025-08-12 20:09:14,790 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 20:09:14,790 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:09:14,809 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:09:14,809 - src.hotkey_manager - INFO - [PERF] Save previous window - 19.33ms
+2025-08-12 20:09:14,809 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:09:14,810 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.80ms
+2025-08-12 20:09:15,817 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.37ms
+2025-08-12 20:09:15,817 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.72ms
+2025-08-12 20:09:15,817 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:09:15,817 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.09ms
+2025-08-12 20:09:15,818 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:09:15,818 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1033.04ms
+2025-08-12 20:14:13,345 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:14:13,348 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:14:13,348 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:14:13,348 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.25ms
+2025-08-12 20:14:13,349 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.55ms
+2025-08-12 20:14:13,349 - src.hotkey_manager - INFO - [PERF] Get active window - 0.66ms
+2025-08-12 20:14:13,349 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 20:14:13,349 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:14:13,355 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:14:13,355 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.86ms
+2025-08-12 20:14:13,355 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:14:13,355 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.32ms
+2025-08-12 20:14:14,362 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.24ms
+2025-08-12 20:14:14,362 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.80ms
+2025-08-12 20:14:14,362 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:14:14,362 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.39ms
+2025-08-12 20:14:14,363 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:14:14,363 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.05ms
+2025-08-12 20:14:22,689 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:14:22,692 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:14:22,696 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:14:22,696 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.09ms
+2025-08-12 20:14:22,696 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.62ms
+2025-08-12 20:14:22,696 - src.hotkey_manager - INFO - [PERF] Get active window - 0.70ms
+2025-08-12 20:14:22,696 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:14:22,697 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:14:22,706 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:14:22,707 - src.hotkey_manager - INFO - [PERF] Save previous window - 9.92ms
+2025-08-12 20:14:22,707 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:14:22,708 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.76ms
+2025-08-12 20:14:23,710 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1002.40ms
+2025-08-12 20:14:23,711 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1002.78ms
+2025-08-12 20:14:23,711 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:14:23,711 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1004.06ms
+2025-08-12 20:14:23,711 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:14:23,711 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.62ms
+2025-08-12 20:15:34,568 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:15:34,571 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:15:34,571 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:15:34,572 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.18ms
+2025-08-12 20:15:34,572 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.49ms
+2025-08-12 20:15:34,572 - src.hotkey_manager - INFO - [PERF] Get active window - 0.64ms
+2025-08-12 20:15:34,572 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 20:15:34,572 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:15:34,576 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:15:34,576 - src.hotkey_manager - INFO - [PERF] Save previous window - 3.90ms
+2025-08-12 20:15:34,576 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:15:34,576 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.26ms
+2025-08-12 20:15:35,583 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.40ms
+2025-08-12 20:15:35,583 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.77ms
+2025-08-12 20:15:35,583 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:15:35,583 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.30ms
+2025-08-12 20:15:35,583 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:15:35,584 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1016.05ms
+2025-08-12 20:17:43,168 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:17:43,172 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:17:43,172 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:17:43,174 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.22ms
+2025-08-12 20:17:43,174 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.65ms
+2025-08-12 20:17:43,174 - src.hotkey_manager - INFO - [PERF] Get active window - 1.76ms
+2025-08-12 20:17:43,174 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.03ms
+2025-08-12 20:17:43,174 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:17:43,181 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:17:43,182 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.00ms
+2025-08-12 20:17:43,182 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:17:43,183 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.82ms
+2025-08-12 20:17:44,198 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1014.60ms
+2025-08-12 20:17:44,198 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1015.08ms
+2025-08-12 20:17:44,199 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:17:44,199 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1016.81ms
+2025-08-12 20:17:44,199 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:17:44,199 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1030.92ms
+2025-08-12 20:23:00,974 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:23:00,976 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.14ms
+2025-08-12 20:23:00,976 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:23:00,976 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.31ms
+2025-08-12 20:23:00,977 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.62ms
+2025-08-12 20:23:00,977 - src.hotkey_manager - INFO - [PERF] Get active window - 0.75ms
+2025-08-12 20:23:00,977 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.05ms
+2025-08-12 20:23:00,977 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:23:00,986 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:23:00,986 - src.hotkey_manager - INFO - [PERF] Save previous window - 9.36ms
+2025-08-12 20:23:00,986 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:23:00,987 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.49ms
+2025-08-12 20:23:01,993 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.46ms
+2025-08-12 20:23:01,997 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1009.74ms
+2025-08-12 20:23:01,997 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:23:01,997 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.60ms
+2025-08-12 20:23:01,997 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:23:01,997 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1023.47ms
+2025-08-12 20:23:04,275 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:23:04,280 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:23:04,281 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:23:04,281 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.13ms
+2025-08-12 20:23:04,281 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.32ms
+2025-08-12 20:23:04,281 - src.hotkey_manager - INFO - [PERF] Get active window - 0.39ms
+2025-08-12 20:23:04,281 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 20:23:04,281 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:23:04,287 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:23:04,287 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.89ms
+2025-08-12 20:23:04,287 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:23:04,287 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.27ms
+2025-08-12 20:23:05,298 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1010.81ms
+2025-08-12 20:23:05,299 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1011.63ms
+2025-08-12 20:23:05,299 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:23:05,300 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1012.44ms
+2025-08-12 20:23:05,300 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:23:05,300 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1025.16ms
+2025-08-12 20:23:47,675 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:23:47,675 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:23:47,675 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:23:47,675 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 20:23:47,675 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.09ms
+2025-08-12 20:23:47,675 - src.hotkey_manager - INFO - [PERF] Get active window - 0.11ms
+2025-08-12 20:23:47,675 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.00ms
+2025-08-12 20:23:47,675 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:23:47,678 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:23:47,678 - src.hotkey_manager - INFO - [PERF] Save previous window - 2.65ms
+2025-08-12 20:23:47,678 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:23:47,678 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.10ms
+2025-08-12 20:23:48,683 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1004.56ms
+2025-08-12 20:23:48,684 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.33ms
+2025-08-12 20:23:48,684 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:23:48,684 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.81ms
+2025-08-12 20:23:48,684 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:23:48,684 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1009.35ms
+2025-08-12 20:23:56,674 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:23:56,675 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:23:56,676 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:23:56,676 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.32ms
+2025-08-12 20:23:56,676 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.58ms
+2025-08-12 20:23:56,676 - src.hotkey_manager - INFO - [PERF] Get active window - 0.73ms
+2025-08-12 20:23:56,676 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.06ms
+2025-08-12 20:23:56,676 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:23:56,681 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:23:56,681 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.32ms
+2025-08-12 20:23:56,682 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:23:56,682 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.28ms
+2025-08-12 20:23:57,689 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.64ms
+2025-08-12 20:23:57,689 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.05ms
+2025-08-12 20:23:57,689 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:23:57,689 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.60ms
+2025-08-12 20:23:57,689 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:23:57,689 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.13ms
+2025-08-12 20:24:01,784 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:24:01,784 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:24:01,784 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:24:01,784 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.10ms
+2025-08-12 20:24:01,785 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.29ms
+2025-08-12 20:24:01,785 - src.hotkey_manager - INFO - [PERF] Get active window - 0.37ms
+2025-08-12 20:24:01,785 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.02ms
+2025-08-12 20:24:01,785 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:24:01,789 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:24:01,789 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.12ms
+2025-08-12 20:24:01,789 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:24:01,790 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.76ms
+2025-08-12 20:24:02,796 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.02ms
+2025-08-12 20:24:02,797 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.50ms
+2025-08-12 20:24:02,797 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:24:02,797 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.78ms
+2025-08-12 20:24:02,797 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:24:02,797 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1013.56ms
+2025-08-12 20:24:24,124 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:24:24,127 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.12ms
+2025-08-12 20:24:24,127 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:24:24,127 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.07ms
+2025-08-12 20:24:24,128 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.23ms
+2025-08-12 20:24:24,128 - src.hotkey_manager - INFO - [PERF] Get active window - 0.27ms
+2025-08-12 20:24:24,128 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:24:24,128 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:24:24,133 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:24:24,133 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.15ms
+2025-08-12 20:24:24,133 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:24:24,133 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.23ms
+2025-08-12 20:24:25,137 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.91ms
+2025-08-12 20:24:25,138 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.24ms
+2025-08-12 20:24:25,138 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:24:25,138 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1004.74ms
+2025-08-12 20:24:25,139 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:24:25,139 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.58ms
+2025-08-12 20:25:24,803 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:25:24,806 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 20:25:24,806 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:25:24,806 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.22ms
+2025-08-12 20:25:24,806 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.49ms
+2025-08-12 20:25:24,807 - src.hotkey_manager - INFO - [PERF] Get active window - 0.61ms
+2025-08-12 20:25:24,807 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 20:25:24,807 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:25:24,813 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:25:24,813 - src.hotkey_manager - INFO - [PERF] Save previous window - 6.45ms
+2025-08-12 20:25:24,813 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:25:24,814 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.74ms
+2025-08-12 20:25:25,820 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.55ms
+2025-08-12 20:25:25,820 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.74ms
+2025-08-12 20:25:25,820 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:25:25,820 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1006.96ms
+2025-08-12 20:25:25,820 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:25:25,820 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1017.94ms
+2025-08-12 20:25:28,842 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:25:28,842 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:25:28,843 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:25:28,843 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.05ms
+2025-08-12 20:25:28,843 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.16ms
+2025-08-12 20:25:28,843 - src.hotkey_manager - INFO - [PERF] Get active window - 0.21ms
+2025-08-12 20:25:28,843 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:25:28,843 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:25:28,847 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:25:28,847 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.14ms
+2025-08-12 20:25:28,847 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:25:28,847 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.26ms
+2025-08-12 20:25:29,854 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.48ms
+2025-08-12 20:25:29,858 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1010.33ms
+2025-08-12 20:25:29,858 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:25:29,858 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1010.87ms
+2025-08-12 20:25:29,858 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:25:29,858 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.92ms
+2025-08-12 20:25:56,173 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:25:56,173 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:25:56,173 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:25:56,174 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.08ms
+2025-08-12 20:25:56,174 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.30ms
+2025-08-12 20:25:56,174 - src.hotkey_manager - INFO - [PERF] Get active window - 0.38ms
+2025-08-12 20:25:56,175 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.05ms
+2025-08-12 20:25:56,175 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:25:56,193 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:25:56,193 - src.hotkey_manager - INFO - [PERF] Save previous window - 17.78ms
+2025-08-12 20:25:56,193 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:25:56,194 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.37ms
+2025-08-12 20:25:57,203 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1009.15ms
+2025-08-12 20:25:57,203 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1009.48ms
+2025-08-12 20:25:57,204 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:25:57,204 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1011.07ms
+2025-08-12 20:25:57,204 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:25:57,205 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1031.95ms
+2025-08-12 20:26:02,082 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:26:02,083 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:26:02,083 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:26:02,083 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.08ms
+2025-08-12 20:26:02,083 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.42ms
+2025-08-12 20:26:02,084 - src.hotkey_manager - INFO - [PERF] Get active window - 0.59ms
+2025-08-12 20:26:02,084 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:26:02,084 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:26:02,091 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:26:02,091 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.22ms
+2025-08-12 20:26:02,091 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:26:02,092 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.30ms
+2025-08-12 20:26:03,096 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1004.23ms
+2025-08-12 20:26:03,097 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1004.95ms
+2025-08-12 20:26:03,097 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:26:03,097 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.76ms
+2025-08-12 20:26:03,097 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:26:03,097 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1015.19ms
+2025-08-12 20:26:05,056 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:26:05,056 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:26:05,056 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:26:05,057 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.03ms
+2025-08-12 20:26:05,057 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.10ms
+2025-08-12 20:26:05,057 - src.hotkey_manager - INFO - [PERF] Get active window - 0.13ms
+2025-08-12 20:26:05,057 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:26:05,057 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:26:05,059 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:26:05,059 - src.hotkey_manager - INFO - [PERF] Save previous window - 2.75ms
+2025-08-12 20:26:05,060 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:26:05,060 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.19ms
+2025-08-12 20:26:06,065 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1005.09ms
+2025-08-12 20:26:06,065 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1005.39ms
+2025-08-12 20:26:06,065 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:26:06,066 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1005.85ms
+2025-08-12 20:26:06,066 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:26:06,066 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1009.58ms
+2025-08-12 20:27:36,349 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:27:36,351 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:27:36,351 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:27:36,352 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.22ms
+2025-08-12 20:27:36,352 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.49ms
+2025-08-12 20:27:36,352 - src.hotkey_manager - INFO - [PERF] Get active window - 0.62ms
+2025-08-12 20:27:36,352 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 20:27:36,352 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:27:36,356 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:27:36,356 - src.hotkey_manager - INFO - [PERF] Save previous window - 4.36ms
+2025-08-12 20:27:36,356 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:27:36,357 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.36ms
+2025-08-12 20:27:37,365 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.79ms
+2025-08-12 20:27:37,365 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.29ms
+2025-08-12 20:27:37,365 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:27:37,365 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1009.09ms
+2025-08-12 20:27:37,366 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:27:37,366 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.36ms
+2025-08-12 20:27:51,161 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:27:51,163 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:27:51,163 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:27:51,163 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.08ms
+2025-08-12 20:27:51,163 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.22ms
+2025-08-12 20:27:51,163 - src.hotkey_manager - INFO - [PERF] Get active window - 0.28ms
+2025-08-12 20:27:51,163 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:27:51,163 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:27:51,171 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:27:51,171 - src.hotkey_manager - INFO - [PERF] Save previous window - 8.08ms
+2025-08-12 20:27:51,171 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:27:51,172 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.26ms
+2025-08-12 20:27:52,178 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.26ms
+2025-08-12 20:27:52,179 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.89ms
+2025-08-12 20:27:52,179 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:27:52,179 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.47ms
+2025-08-12 20:27:52,179 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:27:52,179 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.05ms
+2025-08-12 20:29:05,978 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:29:05,979 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:29:05,979 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:29:05,980 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.57ms
+2025-08-12 20:29:05,980 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.15ms
+2025-08-12 20:29:05,980 - src.hotkey_manager - INFO - [PERF] Get active window - 1.31ms
+2025-08-12 20:29:05,981 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.13ms
+2025-08-12 20:29:05,981 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:29:06,012 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:29:06,013 - src.hotkey_manager - INFO - [PERF] Save previous window - 31.85ms
+2025-08-12 20:29:06,013 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:29:06,013 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.32ms
+2025-08-12 20:29:07,020 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.47ms
+2025-08-12 20:29:07,020 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.78ms
+2025-08-12 20:29:07,020 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:29:07,020 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.50ms
+2025-08-12 20:29:07,020 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:29:07,020 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1042.70ms
+2025-08-12 20:32:03,481 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:32:03,486 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.19ms
+2025-08-12 20:32:03,487 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:32:03,489 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 1.41ms
+2025-08-12 20:32:03,489 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 2.30ms
+2025-08-12 20:32:03,489 - src.hotkey_manager - INFO - [PERF] Get active window - 2.78ms
+2025-08-12 20:32:03,489 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.33ms
+2025-08-12 20:32:03,489 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:32:03,507 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:32:03,508 - src.hotkey_manager - INFO - [PERF] Save previous window - 18.07ms
+2025-08-12 20:32:03,508 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:32:03,509 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.98ms
+2025-08-12 20:32:04,512 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1003.08ms
+2025-08-12 20:32:04,515 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.56ms
+2025-08-12 20:32:04,515 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:32:04,515 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.77ms
+2025-08-12 20:32:04,515 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:32:04,515 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1034.91ms
+2025-08-12 20:32:11,766 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:32:11,767 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:32:11,767 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:32:11,767 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.12ms
+2025-08-12 20:32:11,767 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.32ms
+2025-08-12 20:32:11,767 - src.hotkey_manager - INFO - [PERF] Get active window - 0.40ms
+2025-08-12 20:32:11,767 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:32:11,768 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:32:11,775 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:32:11,775 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.74ms
+2025-08-12 20:32:11,776 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:32:11,777 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 1.04ms
+2025-08-12 20:32:12,784 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.82ms
+2025-08-12 20:32:12,784 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.13ms
+2025-08-12 20:32:12,784 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:32:12,784 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1008.81ms
+2025-08-12 20:32:12,784 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:32:12,784 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.68ms
+2025-08-12 20:32:51,421 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:32:51,423 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.03ms
+2025-08-12 20:32:51,423 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:32:51,424 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.25ms
+2025-08-12 20:32:51,424 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.92ms
+2025-08-12 20:32:51,424 - src.hotkey_manager - INFO - [PERF] Get active window - 1.02ms
+2025-08-12 20:32:51,424 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 20:32:51,424 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:32:51,438 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:32:51,438 - src.hotkey_manager - INFO - [PERF] Save previous window - 13.92ms
+2025-08-12 20:32:51,438 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:32:51,440 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 1.61ms
+2025-08-12 20:32:52,455 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1014.06ms
+2025-08-12 20:32:52,457 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1015.73ms
+2025-08-12 20:32:52,457 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:32:52,457 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1019.09ms
+2025-08-12 20:32:52,457 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:32:52,457 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1037.78ms
+2025-08-12 20:32:55,222 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:32:55,222 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 20:32:55,223 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:32:55,223 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.06ms
+2025-08-12 20:32:55,223 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.22ms
+2025-08-12 20:32:55,223 - src.hotkey_manager - INFO - [PERF] Get active window - 0.29ms
+2025-08-12 20:32:55,223 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 20:32:55,223 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:32:55,233 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:32:55,233 - src.hotkey_manager - INFO - [PERF] Save previous window - 9.31ms
+2025-08-12 20:32:55,233 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:32:55,233 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.14ms
+2025-08-12 20:32:56,240 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1007.46ms
+2025-08-12 20:32:56,241 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1007.69ms
+2025-08-12 20:32:56,241 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:32:56,241 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.98ms
+2025-08-12 20:32:56,241 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:32:56,241 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.74ms
+2025-08-12 20:34:07,843 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:34:07,845 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 20:34:07,846 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:34:07,846 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.23ms
+2025-08-12 20:34:07,846 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.49ms
+2025-08-12 20:34:07,846 - src.hotkey_manager - INFO - [PERF] Get active window - 0.62ms
+2025-08-12 20:34:07,846 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 20:34:07,846 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:34:07,859 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:34:07,860 - src.hotkey_manager - INFO - [PERF] Save previous window - 13.25ms
+2025-08-12 20:34:07,860 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:34:07,861 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 1.21ms
+2025-08-12 20:34:08,872 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1010.83ms
+2025-08-12 20:34:08,873 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1011.14ms
+2025-08-12 20:34:08,873 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:34:08,873 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1012.81ms
+2025-08-12 20:34:08,873 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:34:08,873 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1029.88ms
+2025-08-12 20:34:13,805 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 20:34:13,806 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.01ms
+2025-08-12 20:34:13,806 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 20:34:13,806 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.17ms
+2025-08-12 20:34:13,806 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.30ms
+2025-08-12 20:34:13,806 - src.hotkey_manager - INFO - [PERF] Get active window - 0.36ms
+2025-08-12 20:34:13,806 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.04ms
+2025-08-12 20:34:13,806 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 20:34:13,810 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 20:34:13,810 - src.hotkey_manager - INFO - [PERF] Save previous window - 3.58ms
+2025-08-12 20:34:13,810 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 20:34:13,810 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.36ms
+2025-08-12 20:34:14,824 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1013.00ms
+2025-08-12 20:34:14,824 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1013.19ms
+2025-08-12 20:34:14,824 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 20:34:14,824 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1013.78ms
+2025-08-12 20:34:14,824 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 20:34:14,824 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1018.73ms
+2025-08-12 21:09:19,732 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 21:09:19,735 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.02ms
+2025-08-12 21:09:19,735 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 21:09:19,736 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.24ms
+2025-08-12 21:09:19,736 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.51ms
+2025-08-12 21:09:19,736 - src.hotkey_manager - INFO - [PERF] Get active window - 0.58ms
+2025-08-12 21:09:19,736 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.05ms
+2025-08-12 21:09:19,736 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 21:09:19,743 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 21:09:19,743 - src.hotkey_manager - INFO - [PERF] Save previous window - 7.37ms
+2025-08-12 21:09:19,743 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 21:09:19,744 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.56ms
+2025-08-12 21:09:20,752 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1008.31ms
+2025-08-12 21:09:20,753 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1008.51ms
+2025-08-12 21:09:20,753 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 21:09:20,753 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1009.55ms
+2025-08-12 21:09:20,753 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 21:09:20,753 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1021.45ms
+2025-08-12 21:09:26,141 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 21:09:26,145 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.00ms
+2025-08-12 21:09:26,145 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 21:09:26,146 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.09ms
+2025-08-12 21:09:26,146 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 0.24ms
+2025-08-12 21:09:26,146 - src.hotkey_manager - INFO - [PERF] Get active window - 0.55ms
+2025-08-12 21:09:26,146 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.01ms
+2025-08-12 21:09:26,146 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 21:09:26,151 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 21:09:26,152 - src.hotkey_manager - INFO - [PERF] Save previous window - 5.45ms
+2025-08-12 21:09:26,152 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 21:09:26,152 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.33ms
+2025-08-12 21:09:27,159 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1006.60ms
+2025-08-12 21:09:27,159 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1006.78ms
+2025-08-12 21:09:27,159 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 21:09:27,159 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1007.30ms
+2025-08-12 21:09:27,159 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 21:09:27,159 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1017.72ms
+2025-08-12 21:19:29,929 - src.hotkey_manager - INFO - [PERF] Terminal hotkey triggered - starting callback
+2025-08-12 21:19:29,932 - src.hotkey_manager - INFO - [PERF] Import and initialization - 0.04ms
+2025-08-12 21:19:29,932 - src.window_manager - INFO - [PERF] Starting WindowManager.get_active_window
+2025-08-12 21:19:29,933 - src.platform.macos_optimized - INFO - [PERF] Cocoa get front app info - 0.53ms
+2025-08-12 21:19:29,933 - src.window_manager - INFO - [PERF] Total WindowManager.get_active_window (Cocoa front app) - 1.27ms
+2025-08-12 21:19:29,933 - src.hotkey_manager - INFO - [PERF] Get active window - 1.43ms
+2025-08-12 21:19:29,934 - src.hotkey_manager - INFO - [PERF] Check if terminal window - 0.08ms
+2025-08-12 21:19:29,934 - src.hotkey_manager - INFO - [PERF] Current window is not terminal - using smart focus
+2025-08-12 21:19:29,952 - src.hotkey_manager - DEBUG - Saved previous window: Cursor ()
+2025-08-12 21:19:29,953 - src.hotkey_manager - INFO - [PERF] Save previous window - 18.81ms
+2025-08-12 21:19:29,953 - src.hotkey_manager - INFO - [PERF] Get TC context window (none found) - 0.00ms
+2025-08-12 21:19:29,953 - src.hotkey_manager - INFO - [PERF] Check if terminal running - 0.50ms
+2025-08-12 21:19:30,965 - src.platform.macos_optimized - INFO - [PERF] Cocoa activate app by bundle 'com.googlecode.iterm2' - 1011.86ms
+2025-08-12 21:19:30,965 - src.hotkey_manager - INFO - [PERF] Directly activate terminal app - 1012.06ms
+2025-08-12 21:19:30,965 - src.hotkey_manager - DEBUG - Activated terminal by app activation (fast path)
+2025-08-12 21:19:30,965 - src.hotkey_manager - INFO - [PERF] Smart focus terminal - 1012.74ms
+2025-08-12 21:19:30,965 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 21:19:30,966 - src.hotkey_manager - INFO - [PERF] Total hotkey callback execution - 1039.23ms
