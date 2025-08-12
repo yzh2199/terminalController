@@ -2914,3 +2914,194 @@
 2025-08-13 00:04:48,903 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 222.81ms, success: True
 2025-08-13 00:04:48,903 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
 2025-08-13 00:04:48,903 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 507.07ms
+2025-08-13 00:11:37,687 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:11:37,891 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:37,891 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:11:37,891 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:37,891 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:11:37,891 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:37,891 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:11:37,891 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:37,891 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:11:37,892 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:11:44,716 - src.config_manager - DEBUG - Loaded 9 applications
+2025-08-13 00:11:44,718 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-13 00:11:44,719 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-13 00:11:44,719 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:11:44,877 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:44,877 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:11:44,877 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:44,877 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:11:44,877 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:44,877 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:11:44,877 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:11:44,877 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:11:44,877 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-13 00:11:44,877 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-13 00:11:44,877 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-13 00:11:45,218 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-13 00:11:45,218 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-13 00:11:45,218 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-13 00:11:45,218 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-13 00:11:45,218 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-13 00:11:45,218 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-13 00:11:45,218 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-13 00:11:45,219 - __main__ - INFO - ✅ Simplified daemon server listening on /tmp/terminal_controller.sock
+2025-08-13 00:11:45,305 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-13 00:11:45,721 - __main__ - INFO - ✅ Daemon IPC server started successfully
+2025-08-13 00:11:45,721 - __main__ - INFO - 🎯 Enhanced Terminal Controller daemon started successfully
+2025-08-13 00:11:59,496 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:11:59,646 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:59,646 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:11:59,646 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:59,646 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:11:59,646 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:59,646 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:11:59,646 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:11:59,646 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:11:59,646 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:11:59,647 - __main__ - INFO - 📥 Processing command: 'help' (request #0)
+2025-08-13 00:11:59,647 - __main__ - INFO - 📤 Command completed: 0.12ms (request #0)
+2025-08-13 00:11:59,647 - __main__ - INFO - 📥 Processing command: 'help' (request #1)
+2025-08-13 00:11:59,647 - __main__ - INFO - 📤 Command completed: 0.03ms (request #1)
+2025-08-13 00:11:59,647 - __main__ - INFO - 📥 Processing command: 'config' (request #2)
+2025-08-13 00:11:59,647 - __main__ - INFO - 📤 Command completed: 0.06ms (request #2)
+2025-08-13 00:12:14,544 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:12:14,691 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:14,691 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:12:14,691 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:14,691 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:12:14,691 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:14,691 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:12:14,691 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:14,691 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:12:14,691 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:12:14,692 - __main__ - INFO - 📥 Processing command: 'quit' (request #3)
+2025-08-13 00:12:14,692 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-13 00:12:14,692 - __main__ - ERROR - ❌ Error stopping daemon server: cannot join current thread
+2025-08-13 00:12:14,692 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-13 00:12:14,692 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-13 00:12:14,692 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-13 00:12:14,692 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-13 00:12:14,692 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-13 00:12:14,822 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-13 00:12:14,823 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-13 00:12:14,823 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-13 00:12:14,823 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-13 00:12:14,823 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-13 00:12:23,247 - src.config_manager - DEBUG - Loaded 9 applications
+2025-08-13 00:12:23,248 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-13 00:12:23,250 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-13 00:12:23,250 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:12:23,398 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:23,398 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:12:23,398 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:23,398 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:12:23,398 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:23,398 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:12:23,398 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:12:23,398 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:12:23,398 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-13 00:12:23,398 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-13 00:12:23,399 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-13 00:12:23,586 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-13 00:12:23,586 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-13 00:12:23,586 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-13 00:12:23,586 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-13 00:12:23,586 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-13 00:12:23,586 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-13 00:12:23,586 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-13 00:12:23,587 - __main__ - INFO - ✅ Simplified daemon server listening on /tmp/terminal_controller.sock
+2025-08-13 00:12:23,676 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-13 00:12:24,089 - __main__ - INFO - ✅ Daemon IPC server started successfully
+2025-08-13 00:12:24,089 - __main__ - INFO - 🎯 Enhanced Terminal Controller daemon started successfully
+2025-08-13 00:12:37,747 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:12:37,925 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:37,925 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:12:37,925 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:37,925 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:12:37,925 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:37,925 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:12:37,925 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:12:37,925 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:12:37,925 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:12:37,925 - __main__ - INFO - 📥 Processing command: 'quit' (request #0)
+2025-08-13 00:12:37,925 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-13 00:12:37,926 - __main__ - ERROR - ❌ Error stopping daemon server: cannot join current thread
+2025-08-13 00:12:37,926 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-13 00:12:37,926 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-13 00:12:37,926 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-13 00:12:37,926 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-13 00:12:37,926 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-13 00:12:38,130 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-13 00:12:38,130 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-13 00:12:38,130 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-13 00:12:38,130 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-13 00:12:38,130 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-13 00:13:27,505 - src.config_manager - DEBUG - Loaded 8 applications
+2025-08-13 00:13:27,509 - src.config_manager - DEBUG - Loaded 7 websites
+2025-08-13 00:13:27,511 - src.config_manager - DEBUG - Loaded settings configuration
+2025-08-13 00:13:27,511 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:13:27,695 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:27,695 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:13:27,695 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:27,695 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:13:27,695 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:27,695 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:13:27,695 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:13:27,695 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:13:27,695 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-13 00:13:27,695 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-13 00:13:27,695 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-13 00:13:27,902 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-13 00:13:27,903 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-13 00:13:27,903 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-13 00:13:27,903 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-13 00:13:27,903 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-13 00:13:27,903 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-13 00:13:27,903 - __main__ - INFO - ✅ Hotkey manager started successfully
+2025-08-13 00:13:27,903 - __main__ - INFO - ✅ Simplified daemon server listening on /tmp/terminal_controller.sock
+2025-08-13 00:13:27,995 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-13 00:13:28,408 - __main__ - INFO - ✅ Daemon IPC server started successfully
+2025-08-13 00:13:28,408 - __main__ - INFO - 🎯 Enhanced Terminal Controller daemon started successfully
+2025-08-13 00:13:40,609 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-13 00:13:40,745 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:40,745 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-13 00:13:40,745 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:40,745 - src.window_manager - INFO - Initialized WindowManager
+2025-08-13 00:13:40,745 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:40,745 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-13 00:13:40,745 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-13 00:13:40,745 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-13 00:13:40,745 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-13 00:13:40,746 - __main__ - INFO - 📥 Processing command: 'quit' (request #0)
+2025-08-13 00:13:40,746 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-13 00:13:40,746 - __main__ - ERROR - ❌ Error stopping daemon server: cannot join current thread
+2025-08-13 00:13:40,746 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-13 00:13:40,746 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-13 00:13:40,746 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-13 00:13:40,746 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-13 00:13:40,746 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-13 00:13:41,454 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-13 00:13:41,454 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-13 00:13:41,454 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-13 00:13:41,454 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-13 00:13:41,454 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
