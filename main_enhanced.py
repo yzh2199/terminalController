@@ -21,7 +21,6 @@ import json
 import time
 from pathlib import Path
 from typing import Optional
-macos_optimized
 import click
 from colorama import init as colorama_init, Fore, Style
 

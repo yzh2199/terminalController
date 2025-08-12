@@ -1964,3 +1964,43 @@
 2025-08-12 00:24:31,700 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
 2025-08-12 00:24:31,700 - src.window_manager - INFO - WindowManager cleanup completed
 2025-08-12 00:24:31,700 - __main__ - INFO - Terminal Controller stopped
+2025-08-12 09:49:02,697 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 09:49:06,326 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 09:49:06,326 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 09:49:06,326 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 09:49:06,326 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 09:49:06,326 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-12 09:49:06,327 - __main__ - INFO - 🚀 Starting Enhanced Terminal Controller daemon
+2025-08-12 09:49:06,327 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-12 09:49:06,327 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-12 09:49:06,327 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-12 09:49:06,327 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-12 09:49:06,327 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-12 09:49:06,327 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-12 09:49:06,327 - src.platform.macos - INFO - Starting hotkey registration for: 'ctrl+;'
+2025-08-12 09:49:09,336 - src.platform.macos - ERROR - Error checking accessibility permissions: Command '['osascript', '-e', 'tell application "System Events" to get name of first process']' timed out after 3 seconds
+2025-08-12 09:49:09,336 - src.platform.macos - ERROR - Accessibility permissions not granted. Please enable accessibility permissions for this application in System Preferences > Security & Privacy > Privacy > Accessibility
+2025-08-12 09:49:09,336 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: False
+2025-08-12 09:49:09,336 - src.hotkey_manager - ERROR - Failed to register hotkey ctrl+; for config_terminal
+2025-08-12 09:49:09,336 - src.hotkey_manager - INFO - Terminal hotkey registration result: False
+2025-08-12 09:49:09,336 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: False
+2025-08-12 09:49:09,336 - src.hotkey_manager - INFO - Configured hotkeys registration result: False
+2025-08-12 09:49:09,337 - src.hotkey_manager - ERROR - Failed to register configured hotkeys
+2025-08-12 09:49:09,337 - __main__ - ERROR - ❌ Failed to start hotkey manager
+2025-08-12 09:49:09,337 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-12 09:49:09,337 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 09:49:09,337 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 09:49:09,337 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 09:49:09,337 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-12 09:49:19,381 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 09:49:19,638 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 09:49:19,638 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 09:49:19,638 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 09:49:19,638 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 09:49:19,638 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-12 09:49:33,312 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 09:49:33,583 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 09:49:33,583 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 09:49:33,583 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 09:49:33,583 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 09:49:33,583 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin

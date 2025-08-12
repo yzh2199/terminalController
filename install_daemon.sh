@@ -84,8 +84,10 @@ copy_files() {
     cp main_enhanced.py "$INSTALL_DIR/bin/"
     cp daemon_client.py "$INSTALL_DIR/bin/"
     
-    # 复制源代码目录
+    # 复制源代码目录到根目录和bin目录下的src子目录
     cp -r src "$INSTALL_DIR/"
+    mkdir -p "$INSTALL_DIR/bin/src"
+    cp -r src/* "$INSTALL_DIR/bin/src/"
     
     # 复制和更新配置文件
     if [ ! -f "$INSTALL_DIR/config/apps.yaml" ]; then
@@ -378,13 +380,17 @@ EOF
 setup_environment() {
     print_step "设置环境变量"
     
-    # 检查shell类型
-    if [ -n "$ZSH_VERSION" ]; then
+    # 检查shell类型 - 使用更可靠的方法
+    if [ -n "$ZSH_VERSION" ] || [[ "$SHELL" == *"zsh"* ]]; then
         SHELL_RC="$HOME/.zshrc"
-    elif [ -n "$BASH_VERSION" ]; then
+        print_info "检测到 ZSH shell，使用 .zshrc"
+    elif [ -n "$BASH_VERSION" ] || [[ "$SHELL" == *"bash"* ]]; then
         SHELL_RC="$HOME/.bashrc"
+        print_info "检测到 BASH shell，使用 .bashrc"
     else
-        SHELL_RC="$HOME/.bashrc"
+        # 默认尝试zsh，因为这在macOS上更常见
+        SHELL_RC="$HOME/.zshrc"
+        print_info "使用默认 .zshrc 配置"
     fi
     
     # 添加到PATH
@@ -466,10 +472,14 @@ show_usage() {
     echo "  2. 启动守护进程:"
     echo -e "     ${GREEN}tcd start${NC}"
     echo ""
-  3. 测试超短命令 (无需't'前缀):"
-     echo -e "     ${GREEN}g${NC}             # 直接打开Chrome"
+    echo "  3. 测试超短命令 (无需't'前缀):"
+     echo -e "     ${GREEN}b${NC}             # 直接打开Chrome"
      echo -e "     ${GREEN}c${NC}             # 直接打开Cursor"
      echo -e "     ${GREEN}p${NC}             # 直接打开Postman"
+     echo -e "     ${GREEN}k${NC}             # 直接打开Kim"
+     echo -e "     ${GREEN}py${NC}             # 直接打开PyCharm"
+     echo -e "     ${GREEN}i${NC}             # 直接打开IntelliJ IDEA"
+     echo -e "     ${GREEN}w${NC}             # 直接打开WeChat"
      echo ""
      echo "  4. 传统命令 (如果习惯):"
      echo -e "     ${GREEN}t help${NC}        # 显示帮助"
