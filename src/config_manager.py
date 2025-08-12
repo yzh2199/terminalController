@@ -194,6 +194,31 @@ class ConfigManager:
         self._last_used[app_id] = window_id
         self._save_last_used()
     
+    def get_tc_context_window(self) -> Optional[str]:
+        """Get the terminal window ID where TC was launched or is running.
+        
+        Returns:
+            Window ID of TC context terminal or None if not set
+        """
+        return self._last_used.get("_tc_context_window")
+    
+    def set_tc_context_window(self, window_id: str) -> None:
+        """Set the terminal window ID where TC was launched or is running.
+        
+        Args:
+            window_id: Terminal window identifier
+        """
+        self._last_used["_tc_context_window"] = window_id
+        self._save_last_used()
+        logger.debug(f"Set TC context window: {window_id}")
+    
+    def clear_tc_context_window(self) -> None:
+        """Clear the TC context window (when TC exits)."""
+        if "_tc_context_window" in self._last_used:
+            del self._last_used["_tc_context_window"]
+            self._save_last_used()
+            logger.debug("Cleared TC context window")
+    
     def add_app(self, app_id: str, config: AppConfig) -> bool:
         """Add or update an application configuration.
         

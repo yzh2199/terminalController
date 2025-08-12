@@ -396,34 +396,23 @@ class HotkeyManager:
                 
                 # Check if current window is a terminal
                 if current_window and self._is_terminal_window(current_window, terminal_manager):
-                    # Current window is terminal, switch back to previous non-terminal window
-                    success = self._return_to_previous_window(window_manager)
+                    # Current window is terminal, use smart return logic
+                    success = self._smart_return_from_terminal(window_manager, terminal_manager)
                     if success:
-                        logger.info("Returned to previous window via hotkey")
+                        logger.info("Smart return completed via hotkey")
                     else:
-                        logger.warning("Could not return to previous window, no previous window found")
+                        logger.warning("Could not complete smart return, no suitable window found")
                 else:
-                    # Current window is not terminal, open/focus terminal
+                    # Current window is not terminal, use smart terminal focus
                     # First save current window as previous window
                     if current_window:
                         self._save_previous_window(current_window)
                     
-                    # Try to focus existing terminal first
-                    settings = self.config_manager.get_settings()
-                    default_terminal_id = settings.terminal.default
-                    
-                    if terminal_manager.is_terminal_running(default_terminal_id):
-                        success = window_manager.focus_most_recent_window(default_terminal_id)
-                        if success:
-                            logger.info("Focused existing terminal via hotkey")
-                            return
-                    
-                    # Launch new terminal if no existing one or focus failed
-                    success = terminal_manager.launch_terminal()
+                    success = self._smart_focus_terminal(window_manager, terminal_manager)
                     if success:
-                        logger.info("Terminal launched via hotkey")
+                        logger.info("Smart terminal focus completed via hotkey")
                     else:
-                        logger.error("Failed to launch terminal via hotkey")
+                        logger.error("Failed to focus/launch terminal via hotkey")
                     
             except Exception as e:
                 logger.error(f"Error in terminal hotkey callback: {e}")
@@ -545,6 +534,124 @@ class HotkeyManager:
             
         except Exception as e:
             logger.error(f"Error saving previous window: {e}")
+    
+    def _smart_return_from_terminal(self, window_manager, terminal_manager) -> bool:
+        """Smart return logic when current window is a terminal.
+        
+        Args:
+            window_manager: WindowManager instance
+            terminal_manager: TerminalManager instance
+            
+        Returns:
+            True if successfully returned to a suitable window, False otherwise
+        """
+        try:
+            # Priority 1: Return to previous non-terminal window
+            success = self._return_to_previous_window(window_manager)
+            if success:
+                logger.debug("Returned to previous non-terminal window")
+                return True
+            
+            # Priority 2: If no previous window, try to find a good alternative
+            logger.debug("No previous window found, looking for alternatives")
+            return self._find_best_non_terminal_window(window_manager, terminal_manager)
+            
+        except Exception as e:
+            logger.error(f"Error in smart return from terminal: {e}")
+            return False
+    
+    def _smart_focus_terminal(self, window_manager, terminal_manager) -> bool:
+        """Smart terminal focus logic when current window is not a terminal.
+        
+        Args:
+            window_manager: WindowManager instance
+            terminal_manager: TerminalManager instance
+            
+        Returns:
+            True if successfully focused/launched terminal, False otherwise
+        """
+        try:
+            # Priority 1: Try to focus TC context terminal (where TC is/was running)
+            tc_context_window_id = self.config_manager.get_tc_context_window()
+            if tc_context_window_id:
+                window = window_manager.find_window_by_id(tc_context_window_id)
+                if window and self._is_terminal_window(window, terminal_manager):
+                    success = window_manager.activate_window_by_id(tc_context_window_id)
+                    if success:
+                        logger.debug(f"Focused TC context terminal: {tc_context_window_id}")
+                        return True
+                else:
+                    # TC context window no longer exists, clear it
+                    logger.debug("TC context window no longer exists, clearing")
+                    self.config_manager.clear_tc_context_window()
+            
+            # Priority 2: Try to focus existing terminal using original logic
+            settings = self.config_manager.get_settings()
+            default_terminal_id = settings.terminal.default
+            
+            if terminal_manager.is_terminal_running(default_terminal_id):
+                success = window_manager.focus_most_recent_window(default_terminal_id)
+                if success:
+                    logger.debug("Focused existing terminal using original logic")
+                    return True
+            
+            # Priority 3: Launch new terminal if no existing one or focus failed
+            success = terminal_manager.launch_terminal()
+            if success:
+                logger.debug("Launched new terminal")
+                return True
+            
+            return False
+            
+        except Exception as e:
+            logger.error(f"Error in smart focus terminal: {e}")
+            return False
+    
+    def _find_best_non_terminal_window(self, window_manager, terminal_manager) -> bool:
+        """Find the best non-terminal window to focus on.
+        
+        Args:
+            window_manager: WindowManager instance
+            terminal_manager: TerminalManager instance
+            
+        Returns:
+            True if found and focused a good window, False otherwise
+        """
+        try:
+            all_windows = window_manager.list_all_windows()
+            
+            # Filter out terminal windows and find the best candidate
+            non_terminal_windows = []
+            for window in all_windows:
+                if not self._is_terminal_window(window, terminal_manager) and not window.is_minimized:
+                    non_terminal_windows.append(window)
+            
+            if not non_terminal_windows:
+                logger.debug("No suitable non-terminal windows found")
+                return False
+            
+            # Prefer active windows first, then recent ones
+            for window in non_terminal_windows:
+                if window.is_active:
+                    success = window_manager.activate_window_by_id(window.window_id)
+                    if success:
+                        self._save_previous_window(window)
+                        logger.debug(f"Focused active non-terminal window: {window.app_name}")
+                        return True
+            
+            # If no active window, use the first available
+            window = non_terminal_windows[0]
+            success = window_manager.activate_window_by_id(window.window_id)
+            if success:
+                self._save_previous_window(window)
+                logger.debug(f"Focused first available non-terminal window: {window.app_name}")
+                return True
+            
+            return False
+            
+        except Exception as e:
+            logger.error(f"Error finding best non-terminal window: {e}")
+            return False
     
     def _return_to_previous_window(self, window_manager) -> bool:
         """Return to the previously active non-terminal window.

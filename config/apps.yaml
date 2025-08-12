@@ -28,7 +28,7 @@ apps:
     type: "terminal"
     description: "Terminal application"
   
-  postman:
+  p:
     name: "Postman"
     executable:
       darwin: "/Applications/Postman.app"
@@ -37,7 +37,7 @@ apps:
     type: "api"
     description: "Postman API testing tool"
 
-  wechat:
+  w:
     name: "WeChat"
     executable:
       darwin: "/Applications/WeChat.app"
@@ -46,7 +46,7 @@ apps:
     type: "chat"
     description: "WeChat"
  
-  idea:
+  i:
     name: "IntelliJ IDEA"
     executable:
       darwin: "/Applications/IntelliJ IDEA.app"
@@ -64,7 +64,7 @@ apps:
     type: "editor"
     description: "PyCharm code editor"
 
-  kim:
+  k:
     name: "Kim"
     executable:
       darwin: "/Applications/Kim.app"

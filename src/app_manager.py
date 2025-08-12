@@ -46,6 +46,12 @@ class AppManager:
                 logger.error(f"Unknown application: {app_id}")
                 return False
             
+            # Special handling for terminal applications when running in interactive mode
+            if app_config.type == "terminal" and not force_new:
+                success = self._handle_terminal_launch(app_id, app_config)
+                if success is not None:  # 如果处理了终端切换逻辑，直接返回
+                    return success
+            
             # Get platform-specific executable path
             executable_path = self._get_executable_path(app_config)
             if not executable_path:
@@ -465,3 +471,91 @@ class AppManager:
         except Exception as e:
             logger.error(f"Error launching browser with URL: {e}")
             return False
+    
+    def _handle_terminal_launch(self, app_id: str, app_config: AppConfig) -> Optional[bool]:
+        """Handle terminal application launch with special logic for switching windows.
+        
+        当在交互模式下启动终端应用时，如果当前正在终端中运行脚本，
+        应该切换到其他已存在的终端窗口，而不是启动新的。
+        
+        Args:
+            app_id: Terminal application identifier
+            app_config: Terminal application configuration
+            
+        Returns:
+            True if window switching was successful, False if failed, 
+            None if should proceed with normal launch
+        """
+        try:
+            # Check if we're currently running in a terminal context
+            tc_context_window = self.config_manager.get_tc_context_window()
+            if not tc_context_window:
+                # Not running in terminal context, proceed with normal launch
+                return None
+            
+            # Get all windows for this terminal application
+            terminal_windows = self.get_app_windows(app_id)
+            if not terminal_windows:
+                # No terminal windows exist, proceed with normal launch
+                return None
+            
+            # Filter out the current terminal window (the one running the script)
+            other_windows = [w for w in terminal_windows if w.window_id != tc_context_window]
+            
+            if not other_windows:
+                # Only current terminal window exists, proceed with normal launch
+                return None
+            
+            # Find the best window to switch to
+            target_window = self._select_terminal_window_to_switch(other_windows, app_id)
+            if target_window:
+                # Switch to the selected terminal window
+                success = self.platform_adapter.activate_window(target_window.window_id)
+                if success:
+                    logger.info(f"Switched to existing {app_config.name} window: {target_window.title}")
+                    # Remember this as the last used window
+                    settings = self.config_manager.get_settings()
+                    if settings.behavior.remember_last_used:
+                        self.config_manager.set_last_used_window(app_id, target_window.window_id)
+                    return True
+                else:
+                    logger.warning(f"Failed to switch to terminal window {target_window.window_id}")
+                    return False
+            
+            # No suitable window found, proceed with normal launch
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error in terminal launch handling: {e}")
+            return None
+    
+    def _select_terminal_window_to_switch(self, windows: List[WindowInfo], app_id: str) -> Optional[WindowInfo]:
+        """Select the best terminal window to switch to.
+        
+        Args:
+            windows: List of available terminal windows (excluding current)
+            app_id: Terminal application identifier
+            
+        Returns:
+            Best window to switch to, or None if none suitable
+        """
+        if not windows:
+            return None
+        
+        # Try to get last used window if remember_last_used is enabled
+        settings = self.config_manager.get_settings()
+        if settings.behavior.remember_last_used:
+            last_used_id = self.config_manager.get_last_used_window(app_id)
+            if last_used_id:
+                for window in windows:
+                    if window.window_id == last_used_id:
+                        return window
+        
+        # Prefer non-minimized windows
+        non_minimized = [w for w in windows if not w.is_minimized]
+        if non_minimized:
+            # Return the first non-minimized window (could be made smarter)
+            return non_minimized[0]
+        
+        # If all windows are minimized, return the first one
+        return windows[0]

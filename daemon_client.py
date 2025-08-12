@@ -1,3 +1,7 @@
+'''
+Author: yangzhi05 && <yangzhi05@kuaishou.com>
+Date: 2025-08-12 09:07:43
+'''
 #!/usr/bin/env python3
 """
 守护进程客户端工具

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+todo 目前optimized_main.py在交互模式下无法启动热键监听，后续修改为跟main.py一样后删除main.py，因为这个性能更好
 优化版Terminal Controller主程序
 主要优化：
 1. 单例控制器模式 - 避免重复初始化 (节省200-500ms)
@@ -94,6 +95,9 @@ class OptimizedTerminalController:
         
         self.logger = logging.getLogger(__name__)
         self.logger.info(f"优化版Terminal Controller初始化完成 ({platform.system()})")
+        
+        # Register current terminal context if we're running in a terminal
+        self._register_terminal_context()
         
         self._initialized = True
     
@@ -259,7 +263,16 @@ class OptimizedTerminalController:
         
         if success:
             app_config = self.config_manager.get_app_config(parsed_cmd.app_id)
-            print(f"{Fore.GREEN}已启动 {app_config.name}{Style.RESET_ALL}")
+            # Check if this was a terminal switch operation
+            if app_config.type == "terminal" and not force_new:
+                # For terminal, check if we switched to existing window or launched new
+                tc_context = self.config_manager.get_tc_context_window()
+                if tc_context:
+                    print(f"{Fore.GREEN}已切换到 {app_config.name} 窗口{Style.RESET_ALL}")
+                else:
+                    print(f"{Fore.GREEN}已启动 {app_config.name}{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.GREEN}已启动 {app_config.name}{Style.RESET_ALL}")
         else:
             print(f"{Fore.RED}启动应用失败{Style.RESET_ALL}")
         
@@ -496,6 +509,23 @@ class OptimizedTerminalController:
         print(f"输入 '{Fore.CYAN}help{Style.RESET_ALL}' 查看命令，'{Fore.CYAN}quit{Style.RESET_ALL}' 退出")
         print()
         
+        # Ensure terminal context is registered for interactive mode
+        self._register_terminal_context()
+        
+        # Start hotkey manager for interactive mode
+        hotkey_started = False
+        try:
+            if self.hotkey_manager.start():
+                hotkey_started = True
+                print(f"{Fore.GREEN}✅ 热键已启用 (Ctrl+; 可用){Style.RESET_ALL}")
+                self.logger.info("热键管理器在交互模式中启动")
+            else:
+                print(f"{Fore.YELLOW}⚠️  热键不可用 (可能需要权限){Style.RESET_ALL}")
+                self.logger.warning("在交互模式中启动热键管理器失败")
+        except Exception as e:
+            print(f"{Fore.YELLOW}⚠️  热键不可用: {e}{Style.RESET_ALL}")
+            self.logger.error(f"启动热键管理器错误: {e}")
+        
         try:
             while True:
                 try:
@@ -525,8 +555,39 @@ class OptimizedTerminalController:
         except Exception as e:
             self.logger.error(f"交互模式错误: {e}")
             print(f"{Fore.RED}交互模式错误: {e}{Style.RESET_ALL}")
+        finally:
+            # Stop hotkey manager if it was started
+            if hotkey_started:
+                try:
+                    self.hotkey_manager.stop()
+                    self.logger.info("热键管理器已停止")
+                except Exception as e:
+                    self.logger.error(f"停止热键管理器错误: {e}")
+            
+            # Clear terminal context when exiting interactive mode
+            self._clear_terminal_context()
         
         print(f"{Fore.GREEN}再见!{Style.RESET_ALL}")
+    
+    def _register_terminal_context(self):
+        """Register the current terminal window as TC context if applicable."""
+        try:
+            terminal_window_id = self.window_manager.get_current_terminal_window_id()
+            if terminal_window_id:
+                self.config_manager.set_tc_context_window(terminal_window_id)
+                self.logger.debug(f"Registered TC context terminal: {terminal_window_id}")
+            else:
+                self.logger.debug("TC not running in a terminal, no context to register")
+        except Exception as e:
+            self.logger.error(f"Error registering terminal context: {e}")
+    
+    def _clear_terminal_context(self):
+        """Clear the TC context when TC exits."""
+        try:
+            self.config_manager.clear_tc_context_window()
+            self.logger.debug("Cleared TC context")
+        except Exception as e:
+            self.logger.error(f"Error clearing terminal context: {e}")
     
     def _setup_logging(self):
         """设置日志"""

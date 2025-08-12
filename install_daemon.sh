@@ -313,69 +313,69 @@ source "$INSTALL_DIR/venv/bin/activate"
 exec python3 "$INSTALL_DIR/bin/daemon_client.py" --benchmark
 EOF
 
-    # 创建超短应用启动命令
-    print_info "创建超短应用启动命令..."
-    
-    # Chrome (g)
-    cat > "$INSTALL_DIR/bin/g" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send g "$@"
-EOF
-
-    # Cursor (c)
-    cat > "$INSTALL_DIR/bin/c" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send c "$@"
-EOF
-
-    # Postman (p)
-    cat > "$INSTALL_DIR/bin/p" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send p "$@"
-EOF
-
-    # IntelliJ IDEA (i)
-    cat > "$INSTALL_DIR/bin/i" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send i "$@"
-EOF
-
-    # PyCharm (py)
-    cat > "$INSTALL_DIR/bin/py" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send py "$@"
-EOF
-
-    # WeChat (w)
-    cat > "$INSTALL_DIR/bin/w" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send w "$@"
-EOF
-
-    # Kim (k)
-    cat > "$INSTALL_DIR/bin/k" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="$HOME/.terminal-controller"
-source "$INSTALL_DIR/venv/bin/activate"
-exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send k "$@"
-EOF
-
-    # 设置执行权限
-    chmod +x "$INSTALL_DIR/bin/"*
-    
-    print_success "命令行工具创建完成 (包括超短命令: g, c, p, i, py, w, k)"
+    # 创建超短应用启动命令，这部分没啥用，创建之后用命令模式会很慢，因为每次使用命令都需要启动python
+    # print_info "创建超短应用启动命令..."
+    # 
+    # # Chrome (g)
+    # cat > "$INSTALL_DIR/bin/g" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send g "$@"
+# EOF
+# 
+    # # Cursor (c)
+    # cat > "$INSTALL_DIR/bin/c" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send c "$@"
+# EOF
+# 
+    # # Postman (p)
+    # cat > "$INSTALL_DIR/bin/p" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send p "$@"
+# EOF
+# 
+    # # IntelliJ IDEA (i)
+    # cat > "$INSTALL_DIR/bin/i" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send i "$@"
+# EOF
+# 
+    # # PyCharm (py)
+    # cat > "$INSTALL_DIR/bin/py" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send py "$@"
+# EOF
+# 
+    # # WeChat (w)
+    # cat > "$INSTALL_DIR/bin/w" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send w "$@"
+# EOF
+# 
+    # # Kim (k)
+    # cat > "$INSTALL_DIR/bin/k" << 'EOF'
+# #!/bin/bash
+# INSTALL_DIR="$HOME/.terminal-controller"
+# source "$INSTALL_DIR/venv/bin/activate"
+# exec python3 "$INSTALL_DIR/bin/main_enhanced.py" send k "$@"
+# EOF
+# 
+    # # 设置执行权限
+    # chmod +x "$INSTALL_DIR/bin/"*
+    # 
+    # print_success "命令行工具创建完成 (包括超短命令: g, c, p, i, py, w, k)"
 }
 
 # 设置环境变量

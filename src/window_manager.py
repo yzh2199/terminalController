@@ -464,6 +464,49 @@ class WindowManager:
             logger.error(f"Error performing window action {action} on {window_id}: {e}")
             return False
     
+    def get_current_terminal_window_id(self) -> Optional[str]:
+        """Get the window ID of the current terminal window (if any).
+        
+        This is typically called when TC starts to register the terminal context.
+        
+        Returns:
+            Window ID of current terminal or None if current window is not a terminal
+        """
+        try:
+            current_window = self.get_active_window()
+            if not current_window:
+                return None
+            
+            # Import here to avoid circular imports
+            from .terminal_manager import TerminalManager
+            terminal_manager = TerminalManager(self.config_manager)
+            
+            # Check if current window is a terminal
+            available_terminals = terminal_manager.get_available_terminals()
+            
+            for terminal_id in available_terminals:
+                terminal_config = self.config_manager.get_app_config(terminal_id)
+                if terminal_config and terminal_config.name.lower() in current_window.app_name.lower():
+                    logger.debug(f"Detected current terminal window: {current_window.window_id} ({current_window.app_name})")
+                    return current_window.window_id
+            
+            # Also check common terminal application names
+            terminal_names = [
+                'terminal', 'iterm', 'konsole', 'gnome-terminal', 
+                'xfce4-terminal', 'cmd', 'powershell', 'windows terminal'
+            ]
+            
+            for term_name in terminal_names:
+                if term_name in current_window.app_name.lower():
+                    logger.debug(f"Detected current terminal window by name: {current_window.window_id} ({current_window.app_name})")
+                    return current_window.window_id
+            
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error getting current terminal window ID: {e}")
+            return None
+    
     def cleanup(self):
         """Clean up resources used by the window manager."""
         try:

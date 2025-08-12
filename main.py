@@ -72,6 +72,9 @@ class TerminalController:
         
         self.logger = logging.getLogger(__name__)
         self.logger.info(f"Initialized Terminal Controller on {platform.system()}")
+        
+        # Register current terminal context if we're running in a terminal
+        self._register_terminal_context()
     
     def start_daemon(self) -> bool:
         """Start the Terminal Controller as a daemon process.
@@ -186,6 +189,23 @@ class TerminalController:
         print(f"Type '{Fore.CYAN}help{Style.RESET_ALL}' for available commands, '{Fore.CYAN}quit{Style.RESET_ALL}' to exit")
         print()
         
+        # Ensure terminal context is registered for interactive mode
+        self._register_terminal_context()
+        
+        # Start hotkey manager for interactive mode
+        hotkey_started = False
+        try:
+            if self.hotkey_manager.start():
+                hotkey_started = True
+                print(f"{Fore.GREEN}✅ Hotkeys enabled (Ctrl+; available){Style.RESET_ALL}")
+                self.logger.info("Hotkey manager started in interactive mode")
+            else:
+                print(f"{Fore.YELLOW}⚠️  Hotkeys not available (may require permissions){Style.RESET_ALL}")
+                self.logger.warning("Failed to start hotkey manager in interactive mode")
+        except Exception as e:
+            print(f"{Fore.YELLOW}⚠️  Hotkeys not available: {e}{Style.RESET_ALL}")
+            self.logger.error(f"Error starting hotkey manager: {e}")
+        
         try:
             while True:
                 try:
@@ -208,6 +228,17 @@ class TerminalController:
         except Exception as e:
             self.logger.error(f"Error in interactive mode: {e}")
             print(f"{Fore.RED}Error in interactive mode: {e}{Style.RESET_ALL}")
+        finally:
+            # Stop hotkey manager if it was started
+            if hotkey_started:
+                try:
+                    self.hotkey_manager.stop()
+                    self.logger.info("Hotkey manager stopped")
+                except Exception as e:
+                    self.logger.error(f"Error stopping hotkey manager: {e}")
+            
+            # Clear terminal context when exiting interactive mode
+            self._clear_terminal_context()
         
         print(f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
     
@@ -222,7 +253,16 @@ class TerminalController:
         
         if success:
             app_config = self.config_manager.get_app_config(parsed_cmd.app_id)
-            print(f"{Fore.GREEN}Launched {app_config.name}{Style.RESET_ALL}")
+            # Check if this was a terminal switch operation
+            if app_config.type == "terminal" and not force_new:
+                # For terminal, check if we switched to existing window or launched new
+                tc_context = self.config_manager.get_tc_context_window()
+                if tc_context:
+                    print(f"{Fore.GREEN}Switched to {app_config.name} window{Style.RESET_ALL}")
+                else:
+                    print(f"{Fore.GREEN}Launched {app_config.name}{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.GREEN}Launched {app_config.name}{Style.RESET_ALL}")
         else:
             print(f"{Fore.RED}Failed to launch application{Style.RESET_ALL}")
         
@@ -467,6 +507,26 @@ class TerminalController:
         # Platform-specific signals
         if hasattr(signal, 'SIGHUP'):
             signal.signal(signal.SIGHUP, signal_handler)
+    
+    def _register_terminal_context(self):
+        """Register the current terminal window as TC context if applicable."""
+        try:
+            terminal_window_id = self.window_manager.get_current_terminal_window_id()
+            if terminal_window_id:
+                self.config_manager.set_tc_context_window(terminal_window_id)
+                self.logger.debug(f"Registered TC context terminal: {terminal_window_id}")
+            else:
+                self.logger.debug("TC not running in a terminal, no context to register")
+        except Exception as e:
+            self.logger.error(f"Error registering terminal context: {e}")
+    
+    def _clear_terminal_context(self):
+        """Clear the TC context when TC exits."""
+        try:
+            self.config_manager.clear_tc_context_window()
+            self.logger.debug("Cleared TC context")
+        except Exception as e:
+            self.logger.error(f"Error clearing terminal context: {e}")
 
 
 # CLI Interface using Click，yz这一行很关键，能够保证读取的是安装目录的文件，原因待学习
@@ -516,9 +576,16 @@ def run(ctx, command):
     global main_controller
     main_controller = TerminalController(config_dir, debug)
     
-    command_str = ' '.join(command)
-    success = main_controller.execute_command(command_str)
-    sys.exit(0 if success else 1)
+    # Register terminal context for single command execution
+    main_controller._register_terminal_context()
+    
+    try:
+        command_str = ' '.join(command)
+        success = main_controller.execute_command(command_str)
+        sys.exit(0 if success else 1)
+    finally:
+        # Clear terminal context after single command execution
+        main_controller._clear_terminal_context()
 
 
 @cli.command()
