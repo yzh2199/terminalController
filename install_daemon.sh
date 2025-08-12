@@ -2,6 +2,8 @@
 
 # Terminal Controller Enhanced Daemon 安装脚本
 # 基于原版main.py实现的高性能守护进程版本
+# todo 当前脚本有问题，安装的tc没有像install.sh那样安装到~/.local/bin，导致需要在.bashrc或者.zshrc中添加PATH，否则无法使用tc命令，后续修改脚本
+# todo 让tc安装到~/.local/bin中
 
 set -e
 
