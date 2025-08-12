@@ -219,6 +219,132 @@ class ConfigManager:
             self._save_last_used()
             logger.debug("Cleared TC context window")
     
+    def register_interactive_session(self, window_id: str, pid: int) -> bool:
+        """Register an interactive TC session with PID file.
+        
+        Args:
+            window_id: Terminal window ID where TC is running
+            pid: Process ID of the TC interactive session
+            
+        Returns:
+            True if registration successful, False otherwise
+        """
+        try:
+            import os
+            import json
+            import tempfile
+            import time
+            from pathlib import Path
+            
+            # Create TC runtime directory
+            runtime_dir = Path(tempfile.gettempdir()) / "terminal_controller"
+            runtime_dir.mkdir(exist_ok=True)
+            
+            # Create PID file with session info
+            pid_file = runtime_dir / f"tc_interactive_{pid}.pid"
+            session_info = {
+                "pid": pid,
+                "window_id": window_id,
+                "started_at": time.time(),
+                "app_name": "terminal_controller_interactive"
+            }
+            
+            with open(pid_file, 'w') as f:
+                json.dump(session_info, f)
+            
+            logger.info(f"【hotkey】Registered interactive session: PID={pid}, window={window_id}")  # 注册交互会话
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to register interactive session: {e}")
+            return False
+    
+    def unregister_interactive_session(self, pid: int) -> bool:
+        """Unregister an interactive TC session.
+        
+        Args:
+            pid: Process ID to unregister
+            
+        Returns:
+            True if unregistration successful, False otherwise
+        """
+        try:
+            import tempfile
+            from pathlib import Path
+            
+            runtime_dir = Path(tempfile.gettempdir()) / "terminal_controller"
+            pid_file = runtime_dir / f"tc_interactive_{pid}.pid"
+            
+            if pid_file.exists():
+                pid_file.unlink()
+                logger.info(f"【hotkey】Unregistered interactive session: PID={pid}")  # 注销交互会话
+                return True
+            
+            return False
+            
+        except Exception as e:
+            logger.error(f"Failed to unregister interactive session: {e}")
+            return False
+    
+    def get_active_interactive_sessions(self) -> List[Dict[str, Any]]:
+        """Get all active interactive TC sessions.
+        
+        Returns:
+            List of active session information
+        """
+        try:
+            import os
+            import json
+            import psutil
+            import tempfile
+            import time
+            from pathlib import Path
+            
+            runtime_dir = Path(tempfile.gettempdir()) / "terminal_controller"
+            if not runtime_dir.exists():
+                return []
+            
+            active_sessions = []
+            current_time = time.time()
+            
+            # Check all PID files
+            for pid_file in runtime_dir.glob("tc_interactive_*.pid"):
+                try:
+                    with open(pid_file, 'r') as f:
+                        session_info = json.load(f)
+                    
+                    pid = session_info.get("pid")
+                    
+                    # Verify process is still running
+                    if pid and psutil.pid_exists(pid):
+                        try:
+                            proc = psutil.Process(pid)
+                            # Verify it's actually a Python process running TC
+                            if any("main_enhanced.py" in arg for arg in proc.cmdline()):
+                                active_sessions.append(session_info)
+                                continue
+                        except (psutil.NoSuchProcess, psutil.AccessDenied):
+                            pass
+                    
+                    # Process not running, clean up PID file
+                    pid_file.unlink()
+                    logger.debug(f"Cleaned up stale PID file: {pid_file}")
+                    
+                except Exception as e:
+                    logger.warning(f"Error processing PID file {pid_file}: {e}")
+                    # Try to remove corrupted PID file
+                    try:
+                        pid_file.unlink()
+                    except:
+                        pass
+            
+            logger.info(f"【hotkey】Found {len(active_sessions)} active interactive sessions")  # 找到的活跃交互会话数量
+            return active_sessions
+            
+        except Exception as e:
+            logger.error(f"Failed to get active interactive sessions: {e}")
+            return []
+    
     def add_app(self, app_id: str, config: AppConfig) -> bool:
         """Add or update an application configuration.
         

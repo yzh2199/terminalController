@@ -138,7 +138,7 @@ class MacOSAdapter(PlatformAdapter):
                 ['osascript', '-e', script],
                 capture_output=True,
                 text=True,
-                timeout=5
+                timeout=1.0  # 【hotkey】优化：减少超时时间提升响应速度
             )
             
             if result.returncode == 0 and result.stdout.strip():
@@ -179,7 +179,7 @@ class MacOSAdapter(PlatformAdapter):
                 ['osascript', '-e', script],
                 capture_output=True,
                 text=True,
-                timeout=5
+                timeout=1.0  # 【hotkey】优化：减少超时时间提升响应速度
             )
             
             return result.returncode == 0 and 'true' in result.stdout
@@ -207,7 +207,7 @@ class MacOSAdapter(PlatformAdapter):
                 ['osascript', '-e', script],
                 capture_output=True,
                 text=True,
-                timeout=5
+                timeout=1.0  # 【hotkey】优化：减少超时时间提升响应速度
             )
             
             return result.returncode == 0 and 'true' in result.stdout
@@ -235,7 +235,7 @@ class MacOSAdapter(PlatformAdapter):
                 ['osascript', '-e', script],
                 capture_output=True,
                 text=True,
-                timeout=5
+                timeout=1.0  # 【hotkey】优化：减少超时时间提升响应速度
             )
             
             return result.returncode == 0 and 'true' in result.stdout
@@ -307,7 +307,7 @@ class MacOSAdapter(PlatformAdapter):
                 thread = threading.Thread(target=register_with_timeout)
                 thread.daemon = True
                 thread.start()
-                thread.join(timeout=5.0)  # 5 second timeout
+                thread.join(timeout=2.0)  # 【hotkey】优化：减少热键注册超时时间
                 
                 if thread.is_alive():
                     logger.error("Hotkey registration timed out after 5 seconds")
@@ -365,7 +365,7 @@ class MacOSAdapter(PlatformAdapter):
                 ['osascript', '-e', script],
                 capture_output=True,
                 text=True,
-                timeout=5
+                timeout=1.0  # 【hotkey】优化：减少超时时间提升响应速度
             )
             
             if result.returncode == 0 and result.stdout.strip():

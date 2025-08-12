@@ -310,6 +310,41 @@ class OptimizedMacOSAdapter(PlatformAdapter):
         except:
             return False
     
+    def find_window_by_id_fast(self, window_id: str) -> Optional[WindowInfo]:
+        """
+        快速根据ID查找窗口
+        优化：避免获取所有窗口，直接通过Cocoa API查找特定窗口
+        """
+        try:
+            if not HAS_COCOA:
+                return None
+            
+            # 优化：使用Cocoa API直接根据窗口ID查找
+            window_list = Quartz.CGWindowListCopyWindowInfo(
+                Quartz.kCGWindowListOptionOnScreenOnly, 
+                Quartz.kCGNullWindowID
+            )
+            
+            for window in window_list:
+                if str(window.get('kCGWindowNumber', 0)) == window_id:
+                    owner_name = window.get('kCGWindowOwnerName', '')
+                    title = window.get('kCGWindowName', '')
+                    
+                    logger.debug(f"【hotkey】快速查找窗口成功: {window_id}")
+                    return WindowInfo(
+                        window_id=window_id,
+                        title=title,
+                        app_name=owner_name,
+                        is_active=False,  # 需要额外查询
+                        is_minimized=False
+                    )
+            
+            return None
+            
+        except Exception as e:
+            logger.warning(f"快速窗口查找失败: {e}")
+            return None
+    
     def minimize_window(self, window_id: str) -> bool:
         """最小化窗口 - 优化版"""
         try:

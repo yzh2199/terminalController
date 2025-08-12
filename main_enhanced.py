@@ -221,6 +221,13 @@ class TerminalController:
         # Ensure terminal context is registered for interactive mode
         self._register_terminal_context()
         
+        # 【hotkey】注册交互会话，支持精确的热键终端切换
+        current_pid = os.getpid()
+        current_window_id = self.window_manager.get_current_terminal_window_id()
+        if current_window_id:
+            self.config_manager.register_interactive_session(current_window_id, current_pid)
+            self.logger.info(f"【hotkey】Interactive session registered: PID={current_pid}, window={current_window_id}")  # 交互会话已注册
+        
         # Start hotkey manager for interactive mode
         hotkey_started = False
         try:
@@ -265,6 +272,11 @@ class TerminalController:
                     self.logger.info("Hotkey manager stopped")
                 except Exception as e:
                     self.logger.error(f"Error stopping hotkey manager: {e}")
+            
+            # 【hotkey】注销交互会话
+            current_pid = os.getpid()
+            self.config_manager.unregister_interactive_session(current_pid)
+            self.logger.info(f"【hotkey】Interactive session unregistered: PID={current_pid}")  # 交互会话已注销
             
             # Clear terminal context when exiting interactive mode
             self._clear_terminal_context()

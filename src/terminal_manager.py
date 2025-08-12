@@ -113,15 +113,30 @@ class TerminalManager:
             True if terminal is running, False otherwise
         """
         try:
+            import time
+            start_time = time.time()
+            
             if app_id:
+                config_start_time = time.time()
                 terminal_config = self.config_manager.get_app_config(app_id)
+                config_time = (time.time() - config_start_time) * 1000
+                logger.info(f"【hotkey】Get terminal config - {config_time:.2f}ms")  # 获取终端配置耗时
+                
                 if terminal_config:
-                    return self.platform_adapter.is_app_running(terminal_config.name)
+                    check_start_time = time.time()
+                    is_running = self.platform_adapter.is_app_running(terminal_config.name)
+                    check_time = (time.time() - check_start_time) * 1000
+                    total_time = (time.time() - start_time) * 1000
+                    logger.info(f"【hotkey】Check app running - {check_time:.2f}ms, total: {total_time:.2f}ms, result: {is_running}")  # 检查应用运行状态耗时
+                    return is_running
             else:
                 # Check default terminal
                 settings = self.config_manager.get_settings()
                 default_terminal_id = settings.terminal.default
-                return self.is_terminal_running(default_terminal_id)
+                result = self.is_terminal_running(default_terminal_id)
+                total_time = (time.time() - start_time) * 1000
+                logger.info(f"【hotkey】Check default terminal running - {total_time:.2f}ms, result: {result}")  # 检查默认终端运行状态总耗时
+                return result
             
             return False
             

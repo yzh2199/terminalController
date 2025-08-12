@@ -217,7 +217,11 @@ class WindowManager:
             True if activation was successful, False otherwise
         """
         try:
+            import time
+            start_time = time.time()
             success = self.platform_adapter.activate_window(window_id)
+            duration = (time.time() - start_time) * 1000
+            logger.info(f"【hotkey】Platform adapter activate_window - {duration:.2f}ms, success: {success}")  # 平台适配器激活窗口耗时
             if success:
                 logger.info(f"Activated window {window_id}")
             else:
@@ -280,7 +284,12 @@ class WindowManager:
             Current active window information or None if not available
         """
         try:
-            return self.platform_adapter.get_active_window()
+            import time
+            start_time = time.time()
+            result = self.platform_adapter.get_active_window()
+            duration = (time.time() - start_time) * 1000
+            logger.info(f"【hotkey】Platform adapter get_active_window - {duration:.2f}ms")  # 平台适配器获取活动窗口耗时
+            return result
         except Exception as e:
             logger.error(f"Error getting active window: {e}")
             return None
@@ -321,11 +330,30 @@ class WindowManager:
             Window information if found, None otherwise
         """
         try:
-            all_windows = self.list_all_windows()
-            for window in all_windows:
-                if window.window_id == window_id:
+            import time
+            start_time = time.time()
+            
+            # 【hotkey】优化：优先尝试通过平台适配器的优化方法快速查找
+            if hasattr(self.platform_adapter, 'find_window_by_id_fast'):
+                window = self.platform_adapter.find_window_by_id_fast(window_id)
+                if window:
+                    total_time = (time.time() - start_time) * 1000
+                    logger.info(f"【hotkey】Find window by ID (fast) - {total_time:.2f}ms, found: True")  # 快速查找成功
                     return window
             
+            # 后备方案：遍历所有窗口
+            all_windows = self.list_all_windows()
+            list_time = (time.time() - start_time) * 1000
+            logger.info(f"【hotkey】List all windows for ID search - {list_time:.2f}ms, total: {len(all_windows)}")  # 列出所有窗口耗时
+            
+            for window in all_windows:
+                if window.window_id == window_id:
+                    total_time = (time.time() - start_time) * 1000
+                    logger.info(f"【hotkey】Find window by ID completed - {total_time:.2f}ms, found: True")  # 根据ID查找窗口总耗时
+                    return window
+            
+            total_time = (time.time() - start_time) * 1000
+            logger.info(f"【hotkey】Find window by ID completed - {total_time:.2f}ms, found: False")  # 根据ID查找窗口总耗时（未找到）
             return None
             
         except Exception as e:
@@ -342,31 +370,54 @@ class WindowManager:
             True if successful, False otherwise
         """
         try:
+            import time
+            start_time = time.time()
+            
+            settings_start_time = time.time()
             settings = self.config_manager.get_settings()
+            settings_time = (time.time() - settings_start_time) * 1000
+            logger.info(f"【hotkey】Get settings in focus_most_recent - {settings_time:.2f}ms")  # 获取设置耗时
             
             # Try to get last used window
             if settings.behavior.remember_last_used:
+                last_used_start_time = time.time()
                 last_used_id = self.config_manager.get_last_used_window(app_id)
+                last_used_time = (time.time() - last_used_start_time) * 1000
+                logger.info(f"【hotkey】Get last used window - {last_used_time:.2f}ms, window_id: {last_used_id}")  # 获取最后使用窗口耗时
+                
                 if last_used_id:
                     window = self.find_window_by_id(last_used_id)
                     if window:
                         success = self.activate_window_by_id(last_used_id)
                         if success:
+                            total_time = (time.time() - start_time) * 1000
+                            logger.info(f"【hotkey】Focus most recent window via last used - {total_time:.2f}ms")  # 通过最后使用记录聚焦窗口总耗时
                             return True
             
             # Fallback to application windows
+            app_config_start_time = time.time()
             app_config = self.config_manager.get_app_config(app_id)
+            app_config_time = (time.time() - app_config_start_time) * 1000
+            logger.info(f"【hotkey】Get app config - {app_config_time:.2f}ms")  # 获取应用配置耗时
+            
             if not app_config:
                 return False
             
+            windows_start_time = time.time()
             windows = self.platform_adapter.get_app_windows(app_config.name)
+            windows_time = (time.time() - windows_start_time) * 1000
+            logger.info(f"【hotkey】Get app windows - {windows_time:.2f}ms, count: {len(windows) if windows else 0}")  # 获取应用窗口耗时
+            
             if not windows:
                 return False
             
             # Find active window first
             for window in windows:
                 if window.is_active:
-                    return self.activate_window_by_id(window.window_id)
+                    success = self.activate_window_by_id(window.window_id)
+                    total_time = (time.time() - start_time) * 1000
+                    logger.info(f"【hotkey】Focus most recent window via active - {total_time:.2f}ms")  # 通过活动窗口聚焦总耗时
+                    return success
             
             # Find non-minimized window
             for window in windows:
@@ -374,6 +425,8 @@ class WindowManager:
                     success = self.activate_window_by_id(window.window_id)
                     if success and settings.behavior.remember_last_used:
                         self.config_manager.set_last_used_window(app_id, window.window_id)
+                    total_time = (time.time() - start_time) * 1000
+                    logger.info(f"【hotkey】Focus most recent window via non-minimized - {total_time:.2f}ms")  # 通过非最小化窗口聚焦总耗时
                     return success
             
             # Use first window as last resort
@@ -382,6 +435,8 @@ class WindowManager:
             if success and settings.behavior.remember_last_used:
                 self.config_manager.set_last_used_window(app_id, window.window_id)
             
+            total_time = (time.time() - start_time) * 1000
+            logger.info(f"【hotkey】Focus most recent window via first available - {total_time:.2f}ms")  # 通过第一个可用窗口聚焦总耗时
             return success
             
         except Exception as e:

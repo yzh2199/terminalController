@@ -2370,3 +2370,287 @@
 2025-08-12 13:08:01,147 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
 2025-08-12 13:08:01,147 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
 2025-08-12 13:08:01,147 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-12 23:23:54,443 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 23:23:54,630 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:23:54,630 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 23:23:54,630 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:23:54,630 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:23:54,630 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:23:54,630 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:23:54,630 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:23:54,630 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 23:23:54,630 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-12 23:23:55,074 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 444.16ms
+2025-08-12 23:23:55,253 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 178.01ms
+2025-08-12 23:23:55,253 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-12 23:23:55,253 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-12 23:23:55,253 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-12 23:23:55,253 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-12 23:23:55,253 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-12 23:23:55,253 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-12 23:23:55,254 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-12 23:23:55,424 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-12 23:23:55,425 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-12 23:23:55,425 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-12 23:23:55,425 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-12 23:23:55,425 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-12 23:23:55,425 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-12 23:23:55,425 - __main__ - INFO - Hotkey manager started in interactive mode
+2025-08-12 23:23:55,516 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-12 23:23:56,828 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:23:56,829 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:23:56,829 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:23:56,829 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:23:56,829 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:23:56,829 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.30ms
+2025-08-12 23:23:57,032 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 202.99ms
+2025-08-12 23:23:57,032 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 203.41ms
+2025-08-12 23:23:57,032 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:23:57,033 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.80ms, count: 0
+2025-08-12 23:23:57,033 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.00ms, window_id: None
+2025-08-12 23:23:57,033 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.01ms, terminal: t
+2025-08-12 23:23:57,033 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:23:57,038 - src.terminal_manager - INFO - 【hotkey】Check app running - 4.38ms, total: 4.41ms, result: True
+2025-08-12 23:23:57,038 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 4.46ms, is_running: True
+2025-08-12 23:23:57,038 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:23:57,038 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:23:57,038 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:23:57,226 - src.window_manager - INFO - 【hotkey】Get app windows - 188.40ms, count: 0
+2025-08-12 23:23:57,227 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 188.81ms, success: False
+2025-08-12 23:23:57,232 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 5.24ms, success: True
+2025-08-12 23:23:57,232 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 199.73ms, success: True
+2025-08-12 23:23:57,232 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:23:57,232 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 403.97ms
+2025-08-12 23:24:02,664 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:24:02,665 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:02,666 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:02,666 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:02,666 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:02,666 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.96ms
+2025-08-12 23:24:02,879 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 213.06ms
+2025-08-12 23:24:02,879 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 213.42ms
+2025-08-12 23:24:02,879 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:24:02,880 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.48ms, count: 0
+2025-08-12 23:24:02,880 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.01ms, window_id: None
+2025-08-12 23:24:02,880 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.02ms, terminal: t
+2025-08-12 23:24:02,880 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:24:02,881 - src.terminal_manager - INFO - 【hotkey】Check app running - 0.41ms, total: 0.44ms, result: True
+2025-08-12 23:24:02,881 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 0.48ms, is_running: True
+2025-08-12 23:24:02,881 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:24:02,881 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:24:02,881 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:24:03,056 - src.window_manager - INFO - 【hotkey】Get app windows - 175.31ms, count: 0
+2025-08-12 23:24:03,056 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 175.75ms, success: False
+2025-08-12 23:24:03,060 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 3.18ms, success: True
+2025-08-12 23:24:03,060 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 180.37ms, success: True
+2025-08-12 23:24:03,060 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:24:03,060 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 397.18ms
+2025-08-12 23:24:04,514 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 23:24:04,685 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 23:24:04,685 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:04,685 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:04,685 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 23:24:04,685 - __main__ - INFO - Initialized Terminal Controller on Darwin
+2025-08-12 23:24:05,652 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:24:05,652 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:05,652 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:05,652 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:05,652 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:05,653 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.54ms
+2025-08-12 23:24:05,855 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 202.01ms
+2025-08-12 23:24:05,855 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 202.49ms
+2025-08-12 23:24:05,855 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:24:05,855 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.27ms, count: 0
+2025-08-12 23:24:05,856 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.00ms, window_id: None
+2025-08-12 23:24:05,856 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.01ms, terminal: t
+2025-08-12 23:24:05,856 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:24:05,856 - src.terminal_manager - INFO - 【hotkey】Check app running - 0.21ms, total: 0.25ms, result: True
+2025-08-12 23:24:05,856 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 0.28ms, is_running: True
+2025-08-12 23:24:05,856 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:24:05,856 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:24:05,856 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:24:06,028 - src.window_manager - INFO - 【hotkey】Get app windows - 171.71ms, count: 0
+2025-08-12 23:24:06,028 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 172.08ms, success: False
+2025-08-12 23:24:06,031 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 3.00ms, success: True
+2025-08-12 23:24:06,031 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 176.15ms, success: True
+2025-08-12 23:24:06,031 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:24:06,031 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 379.78ms
+2025-08-12 23:24:11,019 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-12 23:24:11,858 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:24:11,858 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:11,859 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:11,859 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:11,859 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:11,859 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.88ms
+2025-08-12 23:24:12,061 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 200.40ms
+2025-08-12 23:24:12,061 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 200.75ms
+2025-08-12 23:24:12,062 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:24:12,062 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.20ms, count: 0
+2025-08-12 23:24:12,062 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.00ms, window_id: None
+2025-08-12 23:24:12,062 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.01ms, terminal: t
+2025-08-12 23:24:12,062 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:24:12,062 - src.terminal_manager - INFO - 【hotkey】Check app running - 0.22ms, total: 0.25ms, result: True
+2025-08-12 23:24:12,062 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 0.28ms, is_running: True
+2025-08-12 23:24:12,062 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:24:12,062 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:24:12,062 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:24:12,236 - src.window_manager - INFO - 【hotkey】Get app windows - 173.85ms, count: 0
+2025-08-12 23:24:12,236 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 174.23ms, success: False
+2025-08-12 23:24:12,240 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 3.28ms, success: True
+2025-08-12 23:24:12,240 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 178.45ms, success: True
+2025-08-12 23:24:12,240 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:24:12,240 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 382.21ms
+2025-08-12 23:24:22,452 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-12 23:24:23,291 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:24:23,292 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:23,292 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:23,292 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:23,292 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:23,292 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.29ms
+2025-08-12 23:24:23,496 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 204.09ms
+2025-08-12 23:24:23,497 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 204.42ms
+2025-08-12 23:24:23,497 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:24:23,497 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.19ms, count: 0
+2025-08-12 23:24:23,497 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.00ms, window_id: None
+2025-08-12 23:24:23,497 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.01ms, terminal: t
+2025-08-12 23:24:23,497 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:24:23,497 - src.terminal_manager - INFO - 【hotkey】Check app running - 0.21ms, total: 0.24ms, result: True
+2025-08-12 23:24:23,497 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 0.27ms, is_running: True
+2025-08-12 23:24:23,497 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:24:23,497 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:24:23,497 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:24:23,674 - src.window_manager - INFO - 【hotkey】Get app windows - 176.92ms, count: 0
+2025-08-12 23:24:23,674 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 177.30ms, success: False
+2025-08-12 23:24:23,678 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 3.00ms, success: True
+2025-08-12 23:24:23,678 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 181.21ms, success: True
+2025-08-12 23:24:23,678 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:24:23,678 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 386.53ms
+2025-08-12 23:24:30,665 - src.app_manager - INFO - Successfully launched Cursor
+2025-08-12 23:24:36,068 - src.app_manager - INFO - Successfully launched Google Chrome
+2025-08-12 23:24:36,743 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:24:36,743 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:36,743 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:36,744 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:36,744 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:36,744 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.45ms
+2025-08-12 23:24:36,946 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 202.35ms
+2025-08-12 23:24:36,946 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 202.69ms
+2025-08-12 23:24:36,946 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:24:36,947 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.18ms, count: 0
+2025-08-12 23:24:36,947 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.00ms, window_id: None
+2025-08-12 23:24:36,947 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.01ms, terminal: t
+2025-08-12 23:24:36,947 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:24:36,947 - src.terminal_manager - INFO - 【hotkey】Check app running - 0.23ms, total: 0.25ms, result: True
+2025-08-12 23:24:36,947 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 0.29ms, is_running: True
+2025-08-12 23:24:36,947 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:24:36,947 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:24:36,947 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:24:37,114 - src.window_manager - INFO - 【hotkey】Get app windows - 166.44ms, count: 0
+2025-08-12 23:24:37,114 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 166.80ms, success: False
+2025-08-12 23:24:37,117 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 2.92ms, success: True
+2025-08-12 23:24:37,117 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 170.59ms, success: True
+2025-08-12 23:24:37,117 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:24:37,117 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 374.29ms
+2025-08-12 23:24:39,692 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-12 23:24:39,692 - __main__ - INFO - Stopping Terminal Controller
+2025-08-12 23:24:39,693 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 23:24:39,693 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 23:24:39,693 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 23:24:39,693 - __main__ - INFO - Terminal Controller stopped
+2025-08-12 23:24:47,975 - src.hotkey_manager - INFO - 【hotkey】Terminal hotkey callback triggered
+2025-08-12 23:24:47,975 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:47,975 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:24:47,975 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:24:47,975 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:24:47,975 - src.hotkey_manager - INFO - 【hotkey】Manager initialization completed - 0.38ms
+2025-08-12 23:24:48,183 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 207.19ms
+2025-08-12 23:24:48,183 - src.hotkey_manager - INFO - 【hotkey】Get active window completed - 207.54ms
+2025-08-12 23:24:48,183 - src.hotkey_manager - INFO - 【hotkey】No current window found, treating as non-terminal
+2025-08-12 23:24:48,183 - src.hotkey_manager - INFO - 【hotkey】Get active interactive sessions - 0.18ms, count: 0
+2025-08-12 23:24:48,183 - src.hotkey_manager - INFO - 【hotkey】Get TC context window - 0.00ms, window_id: None
+2025-08-12 23:24:48,183 - src.hotkey_manager - INFO - 【hotkey】Get settings and default terminal - 0.01ms, terminal: t
+2025-08-12 23:24:48,183 - src.terminal_manager - INFO - 【hotkey】Get terminal config - 0.00ms
+2025-08-12 23:24:48,184 - src.terminal_manager - INFO - 【hotkey】Check app running - 0.23ms, total: 0.26ms, result: True
+2025-08-12 23:24:48,184 - src.hotkey_manager - INFO - 【hotkey】Check terminal running status - 0.29ms, is_running: True
+2025-08-12 23:24:48,184 - src.window_manager - INFO - 【hotkey】Get settings in focus_most_recent - 0.00ms
+2025-08-12 23:24:48,184 - src.window_manager - INFO - 【hotkey】Get last used window - 0.00ms, window_id: None
+2025-08-12 23:24:48,184 - src.window_manager - INFO - 【hotkey】Get app config - 0.00ms
+2025-08-12 23:24:48,353 - src.window_manager - INFO - 【hotkey】Get app windows - 169.01ms, count: 0
+2025-08-12 23:24:48,353 - src.hotkey_manager - INFO - 【hotkey】Focus most recent window - 169.40ms, success: False
+2025-08-12 23:24:48,357 - src.hotkey_manager - INFO - 【hotkey】Launch new terminal - 3.25ms, success: True
+2025-08-12 23:24:48,357 - src.hotkey_manager - INFO - 【hotkey】Smart focus terminal completed - 173.72ms, success: True
+2025-08-12 23:24:48,357 - src.hotkey_manager - INFO - Smart terminal focus completed via hotkey
+2025-08-12 23:24:48,357 - src.hotkey_manager - INFO - 【hotkey】Total hotkey callback execution time - 382.59ms
+2025-08-12 23:24:57,390 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-12 23:24:57,390 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-12 23:24:57,390 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-12 23:24:57,390 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-12 23:24:57,391 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 23:24:57,391 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 23:24:57,391 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-12 23:24:57,391 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 23:24:57,391 - __main__ - INFO - Hotkey manager stopped
+2025-08-12 23:24:57,392 - __main__ - INFO - 【hotkey】Interactive session unregistered: PID=15933
+2025-08-12 23:29:08,597 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 23:29:08,804 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:29:08,804 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 23:29:08,804 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:29:08,804 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:29:08,804 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:29:08,804 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:29:08,804 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:29:08,804 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 23:29:08,804 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-12 23:29:09,003 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 198.76ms
+2025-08-12 23:29:09,195 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 192.06ms
+2025-08-12 23:29:09,196 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-12 23:29:09,196 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-12 23:29:09,196 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-12 23:29:09,196 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-12 23:29:09,196 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-12 23:29:09,196 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-12 23:29:09,196 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-12 23:29:09,383 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-12 23:29:09,383 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-12 23:29:09,383 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-12 23:29:09,383 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-12 23:29:09,383 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-12 23:29:09,383 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-12 23:29:09,383 - __main__ - INFO - Hotkey manager started in interactive mode
+2025-08-12 23:29:09,475 - pynput.keyboard.GlobalHotKeys - WARNING - This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2025-08-12 23:30:23,337 - __main__ - INFO - Received signal 2, shutting down gracefully
+2025-08-12 23:30:23,338 - __main__ - INFO - 🛑 Stopping Enhanced Terminal Controller
+2025-08-12 23:30:23,338 - src.hotkey_manager - INFO - Unregistered hotkey ctrl+; for config_terminal
+2025-08-12 23:30:23,339 - src.hotkey_manager - INFO - HotkeyManager stopped
+2025-08-12 23:30:23,339 - src.hotkey_manager - INFO - HotkeyManager cleanup completed
+2025-08-12 23:30:23,339 - src.window_manager - INFO - WindowManager cleanup completed
+2025-08-12 23:30:23,339 - __main__ - INFO - ✅ Enhanced Terminal Controller stopped
+2025-08-12 23:30:23,339 - src.hotkey_manager - WARNING - HotkeyManager is not active
+2025-08-12 23:30:23,339 - __main__ - INFO - Hotkey manager stopped
+2025-08-12 23:30:23,341 - __main__ - INFO - 【hotkey】Interactive session unregistered: PID=16545
+2025-08-12 23:30:53,415 - src.config_manager - INFO - Configuration reloaded successfully
+2025-08-12 23:30:53,603 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:30:53,603 - src.app_manager - INFO - Initialized AppManager for platform: darwin
+2025-08-12 23:30:53,603 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:30:53,603 - src.window_manager - INFO - Initialized WindowManager
+2025-08-12 23:30:53,603 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:30:53,603 - src.terminal_manager - INFO - Initialized TerminalManager for platform: darwin
+2025-08-12 23:30:53,603 - src.platform.macos_optimized - INFO - 初始化优化版macOS适配器，启用缓存和并发优化
+2025-08-12 23:30:53,603 - src.hotkey_manager - INFO - Initialized HotkeyManager for platform: darwin
+2025-08-12 23:30:53,603 - __main__ - INFO - Initialized Enhanced Terminal Controller on Darwin
+2025-08-12 23:30:53,831 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 227.97ms
+2025-08-12 23:30:54,015 - src.window_manager - INFO - 【hotkey】Platform adapter get_active_window - 183.35ms
+2025-08-12 23:30:54,016 - src.hotkey_manager - INFO - Starting HotkeyManager and registering configured hotkeys
+2025-08-12 23:30:54,016 - src.hotkey_manager - INFO - Configured terminal hotkey resolved to: 'ctrl+;' for platform darwin
+2025-08-12 23:30:54,016 - src.hotkey_manager - INFO - Creating terminal callback and registering hotkey...
+2025-08-12 23:30:54,016 - src.hotkey_manager - INFO - Creating terminal callback function
+2025-08-12 23:30:54,016 - src.hotkey_manager - INFO - Terminal callback function created successfully
+2025-08-12 23:30:54,016 - src.hotkey_manager - INFO - Registering hotkey binding: id=config_terminal, hotkey=ctrl+;, desc='Launch terminal application'
+2025-08-12 23:30:54,016 - src.platform.macos_optimized - INFO - 注册热键: 'ctrl+;'
+2025-08-12 23:30:54,195 - src.hotkey_manager - INFO - Platform adapter register_hotkey result for config_terminal: True
+2025-08-12 23:30:54,195 - src.hotkey_manager - INFO - Registered hotkey ctrl+; for config_terminal
+2025-08-12 23:30:54,195 - src.hotkey_manager - INFO - Terminal hotkey registration result: True
+2025-08-12 23:30:54,195 - src.hotkey_manager - INFO - Configured hotkeys registration completed. Overall success: True
+2025-08-12 23:30:54,195 - src.hotkey_manager - INFO - Configured hotkeys registration result: True
+2025-08-12 23:30:54,195 - src.hotkey_manager - INFO - HotkeyManager started successfully
+2025-08-12 23:30:54,195 - __main__ - INFO - Hotkey manager started in interactive mode
