@@ -226,9 +226,12 @@ class TerminalController:
         # 【hotkey】注册交互会话，支持精确的热键终端切换
         current_pid = os.getpid()
         current_window_id = self.window_manager.get_current_terminal_window_id()
+        self.logger.info(f"【终端切换】交互模式启动: PID={current_pid}, 当前窗口ID={current_window_id}")
         if current_window_id:
             self.config_manager.register_interactive_session(current_window_id, current_pid)
             self.logger.info(f"【hotkey】Interactive session registered: PID={current_pid}, window={current_window_id}")  # 交互会话已注册
+        else:
+            self.logger.warning(f"【终端切换】未能获取当前终端窗口ID，可能影响终端切换功能")
         
         # Start hotkey manager for interactive mode
         hotkey_started = False
@@ -770,12 +773,13 @@ class TerminalController:
     def _register_terminal_context(self):
         """Register the current terminal window as TC context if applicable."""
         try:
+            self.logger.info(f"【终端切换】开始注册终端上下文")
             terminal_window_id = self.window_manager.get_current_terminal_window_id()
             if terminal_window_id:
                 self.config_manager.set_tc_context_window(terminal_window_id)
-                self.logger.debug(f"Registered TC context terminal: {terminal_window_id}")
+                self.logger.info(f"【终端切换】已注册TC上下文终端: {terminal_window_id}")
             else:
-                self.logger.debug("TC not running in a terminal, no context to register")
+                self.logger.info(f"【终端切换】TC未在终端中运行，无需注册上下文")
         except Exception as e:
             self.logger.error(f"Error registering terminal context: {e}")
     
