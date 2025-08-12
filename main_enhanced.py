@@ -87,6 +87,8 @@ class TerminalController:
     
     def start_daemon(self) -> bool:
         """Start the Enhanced Terminal Controller as a daemon process with IPC support.
+        # 注释：这是非交互模式的守护进程启动功能
+        # 启动后在后台运行，通过IPC socket接收命令
         
         Returns:
             True if daemon started successfully, False otherwise
@@ -541,7 +543,10 @@ class TerminalController:
             signal.signal(signal.SIGHUP, signal_handler)
     
     def _start_daemon_server(self) -> bool:
-        """Start the simplified daemon IPC server in a separate thread."""
+        """Start the simplified daemon IPC server in a separate thread.
+        # 注释：非交互模式的IPC服务器启动功能
+        # 在单独线程中运行，处理来自客户端的命令请求
+        """
         try:
             # Create simplified daemon server directly
             self.daemon_server_thread = threading.Thread(
@@ -565,7 +570,10 @@ class TerminalController:
             return False
     
     def _run_daemon_server(self):
-        """Run the simplified daemon IPC server"""
+        """Run the simplified daemon IPC server
+        # 注释：非交互模式的守护进程服务器主循环
+        # 监听Unix socket，处理客户端连接和命令执行
+        """
         try:
             # Remove existing socket file
             if os.path.exists(self.daemon_socket_path):
@@ -698,6 +706,8 @@ class TerminalController:
     
     def send_to_daemon(self, command: str, timeout: float = 10.0) -> dict:
         """Send command to running daemon process.
+        # 注释：非交互模式的客户端功能
+        # 向正在运行的守护进程发送命令并获取响应
         
         Args:
             command: Command to send
@@ -803,7 +813,9 @@ def cli(ctx, config_dir, debug):
 @cli.command()
 @click.pass_context
 def daemon(ctx):
-    """Start Terminal Controller as a daemon process."""
+    """Start Terminal Controller as a daemon process.
+    # 注释：非交互模式的守护进程启动命令
+    """
     config_dir = ctx.obj['config_dir']
     debug = ctx.obj['debug']
     
@@ -890,7 +902,9 @@ def stop(ctx):
               help='Show detailed execution information')
 @click.pass_context
 def send(ctx, command, timeout, verbose):
-    """Send command to running daemon process."""
+    """Send command to running daemon process.
+    # 注释：非交互模式的客户端命令发送功能
+    """
     try:
         command_str = ' '.join(command)
         
@@ -951,7 +965,9 @@ def send(ctx, command, timeout, verbose):
               help='Daemon socket path')
 @click.pass_context  
 def daemon_status(ctx, socket):
-    """Check daemon status and performance."""
+    """Check daemon status and performance.
+    # 注释：非交互模式的守护进程状态检查功能
+    """
     try:
         controller = TerminalController()
         controller.daemon_socket_path = socket
