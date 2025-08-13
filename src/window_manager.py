@@ -611,8 +611,17 @@ class WindowManager:
             logger.info(f"【终端切换】通过环境变量查找终端窗口: TERM_PROGRAM={term_program}")
             
             if 'iterm' in term_program:
-                # 对于iTerm，尝试获取所有iTerm窗口
-                iterm_windows = self.platform_adapter.get_app_windows("iTerm")
+                # 对于iTerm，尝试获取所有iTerm窗口 - 支持不同的应用名称变体
+                possible_names = ["iTerm2", "iTerm", "iterm2", "iterm"]
+                iterm_windows = []
+                
+                for app_name in possible_names:
+                    windows = self.platform_adapter.get_app_windows(app_name)
+                    if windows:
+                        iterm_windows.extend(windows)
+                        logger.info(f"【终端切换】通过应用名称 '{app_name}' 找到 {len(windows)} 个窗口")
+                        break
+                
                 logger.info(f"【终端切换】找到 {len(iterm_windows)} 个iTerm窗口")
                 if iterm_windows:
                     # 返回第一个窗口（可以进一步优化选择逻辑）

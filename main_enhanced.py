@@ -258,7 +258,16 @@ class TerminalController:
                     if command.lower() in ['quit', 'exit', 'q']:
                         break
                     
-                    self.execute_command(command)
+                    # 特殊处理：在交互模式下，'t' 命令应该切换到其他 iTerm 窗口
+                    if command.lower() == 't':
+                        success = self._handle_interactive_terminal_switch()
+                        if success:
+                            print(f"{Fore.GREEN}切换到其他终端窗口{Style.RESET_ALL}")
+                        else:
+                            print(f"{Fore.YELLOW}未找到其他终端窗口，使用标准 't' 命令{Style.RESET_ALL}")
+                            self.execute_command(command)
+                    else:
+                        self.execute_command(command)
                     print()  # Add spacing after command execution
                     
                 except KeyboardInterrupt:
@@ -287,6 +296,79 @@ class TerminalController:
             self._clear_terminal_context()
         
         print(f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
+    
+    def _handle_interactive_terminal_switch(self) -> bool:
+        """处理交互模式下的终端切换命令。
+        
+        在交互模式下，'t' 命令应该切换到其他 iTerm 窗口，而不是在当前窗口中执行。
+        
+        Returns:
+            True if successfully switched to another terminal window, False otherwise
+        """
+        try:
+            self.logger.info("【交互模式】处理终端切换命令")
+            
+            # 获取当前终端窗口ID（运行交互模式的窗口）
+            current_window_id = self.window_manager.get_current_terminal_window_id()
+            self.logger.info(f"【交互模式】当前终端窗口ID: {current_window_id}")
+            
+            # 获取所有iTerm窗口 - 尝试不同的应用名称变体
+            possible_iterm_names = ["iTerm2", "iTerm", "iterm2", "iterm"]
+            iterm_windows = []
+            
+            for app_name in possible_iterm_names:
+                windows = self.window_manager.platform_adapter.get_app_windows(app_name)
+                if windows:
+                    iterm_windows.extend(windows)
+                    self.logger.info(f"【交互模式】通过应用名称 '{app_name}' 找到 {len(windows)} 个窗口")
+                    break  # 找到窗口后就停止尝试其他名称
+            
+            self.logger.info(f"【交互模式】总共找到 {len(iterm_windows)} 个iTerm窗口")
+            
+            if len(iterm_windows) <= 1:
+                self.logger.info("【交互模式】只有一个或没有iTerm窗口，无法切换")
+                return False
+            
+            # 找到其他iTerm窗口（排除当前窗口）
+            other_terminals = []
+            for window in iterm_windows:
+                if current_window_id is None or window.window_id != current_window_id:
+                    other_terminals.append(window)
+                    self.logger.info(f"【交互模式】发现其他终端窗口: {window.window_id} - {window.title}")
+            
+            if not other_terminals:
+                self.logger.info("【交互模式】没有找到其他终端窗口")
+                return False
+            
+            # 选择切换目标窗口
+            # 优先选择最近使用的非当前窗口，否则选择第一个
+            target_window = None
+            
+            # 首先尝试选择最近活跃但非当前的窗口
+            for window in other_terminals:
+                if not window.is_minimized:
+                    target_window = window
+                    break
+            
+            # 如果没有找到非最小化的窗口，使用第一个可用窗口
+            if target_window is None:
+                target_window = other_terminals[0]
+            
+            self.logger.info(f"【交互模式】选择切换到窗口: {target_window.window_id} - {target_window.title}")
+            
+            # 执行窗口切换
+            success = self.window_manager.activate_window_by_id(target_window.window_id)
+            
+            if success:
+                self.logger.info(f"【交互模式】成功切换到终端窗口: {target_window.window_id}")
+                return True
+            else:
+                self.logger.error(f"【交互模式】切换到终端窗口失败: {target_window.window_id}")
+                return False
+                
+        except Exception as e:
+            self.logger.error(f"【交互模式】终端切换命令处理失败: {e}")
+            return False
     
     def _handle_launch_app(self, parsed_cmd) -> bool:
         """Handle application launch command."""

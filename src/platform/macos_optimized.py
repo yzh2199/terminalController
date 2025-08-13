@@ -174,14 +174,26 @@ class OptimizedMacOSAdapter(PlatformAdapter):
             )
             
             windows = []
+            all_apps = set()  # 收集所有应用名称用于调试
+            
             for window in window_list:
                 owner_name = window.get('kCGWindowOwnerName', '')
+                all_apps.add(owner_name)
+                
                 if owner_name == app_name:
                     window_id = str(window.get('kCGWindowNumber', 0))
                     title = window.get('kCGWindowName', '')
                     
-                    # 过滤掉没有标题的窗口
-                    if title:
+                    # 对于终端应用，即使没有标题也要包含窗口
+                    # 使用默认标题或窗口ID作为标识
+                    if not title:
+                        if 'iterm' in app_name.lower() or 'terminal' in app_name.lower():
+                            title = f"Terminal Window {window_id}"
+                        else:
+                            title = f"Untitled Window {window_id}"
+                    
+                    # 只过滤掉明显无效的窗口（窗口ID为0）
+                    if window_id and window_id != '0':
                         windows.append(WindowInfo(
                             window_id=window_id,
                             title=title,
@@ -189,6 +201,14 @@ class OptimizedMacOSAdapter(PlatformAdapter):
                             is_active=False,  # Cocoa API需要额外调用来确定
                             is_minimized=False
                         ))
+                        logger.debug(f"添加窗口: {window_id} - '{title}'")
+                    else:
+                        logger.debug(f"跳过无效窗口: {window_id}")
+            
+            # 调试日志：如果没有找到窗口，显示所有应用名称
+            if not windows and any('iterm' in app.lower() or 'terminal' in app.lower() for app in all_apps):
+                terminal_apps = [app for app in all_apps if 'iterm' in app.lower() or 'terminal' in app.lower()]
+                logger.info(f"调试: 查找 '{app_name}' 时未找到窗口，但发现终端类应用: {terminal_apps}")
             
             logger.debug(f"通过Cocoa API获取到 {len(windows)} 个窗口")
             return windows
@@ -262,33 +282,67 @@ class OptimizedMacOSAdapter(PlatformAdapter):
         优化：减少超时时间，添加快速失败机制
         """
         try:
-            # 优化：简化的激活脚本
-            script = f'''
-            tell application "System Events"
-                try
-                    perform action "AXRaise" of (first window whose id is {window_id})
-                    return true
-                on error
-                    return false
-                end try
-            end tell
-            '''
+            # 首先尝试找到窗口所属的应用
+            window_info = self.find_window_by_id_fast(window_id)
+            
+            # 针对 iTerm2 使用专门的激活脚本
+            if window_info and 'iterm' in window_info.app_name.lower():
+                script = f'''
+                tell application "iTerm2"
+                    activate
+                    try
+                        repeat with theWindow in windows
+                            if id of theWindow is {window_id} then
+                                select theWindow
+                                return "success"
+                            end if
+                        end repeat
+                        return "notfound"
+                    on error errMsg
+                        return "error:" & errMsg
+                    end try
+                end tell
+                '''
+            else:
+                # 对于其他应用，使用 System Events
+                script = f'''
+                tell application "System Events"
+                    try
+                        perform action "AXRaise" of (first window whose id is {window_id})
+                        return "success"
+                    on error errMsg
+                        return "error:" & errMsg
+                    end try
+                end tell
+                '''
             
             start_time = time.time()
             result = subprocess.run(
                 ['osascript', '-e', script],
                 capture_output=True,
                 text=True,
-                timeout=0.3  # 优化：激活操作使用更短超时
+                timeout=2.0 if window_info and 'iterm' in window_info.app_name.lower() else 0.5  # iTerm2 需要更多时间
             )
             execution_time = (time.time() - start_time) * 1000
             
             logger.debug(f"窗口激活耗时: {execution_time:.2f}ms")
             
-            success = result.returncode == 0 and 'true' in result.stdout
+            # 检查激活结果
+            success = result.returncode == 0 and 'success' in result.stdout
+            
             if success:
+                logger.info(f"成功激活窗口 {window_id}")
                 # 清除缓存，因为窗口状态可能改变
                 self._clear_cache()
+            else:
+                # 详细的错误日志
+                if 'notfound' in result.stdout:
+                    logger.warning(f"激活失败：未找到窗口 {window_id}")
+                elif 'error:' in result.stdout:
+                    error_msg = result.stdout.replace('error:', '').strip()
+                    logger.warning(f"激活失败：{error_msg} (窗口 {window_id})")
+                else:
+                    logger.warning(f"激活失败：未知错误 (窗口 {window_id}), returncode: {result.returncode}, stdout: '{result.stdout}', stderr: '{result.stderr}'")
             
             return success
             
