@@ -230,7 +230,6 @@ class ConfigManager:
             True if registration successful, False otherwise
         """
         try:
-            import os
             import json
             import tempfile
             import time

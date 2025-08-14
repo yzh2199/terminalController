@@ -207,6 +207,7 @@ class WindowManager:
                 callback(selected)
             return selected
     
+    # todo这里面调的activate_window方法很慢，考虑优化
     def activate_window_by_id(self, window_id: str) -> bool:
         """Activate a window by its ID.
         
@@ -277,6 +278,7 @@ class WindowManager:
             logger.error(f"Error closing window {window_id}: {e}")
             return False
     
+    # 这个方法又慢还获取不到窗口(320ms)，至少获取不到终端窗口，考虑对终端替换这个方法，用通过env获取的方法
     def get_active_window(self) -> Optional[WindowInfo]:
         """Get information about the currently active window.
         
@@ -288,7 +290,7 @@ class WindowManager:
             start_time = time.time()
             result = self.platform_adapter.get_active_window()
             duration = (time.time() - start_time) * 1000
-            logger.info(f"【hotkey】Platform adapter get_active_window - {duration:.2f}ms")  # 平台适配器获取活动窗口耗时
+            logger.info(f"【获取活动窗口】Platform adapter get_active_window - {duration:.2f}ms")  # 平台适配器获取活动窗口耗时
             return result
         except Exception as e:
             logger.error(f"Error getting active window: {e}")
@@ -555,49 +557,46 @@ class WindowManager:
                 logger.info(f"【终端切换】环境变量检查显示未在终端中运行")
                 return None
             
-            current_window = self.get_active_window()
-            if not current_window:
-                logger.info(f"【终端切换】未获取到当前活动窗口，但通过环境变量检测在终端中运行")
-                # 即使无法获取活动窗口，也可以尝试通过其他方式查找终端窗口
-                return self._find_terminal_window_by_env()
+            # current_window = self.get_active_window()
+            # if not current_window:
+            return self._find_terminal_window_by_env()
             
-            logger.info(f"【终端切换】当前活动窗口: id={current_window.window_id}, app='{current_window.app_name}', title='{current_window.title}'")
             
-            # Import here to avoid circular imports
-            from .terminal_manager import TerminalManager
-            terminal_manager = TerminalManager(self.config_manager)
-            
-            # Check if current window is a terminal
-            available_terminals = terminal_manager.get_available_terminals()
-            logger.info(f"【终端切换】可用终端应用: {available_terminals}")
-            
-            for terminal_id in available_terminals:
-                terminal_config = self.config_manager.get_app_config(terminal_id)
-                if terminal_config:
-                    logger.info(f"【终端切换】检查终端应用: {terminal_id} -> {terminal_config.name}")
-                    if terminal_config.name.lower() in current_window.app_name.lower():
-                        logger.info(f"【终端切换】匹配成功，检测到当前终端窗口: {current_window.window_id} ({current_window.app_name})")
-                        return current_window.window_id
-            
-            # Also check common terminal application names
-            terminal_names = [
-                'terminal', 'iterm', 'konsole', 'gnome-terminal', 
-                'xfce4-terminal', 'cmd', 'powershell', 'windows terminal'
-            ]
-            
-            logger.info(f"【终端切换】通过通用名称检查终端")
-            for term_name in terminal_names:
-                if term_name in current_window.app_name.lower():
-                    logger.info(f"【终端切换】通过名称匹配成功: {current_window.window_id} ({current_window.app_name})")
-                    return current_window.window_id
-            
-            # 如果通过环境变量确定在终端中运行，但无法匹配窗口，尝试其他方法
-            if is_in_terminal:
-                logger.info(f"【终端切换】环境变量确认在终端中运行，但窗口匹配失败，尝试其他方法")
-                return self._find_terminal_window_by_env()
-            
-            logger.info(f"【终端切换】当前窗口不是终端应用")
-            return None
+            # # Import here to avoid circular imports
+            # from .terminal_manager import TerminalManager
+            # terminal_manager = TerminalManager(self.config_manager)
+            # 
+            # # Check if current window is a terminal
+            # available_terminals = terminal_manager.get_available_terminals()
+            # logger.info(f"【终端切换】可用终端应用: {available_terminals}")
+            # 
+            # for terminal_id in available_terminals:
+                # terminal_config = self.config_manager.get_app_config(terminal_id)
+                # if terminal_config:
+                    # logger.info(f"【终端切换】检查终端应用: {terminal_id} -> {terminal_config.name}")
+                    # if terminal_config.name.lower() in current_window.app_name.lower():
+                        # logger.info(f"【终端切换】匹配成功，检测到当前终端窗口: {current_window.window_id} ({current_window.app_name})")
+                        # return current_window.window_id
+            # 
+            # # Also check common terminal application names
+            # terminal_names = [
+                # 'terminal', 'iterm', 'konsole', 'gnome-terminal', 
+                # 'xfce4-terminal', 'cmd', 'powershell', 'windows terminal'
+            # ]
+            # 
+            # logger.info(f"【终端切换】通过通用名称检查终端")
+            # for term_name in terminal_names:
+                # if term_name in current_window.app_name.lower():
+                    # logger.info(f"【终端切换】通过名称匹配成功: {current_window.window_id} ({current_window.app_name})")
+                    # return current_window.window_id
+            # 
+            # # 如果通过环境变量确定在终端中运行，但无法匹配窗口，尝试其他方法
+            # if is_in_terminal:
+                # logger.info(f"【终端切换】环境变量确认在终端中运行，但窗口匹配失败，尝试其他方法")
+                # return self._find_terminal_window_by_env()
+            # 
+            # logger.info(f"【终端切换】当前窗口不是终端应用")
+            # return None
             
         except Exception as e:
             logger.error(f"Error getting current terminal window ID: {e}")
@@ -610,28 +609,28 @@ class WindowManager:
             term_program = os.environ.get('TERM_PROGRAM', '').lower()
             logger.info(f"【终端切换】通过环境变量查找终端窗口: TERM_PROGRAM={term_program}")
             
-            if 'iterm' in term_program:
-                # 对于iTerm，尝试获取所有iTerm窗口 - 支持不同的应用名称变体
-                possible_names = ["iTerm2", "iTerm", "iterm2", "iterm"]
-                iterm_windows = []
-                
-                for app_name in possible_names:
-                    windows = self.platform_adapter.get_app_windows(app_name)
-                    if windows:
-                        iterm_windows.extend(windows)
-                        logger.info(f"【终端切换】通过应用名称 '{app_name}' 找到 {len(windows)} 个窗口")
-                        break
-                
-                logger.info(f"【终端切换】找到 {len(iterm_windows)} 个iTerm窗口")
-                if iterm_windows:
-                    # 返回第一个窗口（可以进一步优化选择逻辑）
-                    return iterm_windows[0].window_id
-            elif 'terminal' in term_program:
-                # 对于Terminal.app
-                terminal_windows = self.platform_adapter.get_app_windows("Terminal")
-                logger.info(f"【终端切换】找到 {len(terminal_windows)} 个Terminal窗口")
-                if terminal_windows:
-                    return terminal_windows[0].window_id
+            # if 'iterm' in term_program:
+            # 对于iTerm，尝试获取所有iTerm窗口 - 支持不同的应用名称变体
+            possible_names = ["iTerm2"] #后续可以改成可配置的
+            iterm_windows = []
+            
+            for app_name in possible_names:
+                windows = self.platform_adapter.get_app_windows(app_name)
+                if windows:
+                    iterm_windows.extend(windows)
+                    logger.info(f"【终端切换】通过应用名称 '{app_name}' 找到 {len(windows)} 个窗口")
+                    break
+            
+            logger.info(f"【终端切换】找到 {len(iterm_windows)} 个iTerm窗口")
+            if iterm_windows:
+                # 返回第一个窗口（可以进一步优化选择逻辑）
+                return iterm_windows[0].window_id
+            # elif 'terminal' in term_program:
+                # # 对于Terminal.app
+                # terminal_windows = self.platform_adapter.get_app_windows("Terminal")
+                # logger.info(f"【终端切换】找到 {len(terminal_windows)} 个Terminal窗口")
+                # if terminal_windows:
+                    # return terminal_windows[0].window_id
             
             return None
         except Exception as e:

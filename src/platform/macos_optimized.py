@@ -276,6 +276,7 @@ class OptimizedMacOSAdapter(PlatformAdapter):
         
         return windows
     
+    # todo这个方法比较慢，接近300ms，按t终端切换时会调用，后续考虑优化为按c切换应用一样的逻辑
     def activate_window(self, window_id: str) -> bool:
         """
         激活窗口

@@ -220,12 +220,13 @@ class TerminalController:
         print(f"Type '{Fore.CYAN}help{Style.RESET_ALL}' for available commands, '{Fore.CYAN}quit{Style.RESET_ALL}' to exit")
         print()
         
-        # Ensure terminal context is registered for interactive mode
+        # 这个context和下面的interactive_session是同一个功能，都是为了记录当前终端窗口的id，用于终端切换
+        # todo 考虑删除其中一个
         self._register_terminal_context()
         
         # 【hotkey】注册交互会话，支持精确的热键终端切换
         current_pid = os.getpid()
-        current_window_id = self.window_manager.get_current_terminal_window_id()
+        current_window_id = self.config_manager.get_tc_context_window()
         self.logger.info(f"【终端切换】交互模式启动: PID={current_pid}, 当前窗口ID={current_window_id}")
         if current_window_id:
             self.config_manager.register_interactive_session(current_window_id, current_pid)
@@ -306,27 +307,27 @@ class TerminalController:
             True if successfully switched to another terminal window, False otherwise
         """
         try:
-            self.logger.info("【交互模式】处理终端切换命令")
+            self.logger.info("【终端切换】处理终端切换命令")
             
             # 获取当前终端窗口ID（运行交互模式的窗口）
-            current_window_id = self.window_manager.get_current_terminal_window_id()
-            self.logger.info(f"【交互模式】当前终端窗口ID: {current_window_id}")
+            current_window_id = self.config_manager.get_tc_context_window().window_id
+            self.logger.info(f"【终端切换】当前终端窗口ID: {current_window_id}")
             
             # 获取所有iTerm窗口 - 尝试不同的应用名称变体
-            possible_iterm_names = ["iTerm2", "iTerm", "iterm2", "iterm"]
+            possible_iterm_names = ["iTerm2"]
             iterm_windows = []
             
             for app_name in possible_iterm_names:
                 windows = self.window_manager.platform_adapter.get_app_windows(app_name)
                 if windows:
                     iterm_windows.extend(windows)
-                    self.logger.info(f"【交互模式】通过应用名称 '{app_name}' 找到 {len(windows)} 个窗口")
+                    self.logger.info(f"【终端切换】通过应用名称 '{app_name}' 找到 {len(windows)} 个窗口")
                     break  # 找到窗口后就停止尝试其他名称
             
-            self.logger.info(f"【交互模式】总共找到 {len(iterm_windows)} 个iTerm窗口")
+            self.logger.info(f"【终端切换】总共找到 {len(iterm_windows)} 个iTerm窗口")
             
             if len(iterm_windows) <= 1:
-                self.logger.info("【交互模式】只有一个或没有iTerm窗口，无法切换")
+                self.logger.info("【终端切换】只有一个或没有iTerm窗口，无法切换")
                 return False
             
             # 找到其他iTerm窗口（排除当前窗口）
@@ -334,10 +335,10 @@ class TerminalController:
             for window in iterm_windows:
                 if current_window_id is None or window.window_id != current_window_id:
                     other_terminals.append(window)
-                    self.logger.info(f"【交互模式】发现其他终端窗口: {window.window_id} - {window.title}")
+                    self.logger.info(f"【终端切换】发现其他终端窗口: {window.window_id} - {window.title}")
             
             if not other_terminals:
-                self.logger.info("【交互模式】没有找到其他终端窗口")
+                self.logger.info("【终端切换】没有找到其他终端窗口")
                 return False
             
             # 选择切换目标窗口
@@ -354,20 +355,24 @@ class TerminalController:
             if target_window is None:
                 target_window = other_terminals[0]
             
-            self.logger.info(f"【交互模式】选择切换到窗口: {target_window.window_id} - {target_window.title}")
+            self.logger.info(f"【终端切换】选择切换到窗口: {target_window.window_id} - {target_window.title}")
             
             # 执行窗口切换
+            start_time = time.time()
             success = self.window_manager.activate_window_by_id(target_window.window_id)
+            end_time = time.time()
+            duration = end_time - start_time
+            self.logger.info(f"【终端切换】激活窗口耗时: {duration:.2f}ms")
             
             if success:
-                self.logger.info(f"【交互模式】成功切换到终端窗口: {target_window.window_id}")
+                self.logger.info(f"【终端切换】成功切换到终端窗口: {target_window.window_id}")
                 return True
             else:
-                self.logger.error(f"【交互模式】切换到终端窗口失败: {target_window.window_id}")
+                self.logger.error(f"【终端切换】切换到终端窗口失败: {target_window.window_id}")
                 return False
                 
         except Exception as e:
-            self.logger.error(f"【交互模式】终端切换命令处理失败: {e}")
+            self.logger.error(f"【终端切换】终端切换命令处理失败: {e}")
             return False
     
     def _handle_launch_app(self, parsed_cmd) -> bool:
