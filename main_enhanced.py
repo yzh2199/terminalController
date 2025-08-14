@@ -221,7 +221,7 @@ class TerminalController:
         print()
         
         # 这个context和下面的interactive_session是同一个功能，都是为了记录当前终端窗口的id，用于终端切换
-        # todo 考虑删除其中一个
+        # 但是context是维护到内存的更快，interactive_session是维护到文件的，所以这里用context
         self._register_terminal_context()
         
         # 【hotkey】注册交互会话，支持精确的热键终端切换
@@ -310,7 +310,7 @@ class TerminalController:
             self.logger.info("【终端切换】处理终端切换命令")
             
             # 获取当前终端窗口ID（运行交互模式的窗口）
-            current_window_id = self.config_manager.get_tc_context_window().window_id
+            current_window_id = self.config_manager.get_tc_context_window()
             self.logger.info(f"【终端切换】当前终端窗口ID: {current_window_id}")
             
             # 获取所有iTerm窗口 - 尝试不同的应用名称变体
