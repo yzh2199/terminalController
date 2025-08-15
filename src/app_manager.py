@@ -3,6 +3,7 @@ import platform as std_platform
 import logging
 from typing import List, Optional, Dict, Any
 from pathlib import Path
+import time
 
 from .platform import get_platform_adapter, PlatformAdapter
 from .platform.base import WindowInfo, AppInfo
@@ -41,28 +42,28 @@ class AppManager:
             True if launch was successful, False otherwise
         """
         try:
-            logger.info(f"【终端切换】启动应用: app_id={app_id}, force_new={force_new}")
+            logger.info(f"【launch_app】启动应用: app_id={app_id}, force_new={force_new}")
             app_config = self.config_manager.get_app_config(app_id)
             if not app_config:
                 logger.error(f"Unknown application: {app_id}")
                 return False
             
-            logger.info(f"【终端切换】应用配置: name={app_config.name}, type={app_config.type}")
+            logger.info(f"【launch_app】应用配置: name={app_config.name}, type={app_config.type}")
             
-            # Special handling for terminal applications when running in interactive mode
-            if app_config.type == "terminal" and not force_new:
-                logger.info(f"【终端切换】检测到终端应用，进入特殊处理逻辑")
-                success = self._handle_terminal_launch(app_id, app_config)
-                logger.info(f"【终端切换】_handle_terminal_launch返回结果: {success}")
-                if success is not None:  # 如果处理了终端切换逻辑，直接返回
-                    return success
-                else:
-                    logger.info(f"【终端切换】未执行切换逻辑，继续正常启动流程")
+            # 对终端的特殊逻辑已经在main中处理
+            # if app_config.type == "terminal" and not force_new:
+                # logger.info(f"【终端切换】检测到终端应用，进入特殊处理逻辑")
+                # success = self._handle_terminal_launch(app_id, app_config)
+                # logger.info(f"【终端切换】_handle_terminal_launch返回结果: {success}")
+                # if success is not None:  # 如果处理了终端切换逻辑，直接返回
+                    # return success
+                # else:
+                    # logger.info(f"【终端切换】未执行切换逻辑，继续正常启动流程")
             
             # Get platform-specific executable path
             executable_path = self._get_executable_path(app_config)
             if not executable_path:
-                logger.error(f"No executable found for {app_id} on {self.current_platform}")
+                logger.error(f"【launch_app】No executable found for {app_id} on {self.current_platform}")
                 return False
             
             # Prepare arguments
@@ -75,13 +76,16 @@ class AppManager:
                 if website_config:
                     target_url = website_config.url
                 else:
-                    logger.warning(f"Unknown website: {website_id}")
+                    logger.warning(f"【launch_app】Unknown website: {website_id}")
             elif url:
                 target_url = url
+            
+            logger.info(f"【launch_app】args: {args}, target_url: {target_url}")
             
             # Launch application
             if app_config.type == "browser" and target_url:
                 # Special handling for browsers with URLs
+                # todo 这里需要修复，目前无法打开特定链接
                 success = self._launch_browser_with_url(executable_path, target_url, 
                                                      args, force_new)
             else:
@@ -90,14 +94,17 @@ class AppManager:
                     if '--new-window' not in args:
                         args.append('--new-window')
                 
+                start_time = time.time()
                 success = self.platform_adapter.launch_app(
                     executable_path, 
                     args=args,
                     cwd=Path.home()
                 )
-            
+                end_time = time.time()
+                logger.info(f"【launch_app】应用启动完成: {app_config.name}, 耗时: {(end_time - start_time) * 1000:.2f}ms")
+
             if success:
-                logger.info(f"Successfully launched {app_config.name}")
+                logger.info(f"【launch_app】Successfully launched {app_config.name}")
                 
                 # Open URL separately if not a browser
                 if target_url and app_config.type != "browser":
@@ -105,11 +112,11 @@ class AppManager:
                 
                 return True
             else:
-                logger.error(f"Failed to launch {app_config.name}")
+                logger.error(f"【launch_app】Failed to launch {app_config.name}")
                 return False
                 
         except Exception as e:
-            logger.error(f"Error launching app {app_id}: {e}")
+            logger.error(f"【launch_app】Error launching app {app_id}: {e}")
             return False
     
     def get_app_windows(self, app_id: str) -> List[WindowInfo]:
@@ -479,75 +486,75 @@ class AppManager:
             logger.error(f"Error launching browser with URL: {e}")
             return False
     
-    def _handle_terminal_launch(self, app_id: str, app_config: AppConfig) -> Optional[bool]:
-        """Handle terminal application launch with special logic for switching windows.
-        
-        当在交互模式下启动终端应用时，如果当前正在终端中运行脚本，
-        应该切换到其他已存在的终端窗口，而不是启动新的。
-        
-        Args:
-            app_id: Terminal application identifier
-            app_config: Terminal application configuration
-            
-        Returns:
-            True if window switching was successful, False if failed, 
-            None if should proceed with normal launch
-        """
-        try:
-            logger.info(f"【终端切换】开始处理终端启动逻辑: app_id={app_id}")
-            
-            # Check if we're currently running in a terminal context
-            tc_context_window = self.config_manager.get_tc_context_window()
-            logger.info(f"【终端切换】TC上下文窗口ID: {tc_context_window}")
-            if not tc_context_window:
-                logger.info(f"【终端切换】未在终端上下文中运行，使用正常启动")
-                return None
-            
-            # Get all windows for this terminal application
-            terminal_windows = self.get_app_windows(app_id)
-            logger.info(f"【终端切换】找到终端窗口数量: {len(terminal_windows)}")
-            for i, win in enumerate(terminal_windows):
-                logger.info(f"【终端切换】窗口{i}: id={win.window_id}, title='{win.title}', minimized={win.is_minimized}")
-                
-            if not terminal_windows:
-                logger.info(f"【终端切换】无终端窗口存在，使用正常启动")
-                return None
-            
-            # Filter out the current terminal window (the one running the script)
-            other_windows = [w for w in terminal_windows if w.window_id != tc_context_window]
-            logger.info(f"【终端切换】过滤当前窗口后剩余窗口数: {len(other_windows)}")
-            
-            if not other_windows:
-                logger.info(f"【终端切换】只有当前终端窗口，使用正常启动")
-                return None
-            
-            # Find the best window to switch to
-            target_window = self._select_terminal_window_to_switch(other_windows, app_id)
-            logger.info(f"【终端切换】选择的目标窗口: {target_window.window_id if target_window else None}")
-            if target_window:
-                logger.info(f"【终端切换】目标窗口详情: title='{target_window.title}', minimized={target_window.is_minimized}")
-                # Switch to the selected terminal window
-                logger.info(f"【终端切换】尝试激活窗口: {target_window.window_id}")
-                success = self.platform_adapter.activate_window(target_window.window_id)
-                logger.info(f"【终端切换】窗口激活结果: {success}")
-                if success:
-                    logger.info(f"Switched to existing {app_config.name} window: {target_window.title}")
-                    # Remember this as the last used window
-                    settings = self.config_manager.get_settings()
-                    if settings.behavior.remember_last_used:
-                        self.config_manager.set_last_used_window(app_id, target_window.window_id)
-                    return True
-                else:
-                    logger.warning(f"Failed to switch to terminal window {target_window.window_id}")
-                    return False
-            
-            # No suitable window found, proceed with normal launch
-            logger.info(f"【终端切换】未找到合适窗口，使用正常启动")
-            return None
-            
-        except Exception as e:
-            logger.error(f"Error in terminal launch handling: {e}")
-            return None
+    # def _handle_terminal_launch(self, app_id: str, app_config: AppConfig) -> Optional[bool]:
+        # """Handle terminal application launch with special logic for switching windows.
+        # 
+        # 当在交互模式下启动终端应用时，如果当前正在终端中运行脚本，
+        # 应该切换到其他已存在的终端窗口，而不是启动新的。
+        # 
+        # Args:
+            # app_id: Terminal application identifier
+            # app_config: Terminal application configuration
+            # 
+        # Returns:
+            # True if window switching was successful, False if failed, 
+            # None if should proceed with normal launch
+        # """
+        # try:
+            # logger.info(f"【终端切换】开始处理终端启动逻辑: app_id={app_id}")
+            # 
+            # # Check if we're currently running in a terminal context
+            # tc_context_window = self.config_manager.get_tc_context_window()
+            # logger.info(f"【终端切换】TC上下文窗口ID: {tc_context_window}")
+            # if not tc_context_window:
+                # logger.info(f"【终端切换】未在终端上下文中运行，使用正常启动")
+                # return None
+            # 
+            # # Get all windows for this terminal application
+            # terminal_windows = self.get_app_windows(app_id)
+            # logger.info(f"【终端切换】找到终端窗口数量: {len(terminal_windows)}")
+            # for i, win in enumerate(terminal_windows):
+                # logger.info(f"【终端切换】窗口{i}: id={win.window_id}, title='{win.title}', minimized={win.is_minimized}")
+                # 
+            # if not terminal_windows:
+                # logger.info(f"【终端切换】无终端窗口存在，使用正常启动")
+                # return None
+            # 
+            # # Filter out the current terminal window (the one running the script)
+            # other_windows = [w for w in terminal_windows if w.window_id != tc_context_window]
+            # logger.info(f"【终端切换】过滤当前窗口后剩余窗口数: {len(other_windows)}")
+            # 
+            # if not other_windows:
+                # logger.info(f"【终端切换】只有当前终端窗口，使用正常启动")
+                # return None
+            # 
+            # # Find the best window to switch to
+            # target_window = self._select_terminal_window_to_switch(other_windows, app_id)
+            # logger.info(f"【终端切换】选择的目标窗口: {target_window.window_id if target_window else None}")
+            # if target_window:
+                # logger.info(f"【终端切换】目标窗口详情: title='{target_window.title}', minimized={target_window.is_minimized}")
+                # # Switch to the selected terminal window
+                # logger.info(f"【终端切换】尝试激活窗口: {target_window.window_id}")
+                # success = self.platform_adapter.activate_window(target_window.window_id)
+                # logger.info(f"【终端切换】窗口激活结果: {success}")
+                # if success:
+                    # logger.info(f"Switched to existing {app_config.name} window: {target_window.title}")
+                    # # Remember this as the last used window
+                    # settings = self.config_manager.get_settings()
+                    # if settings.behavior.remember_last_used:
+                        # self.config_manager.set_last_used_window(app_id, target_window.window_id)
+                    # return True
+                # else:
+                    # logger.warning(f"Failed to switch to terminal window {target_window.window_id}")
+                    # return False
+            # 
+            # # No suitable window found, proceed with normal launch
+            # logger.info(f"【终端切换】未找到合适窗口，使用正常启动")
+            # return None
+            # 
+        # except Exception as e:
+            # logger.error(f"Error in terminal launch handling: {e}")
+            # return None
     
     def _select_terminal_window_to_switch(self, windows: List[WindowInfo], app_id: str) -> Optional[WindowInfo]:
         """Select the best terminal window to switch to.

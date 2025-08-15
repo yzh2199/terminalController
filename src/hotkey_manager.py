@@ -69,25 +69,25 @@ class HotkeyManager:
         try:
             with self._lock:
                 if self._active:
-                    logger.warning("HotkeyManager is already active")
+                    logger.warning("【hotkey】HotkeyManager is already active")
                     return True
                 
-                logger.info("Starting HotkeyManager and registering configured hotkeys")
+                logger.info("【hotkey】Starting HotkeyManager and registering configured hotkeys")
                 
                 # Load and register hotkeys from configuration
                 success = self._register_configured_hotkeys()
-                logger.info(f"Configured hotkeys registration result: {success}")
+                logger.info(f"【hotkey】Configured hotkeys registration result: {success}")
                 
                 if success:
                     self._active = True
-                    logger.info("HotkeyManager started successfully")
+                    logger.info("【hotkey】HotkeyManager started successfully")
                 else:
-                    logger.error("Failed to register configured hotkeys")
+                    logger.error("【hotkey】Failed to register configured hotkeys")
                 
                 return success
                 
         except Exception as e:
-            logger.error(f"Error starting HotkeyManager: {e}", exc_info=True)
+            logger.error(f"【hotkey】Error starting HotkeyManager: {e}", exc_info=True)
             return False
     
     def stop(self) -> bool:
@@ -141,13 +141,13 @@ class HotkeyManager:
                     try:
                         callback()
                     except Exception as e:
-                        logger.error(f"Error in hotkey callback for {binding_id}: {e}")
+                        logger.error(f"【hotkey】Error in hotkey callback for {binding_id}: {e}")
                 
-                logger.info(f"Registering hotkey binding: id={binding_id}, hotkey={hotkey}, desc='{description}'")
+                logger.info(f"【hotkey】Registering hotkey binding: id={binding_id}, hotkey={hotkey}, desc='{description}'")
 
                 # Register with platform adapter
                 success = self.platform_adapter.register_hotkey(hotkey, safe_callback)
-                logger.info(f"Platform adapter register_hotkey result for {binding_id}: {success}")
+                logger.info(f"【hotkey】Platform adapter register_hotkey result for {binding_id}: {success}")
                 
                 if success:
                     self._bindings[binding_id] = HotkeyBinding(
@@ -155,14 +155,14 @@ class HotkeyManager:
                         callback=callback,
                         description=description
                     )
-                    logger.info(f"Registered hotkey {hotkey} for {binding_id}")
+                    logger.info(f"【hotkey】Registered hotkey {hotkey} for {binding_id}")
                 else:
-                    logger.error(f"Failed to register hotkey {hotkey} for {binding_id}")
+                    logger.error(f"【hotkey】Failed to register hotkey {hotkey} for {binding_id}")
                 
                 return success
                 
         except Exception as e:
-            logger.error(f"Error registering hotkey {binding_id}: {e}")
+            logger.error(f"【hotkey】Error registering hotkey {binding_id}: {e}")
             return False
     
     def unregister_hotkey(self, binding_id: str) -> bool:
@@ -335,27 +335,20 @@ class HotkeyManager:
             
             return "\n".join(lines)
     
-    def get_platform_hotkey(self, hotkey_type: str) -> str:
+    def get_platform_hotkey(self) -> str:
         """Get platform-specific hotkey string.
-        
-        Args:
-            hotkey_type: Type of hotkey (e.g., 'terminal')
             
         Returns:
             Platform-specific hotkey string
         """
         settings = self.config_manager.get_settings()
         
-        if hotkey_type == "terminal":
-            if self.current_platform == "darwin":
-                return settings.hotkeys.terminal
-            elif self.current_platform == "linux":
-                return settings.hotkeys.terminal_linux
-            elif self.current_platform == "windows":
-                return settings.hotkeys.terminal_windows
-        
-        # Fallback to default
-        return getattr(settings.hotkeys, hotkey_type, "")
+        if self.current_platform == "darwin":
+            return settings.hotkeys.terminal
+        elif self.current_platform == "linux":
+            return settings.hotkeys.terminal_linux
+        elif self.current_platform == "windows":
+            return settings.hotkeys.terminal_windows
     
     def _register_configured_hotkeys(self) -> bool:
         """Register hotkeys from configuration.
@@ -368,10 +361,10 @@ class HotkeyManager:
             success = True
             
             # Register terminal hotkey
-            terminal_hotkey = self.get_platform_hotkey("terminal")
-            logger.info(f"Configured terminal hotkey resolved to: '{terminal_hotkey}' for platform {self.current_platform}")
+            terminal_hotkey = self.get_platform_hotkey()
+            logger.info(f"【hotkey】Configured terminal hotkey resolved to: '{terminal_hotkey}' for platform {self.current_platform}")
             if terminal_hotkey:
-                logger.info(f"Creating terminal callback and registering hotkey...")
+                logger.info(f"【hotkey】Creating terminal callback and registering hotkey...")
                 terminal_callback = self._create_terminal_callback()
                 register_result = self.register_hotkey(
                     "config_terminal", 
@@ -379,11 +372,11 @@ class HotkeyManager:
                     terminal_callback,
                     "Launch terminal application"
                 )
-                logger.info(f"Terminal hotkey registration result: {register_result}")
+                logger.info(f"【hotkey】Terminal hotkey registration result: {register_result}")
                 if not register_result:
                     success = False
             else:
-                logger.warning("No terminal hotkey configured")
+                logger.warning("【hotkey】No terminal hotkey configured")
             
             # TODO: Add more configured hotkeys here
             # For example, hotkeys for specific applications or actions
@@ -395,6 +388,7 @@ class HotkeyManager:
             logger.error(f"Error registering configured hotkeys: {e}", exc_info=True)
             return False
     
+    # 热键回调的关键方法，作为回调方法注册到pynuput库的GlobalHotKeys，当热键被触发时，会调用这个方法里创建的terminal_callback方法
     def _create_terminal_callback(self) -> Callable:
         """Create callback function for terminal hotkey.
         
@@ -405,70 +399,27 @@ class HotkeyManager:
         def terminal_callback():
             try:
                 import time
-                callback_start_time = time.time()
-                logger.info("【hotkey】Terminal hotkey callback triggered")  # 热键回调触发的日志
+                logger.info("【hotkey_triggered】Terminal hotkey callback triggered")  # 热键回调触发的日志
                 
                 # Import here to avoid circular imports
                 from .terminal_manager import TerminalManager
                 from .window_manager import WindowManager
                 
-                init_start_time = time.time()
                 terminal_manager = TerminalManager(self.config_manager)
                 window_manager = WindowManager(self.config_manager)
-                init_time = (time.time() - init_start_time) * 1000
-                logger.info(f"【hotkey】Manager initialization completed - {init_time:.2f}ms")  # 管理器初始化耗时
                 
-                # Get current active window
-                window_start_time = time.time()
-                current_window = window_manager.get_active_window()
-                window_time = (time.time() - window_start_time) * 1000
-                logger.info(f"【hotkey】Get active window completed - {window_time:.2f}ms")  # 获取活动窗口耗时
-                
-                # Check if current window is a terminal
-                if current_window:
-                    check_start_time = time.time()
-                    is_terminal = self._is_terminal_window(current_window, terminal_manager)
-                    check_time = (time.time() - check_start_time) * 1000
-                    logger.info(f"【hotkey】Terminal window check completed - {check_time:.2f}ms, is_terminal: {is_terminal}")  # 终端窗口检查耗时
+                action_start_time = time.time()
+                success = self._smart_focus_terminal(window_manager, terminal_manager)
+                action_time = (time.time() - action_start_time) * 1000
+                logger.info(f"【hotkey_triggered】Smart focus terminal completed - {action_time:.2f}ms, success: {success}")  # 智能聚焦终端耗时
+                if success:
+                    logger.info("【hotkey_triggered】Smart terminal focus completed via hotkey")
                 else:
-                    is_terminal = False
-                    logger.info("【hotkey】No current window found, treating as non-terminal")  # 无当前窗口
-                
-                if current_window and is_terminal:
-                    # Current window is terminal, use smart return logic
-                    action_start_time = time.time()
-                    success = self._smart_return_from_terminal(window_manager, terminal_manager)
-                    action_time = (time.time() - action_start_time) * 1000
-                    logger.info(f"【hotkey】Smart return from terminal completed - {action_time:.2f}ms, success: {success}")  # 智能返回耗时
-                    if success:
-                        logger.info("Smart return completed via hotkey")
-                    else:
-                        logger.warning("Could not complete smart return, no suitable window found")
-                else:
-                    # Current window is not terminal, use smart terminal focus
-                    # First save current window as previous window
-                    if current_window:
-                        save_start_time = time.time()
-                        self._save_previous_window(current_window)
-                        save_time = (time.time() - save_start_time) * 1000
-                        logger.info(f"【hotkey】Save previous window completed - {save_time:.2f}ms")  # 保存前一个窗口耗时
-                    
-                    action_start_time = time.time()
-                    success = self._smart_focus_terminal(window_manager, terminal_manager)
-                    action_time = (time.time() - action_start_time) * 1000
-                    logger.info(f"【hotkey】Smart focus terminal completed - {action_time:.2f}ms, success: {success}")  # 智能聚焦终端耗时
-                    if success:
-                        logger.info("Smart terminal focus completed via hotkey")
-                    else:
-                        logger.error("Failed to focus/launch terminal via hotkey")
-                
-                total_time = (time.time() - callback_start_time) * 1000
-                logger.info(f"【hotkey】Total hotkey callback execution time - {total_time:.2f}ms")  # 总回调执行时间
+                    logger.error("【hotkey_triggered】Failed to focus/launch terminal via hotkey")
                     
             except Exception as e:
-                logger.error(f"Error in terminal hotkey callback: {e}")
+                logger.error(f"【hotkey_triggered】Error in terminal hotkey callback: {e}")
         
-        logger.info("Terminal callback function created successfully")
         return terminal_callback
     
     def _create_app_callback(self, app_id: str) -> Callable:
@@ -569,48 +520,7 @@ class HotkeyManager:
             logger.error(f"Error checking if window is terminal: {e}")
             return False
     
-    def _save_previous_window(self, window_info) -> None:
-        """Save the current window as the previous window.
-        
-        Args:
-            window_info: WindowInfo object of current window
-        """
-        try:
-            # Store the previous window info in a simple way
-            # We'll use a special key to store non-terminal window info
-            self.config_manager.set_last_used_window("_previous_window", window_info.window_id)
-            # Also store the app name for easier retrieval
-            self.config_manager.set_last_used_window("_previous_app", window_info.app_name)
-            logger.debug(f"Saved previous window: {window_info.app_name} ({window_info.window_id})")
-            
-        except Exception as e:
-            logger.error(f"Error saving previous window: {e}")
-    
-    def _smart_return_from_terminal(self, window_manager, terminal_manager) -> bool:
-        """Smart return logic when current window is a terminal.
-        
-        Args:
-            window_manager: WindowManager instance
-            terminal_manager: TerminalManager instance
-            
-        Returns:
-            True if successfully returned to a suitable window, False otherwise
-        """
-        try:
-            # Priority 1: Return to previous non-terminal window
-            success = self._return_to_previous_window(window_manager)
-            if success:
-                logger.debug("Returned to previous non-terminal window")
-                return True
-            
-            # Priority 2: If no previous window, try to find a good alternative
-            logger.debug("No previous window found, looking for alternatives")
-            return self._find_best_non_terminal_window(window_manager, terminal_manager)
-            
-        except Exception as e:
-            logger.error(f"Error in smart return from terminal: {e}")
-            return False
-    
+    # todo 阅读这段逻辑，寻找回到tc终端流程的优化点，考虑复用这个找到终端的逻辑到找到其他程序的特定窗口
     def _smart_focus_terminal(self, window_manager, terminal_manager) -> bool:
         """Smart terminal focus logic when current window is not a terminal.
         
@@ -628,7 +538,7 @@ class HotkeyManager:
             sessions_start_time = time.time()
             active_sessions = self.config_manager.get_active_interactive_sessions()
             sessions_time = (time.time() - sessions_start_time) * 1000
-            logger.info(f"【hotkey】Get active interactive sessions - {sessions_time:.2f}ms, count: {len(active_sessions)}")  # 获取活跃交互会话耗时
+            logger.info(f"【hotkey_triggered】Get active interactive sessions - {sessions_time:.2f}ms, count: {len(active_sessions)}")  # 获取活跃交互会话耗时
             
             # 如果找到活跃的交互会话，优先切换到这些终端
             if active_sessions:
@@ -640,7 +550,7 @@ class HotkeyManager:
                     activate_start_time = time.time()
                     success = window_manager.activate_window_by_id(session_window_id)
                     activate_time = (time.time() - activate_start_time) * 1000
-                    logger.info(f"【hotkey】Activate interactive session window - {activate_time:.2f}ms, success: {success}")  # 激活交互会话窗口耗时
+                    logger.info(f"【hotkey_triggered】Activate interactive session window - {activate_time:.2f}ms, success: {success}")  # 激活交互会话窗口耗时
                     
                     if success:
                         logger.debug(f"Focused active interactive session: {session_window_id}")
@@ -650,19 +560,19 @@ class HotkeyManager:
             context_start_time = time.time()
             tc_context_window_id = self.config_manager.get_tc_context_window()
             context_get_time = (time.time() - context_start_time) * 1000
-            logger.info(f"【hotkey】Get TC context window - {context_get_time:.2f}ms, window_id: {tc_context_window_id}")  # 获取TC上下文窗口耗时
+            logger.info(f"【hotkey_triggered】Get TC context window - {context_get_time:.2f}ms, window_id: {tc_context_window_id}")  # 获取TC上下文窗口耗时
             
             if tc_context_window_id:
                 find_start_time = time.time()
                 window = window_manager.find_window_by_id(tc_context_window_id)
                 find_time = (time.time() - find_start_time) * 1000
-                logger.info(f"【hotkey】Find window by ID - {find_time:.2f}ms, found: {window is not None}")  # 根据ID查找窗口耗时
+                logger.info(f"【hotkey_triggered】Find window by ID - {find_time:.2f}ms, found: {window is not None}")  # 根据ID查找窗口耗时
                 
                 if window and self._is_terminal_window(window, terminal_manager):
                     activate_start_time = time.time()
                     success = window_manager.activate_window_by_id(tc_context_window_id)
                     activate_time = (time.time() - activate_start_time) * 1000
-                    logger.info(f"【hotkey】Activate TC context window - {activate_time:.2f}ms, success: {success}")  # 激活TC上下文窗口耗时
+                    logger.info(f"【hotkey_triggered】Activate TC context window - {activate_time:.2f}ms, success: {success}")  # 激活TC上下文窗口耗时
                     if success:
                         logger.debug(f"Focused TC context terminal: {tc_context_window_id}")
                         return True
@@ -671,7 +581,7 @@ class HotkeyManager:
                     clear_start_time = time.time()
                     self.config_manager.clear_tc_context_window()
                     clear_time = (time.time() - clear_start_time) * 1000
-                    logger.info(f"【hotkey】Clear TC context window - {clear_time:.2f}ms")  # 清除TC上下文窗口耗时
+                    logger.info(f"【hotkey_triggered】Clear TC context window - {clear_time:.2f}ms")  # 清除TC上下文窗口耗时
                     logger.debug("TC context window no longer exists, clearing")
             
             # Priority 2: Try to focus existing terminal using original logic
@@ -679,18 +589,18 @@ class HotkeyManager:
             settings = self.config_manager.get_settings()
             default_terminal_id = settings.terminal.default
             settings_time = (time.time() - settings_start_time) * 1000
-            logger.info(f"【hotkey】Get settings and default terminal - {settings_time:.2f}ms, terminal: {default_terminal_id}")  # 获取设置和默认终端耗时
+            logger.info(f"【hotkey_triggered】Get settings and default terminal - {settings_time:.2f}ms, terminal: {default_terminal_id}")  # 获取设置和默认终端耗时
             
             running_check_start_time = time.time()
             is_running = terminal_manager.is_terminal_running(default_terminal_id)
             running_check_time = (time.time() - running_check_start_time) * 1000
-            logger.info(f"【hotkey】Check terminal running status - {running_check_time:.2f}ms, is_running: {is_running}")  # 检查终端运行状态耗时
+            logger.info(f"【hotkey_triggered】Check terminal running status - {running_check_time:.2f}ms, is_running: {is_running}")  # 检查终端运行状态耗时
             
             if is_running:
                 focus_start_time = time.time()
                 success = window_manager.focus_most_recent_window(default_terminal_id)
                 focus_time = (time.time() - focus_start_time) * 1000
-                logger.info(f"【hotkey】Focus most recent window - {focus_time:.2f}ms, success: {success}")  # 聚焦最近窗口耗时
+                logger.info(f"【hotkey_triggered】Focus most recent window - {focus_time:.2f}ms, success: {success}")  # 聚焦最近窗口耗时
                 if success:
                     logger.debug("Focused existing terminal using original logic")
                     return True
@@ -699,7 +609,7 @@ class HotkeyManager:
             launch_start_time = time.time()
             success = terminal_manager.launch_terminal()
             launch_time = (time.time() - launch_start_time) * 1000
-            logger.info(f"【hotkey】Launch new terminal - {launch_time:.2f}ms, success: {success}")  # 启动新终端耗时
+            logger.info(f"【hotkey_triggered】Launch new terminal - {launch_time:.2f}ms, success: {success}")  # 启动新终端耗时
             if success:
                 logger.debug("Launched new terminal")
                 return True
@@ -710,97 +620,6 @@ class HotkeyManager:
             logger.error(f"Error in smart focus terminal: {e}")
             return False
     
-    def _find_best_non_terminal_window(self, window_manager, terminal_manager) -> bool:
-        """Find the best non-terminal window to focus on.
-        
-        Args:
-            window_manager: WindowManager instance
-            terminal_manager: TerminalManager instance
-            
-        Returns:
-            True if found and focused a good window, False otherwise
-        """
-        try:
-            all_windows = window_manager.list_all_windows()
-            
-            # Filter out terminal windows and find the best candidate
-            non_terminal_windows = []
-            for window in all_windows:
-                if not self._is_terminal_window(window, terminal_manager) and not window.is_minimized:
-                    non_terminal_windows.append(window)
-            
-            if not non_terminal_windows:
-                logger.debug("No suitable non-terminal windows found")
-                return False
-            
-            # Prefer active windows first, then recent ones
-            for window in non_terminal_windows:
-                if window.is_active:
-                    success = window_manager.activate_window_by_id(window.window_id)
-                    if success:
-                        self._save_previous_window(window)
-                        logger.debug(f"Focused active non-terminal window: {window.app_name}")
-                        return True
-            
-            # If no active window, use the first available
-            window = non_terminal_windows[0]
-            success = window_manager.activate_window_by_id(window.window_id)
-            if success:
-                self._save_previous_window(window)
-                logger.debug(f"Focused first available non-terminal window: {window.app_name}")
-                return True
-            
-            return False
-            
-        except Exception as e:
-            logger.error(f"Error finding best non-terminal window: {e}")
-            return False
-    
-    def _return_to_previous_window(self, window_manager) -> bool:
-        """Return to the previously active non-terminal window.
-        
-        Args:
-            window_manager: WindowManager instance
-            
-        Returns:
-            True if successfully returned to previous window, False otherwise
-        """
-        try:
-            # Get stored previous window ID
-            previous_window_id = self.config_manager.get_last_used_window("_previous_window")
-            previous_app_name = self.config_manager.get_last_used_window("_previous_app")
-            
-            if not previous_window_id:
-                logger.debug("No previous window stored")
-                return False
-            
-            # Try to activate the previous window
-            window = window_manager.find_window_by_id(previous_window_id)
-            if window and window.app_name == previous_app_name:
-                success = window_manager.activate_window_by_id(previous_window_id)
-                if success:
-                    logger.debug(f"Successfully returned to previous window: {previous_app_name}")
-                    return True
-            
-            # If exact window not found, try to find any window of the same app
-            if previous_app_name:
-                all_windows = window_manager.list_all_windows()
-                for window in all_windows:
-                    if window.app_name == previous_app_name and not window.is_minimized:
-                        success = window_manager.activate_window_by_id(window.window_id)
-                        if success:
-                            # Update the stored window ID to the new one
-                            self.config_manager.set_last_used_window("_previous_window", window.window_id)
-                            logger.debug(f"Returned to alternative window of same app: {previous_app_name}")
-                            return True
-            
-            logger.debug("Could not find previous window to return to")
-            return False
-            
-        except Exception as e:
-            logger.error(f"Error returning to previous window: {e}")
-            return False
-
     def cleanup(self):
         """Clean up resources used by the hotkey manager."""
         try:

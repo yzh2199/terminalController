@@ -58,7 +58,6 @@ class OptimizedMacOSAdapter(PlatformAdapter):
                    cwd: Optional[str] = None) -> bool:
         """
         启动应用程序
-        优化：保持原有实现，已经足够快
         """
         try:
             normalized_path = self.normalize_app_path(app_path)
@@ -72,6 +71,7 @@ class OptimizedMacOSAdapter(PlatformAdapter):
                 if args:
                     cmd.extend(args)
             
+            logger.info(f"【launch_app】启动应用: {app_path}, 参数: {args}, 工作目录: {cwd}")
             subprocess.Popen(
                 cmd,
                 cwd=cwd or os.path.expanduser('~'),
@@ -556,21 +556,20 @@ class OptimizedMacOSAdapter(PlatformAdapter):
         
         logger.info("优化版macOS适配器已清理")
     
-    # 以下方法保持原有实现
     def register_hotkey(self, hotkey: str, callback: Callable) -> bool:
         """注册全局热键"""
-        # 保持原有实现，已经足够好
-        logger.info(f"注册热键: '{hotkey}'")
+        logger.info(f"【mac_hotkey】注册热键: '{hotkey}'")
         if not keyboard:
-            logger.error("pynput不可用")
+            logger.error("【mac_hotkey】pynput不可用")
             return False
         
         if not self._check_accessibility_permissions():
-            logger.error("无辅助功能权限")
+            logger.error("【mac_hotkey】无辅助功能权限")
             return False
         
         try:
             key_combination = self._parse_hotkey(hotkey)
+            logger.info(f"【mac_hotkey】解析热键: '{hotkey}' 为: '{key_combination}'")
             if not key_combination:
                 return False
             
@@ -584,6 +583,7 @@ class OptimizedMacOSAdapter(PlatformAdapter):
                 self._running_listener.stop()
             
             mapping = {key_combination: on_hotkey}
+            # 注册热键kv结构，key是热键，value是回调方法
             self._running_listener = keyboard.GlobalHotKeys(mapping)
             self._running_listener.start()
             
@@ -704,14 +704,17 @@ class OptimizedMacOSAdapter(PlatformAdapter):
         
         return '+'.join(normalized_keys) if normalized_keys else None
     
+    # todo 这个方法比较慢，250ms,不过只有启动时候调用一次，可以接受
     def _check_accessibility_permissions(self) -> bool:
         """检查辅助功能权限"""
         try:
+            start_time = time.time()
             result = subprocess.run([
                 'osascript', '-e', 
                 'tell application "System Events" to get name of first process'
             ], capture_output=True, text=True, timeout=1)
-            
+            end_time = time.time()
+            logger.info(f"【mac_hotkey】检查辅助功能权限耗时: {(end_time - start_time) * 1000:.2f}ms")
             return result.returncode == 0
         except Exception:
             return False

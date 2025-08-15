@@ -292,7 +292,6 @@ class ConfigManager:
             List of active session information
         """
         try:
-            import os
             import json
             import psutil
             import tempfile
