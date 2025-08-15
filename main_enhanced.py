@@ -605,8 +605,23 @@ class TerminalController:
         """Set up logging configuration."""
         log_level = logging.DEBUG if self.debug else logging.INFO
         
-        # Create logs directory if it doesn't exist
-        logs_dir = Path("logs")
+        # Determine project root directory (where the script is located)
+        if hasattr(sys, '_MEIPASS'):
+            # Running as PyInstaller bundle
+            project_root = Path(sys._MEIPASS).parent
+        else:
+            # Running as script
+            project_root = Path(__file__).parent
+        
+        # Create logs directory relative to project root - avoid recursive creation
+        logs_dir = project_root / "logs"
+        
+        # Add debug logging for troubleshooting
+        if self.debug:
+            print(f"【logs】修复 - 当前工作目录: {os.getcwd()}")
+            print(f"【logs】修复 - 项目根目录: {project_root}")
+            print(f"【logs】修复 - 日志目录: {logs_dir}")
+        
         logs_dir.mkdir(exist_ok=True)
         
         # Configure logging
