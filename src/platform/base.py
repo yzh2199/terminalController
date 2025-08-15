@@ -163,12 +163,11 @@ class PlatformAdapter(ABC):
         pass
     
     @abstractmethod
-    def open_url(self, url: str, browser_path: Optional[str] = None) -> bool:
-        """Open a URL in the default or specified browser.
+    def open_url(self, url: str) -> bool:
+        """Open a URL.
         
         Args:
             url: URL to open
-            browser_path: Path to specific browser (optional)
             
         Returns:
             True if URL was opened successfully, False otherwise

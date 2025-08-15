@@ -85,9 +85,7 @@ class AppManager:
             # Launch application
             if app_config.type == "browser" and target_url:
                 # Special handling for browsers with URLs
-                # todo 这里需要修复，目前无法打开特定链接
-                success = self._launch_browser_with_url(executable_path, target_url, 
-                                                     args, force_new)
+                success = self.platform_adapter.open_url(target_url)
             else:
                 # Standard application launch
                 if force_new or 'new' in args:
@@ -108,7 +106,7 @@ class AppManager:
                 
                 # Open URL separately if not a browser
                 if target_url and app_config.type != "browser":
-                    self.platform_adapter.open_url(target_url, executable_path)
+                    self.platform_adapter.open_url(target_url)
                 
                 return True
             else:
@@ -450,41 +448,6 @@ class AppManager:
         
         # Return first window as fallback
         return windows[0]
-    
-    def _launch_browser_with_url(self, browser_path: str, url: str, 
-                                args: List[str], force_new: bool) -> bool:
-        """Launch a browser application with a specific URL.
-        
-        Args:
-            browser_path: Path to browser executable
-            url: URL to open
-            args: Additional arguments
-            force_new: Force new window
-            
-        Returns:
-            True if launch was successful, False otherwise
-        """
-        try:
-            # Prepare browser-specific arguments
-            browser_args = args.copy()
-            
-            # Add URL to arguments
-            browser_args.append(url)
-            
-            # Force new window if requested
-            if force_new:
-                if '--new-window' not in browser_args:
-                    browser_args.insert(0, '--new-window')
-            
-            return self.platform_adapter.launch_app(
-                browser_path,
-                args=browser_args,
-                cwd=Path.home()
-            )
-            
-        except Exception as e:
-            logger.error(f"Error launching browser with URL: {e}")
-            return False
     
     # def _handle_terminal_launch(self, app_id: str, app_config: AppConfig) -> Optional[bool]:
         # """Handle terminal application launch with special logic for switching windows.

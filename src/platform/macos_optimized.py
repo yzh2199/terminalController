@@ -71,7 +71,7 @@ class OptimizedMacOSAdapter(PlatformAdapter):
                 if args:
                     cmd.extend(args)
             
-            logger.info(f"【launch_app】启动应用: {app_path}, 参数: {args}, 工作目录: {cwd}")
+            logger.info(f"【launch_app】启动应用: {app_path}, 参数: {args}, 工作目录: {cwd}, 命令: {cmd}")
             subprocess.Popen(
                 cmd,
                 cwd=cwd or os.path.expanduser('~'),
@@ -82,6 +82,25 @@ class OptimizedMacOSAdapter(PlatformAdapter):
             
         except Exception as e:
             logger.error(f"启动应用失败 {app_path}: {e}")
+            return False
+    
+    def open_url(self, url: str) -> bool:
+        """
+        打开网站URL
+        """
+        try:
+            cmd = ['open', '-u', url]
+            
+            logger.info(f"【open_url】打开网站: {url}, 命令: {cmd}")
+            subprocess.Popen(
+                cmd,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            return True
+            
+        except Exception as e:
+            logger.error(f"打开url失败 {url}: {e}")
             return False
     
     def get_running_apps(self, app_name: Optional[str] = None) -> List[AppInfo]:
@@ -642,18 +661,6 @@ class OptimizedMacOSAdapter(PlatformAdapter):
             return True
         except Exception as e:
             logger.error(f"终止应用失败 {app_name}: {e}")
-            return False
-    
-    def open_url(self, url: str, browser_path: Optional[str] = None) -> bool:
-        """打开URL"""
-        try:
-            if browser_path:
-                subprocess.run(['open', '-a', browser_path, url], check=False)
-            else:
-                subprocess.run(['open', url], check=False)
-            return True
-        except Exception as e:
-            logger.error(f"打开URL失败 {url}: {e}")
             return False
     
     def get_default_terminal(self) -> str:

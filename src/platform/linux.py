@@ -324,19 +324,16 @@ class LinuxAdapter(PlatformAdapter):
             logger.error(f"Failed to kill app {app_name}: {e}")
             return False
     
-    def open_url(self, url: str, browser_path: Optional[str] = None) -> bool:
-        """Open a URL in the default or specified browser."""
+    def open_url(self, url: str) -> bool:
+        """Open a URL."""
         try:
-            if browser_path:
-                subprocess.run([browser_path, url], check=False)
-            else:
-                # Try common methods to open URL
-                for cmd in ['xdg-open', 'firefox', 'chromium', 'google-chrome']:
-                    try:
-                        subprocess.run([cmd, url], check=False)
-                        return True
-                    except FileNotFoundError:
-                        continue
+            # Try common methods to open URL
+            for cmd in ['xdg-open', 'firefox', 'chromium', 'google-chrome']:
+                try:
+                    subprocess.run([cmd, url], check=False)
+                    return True
+                except FileNotFoundError:
+                    continue
             
             return True
             

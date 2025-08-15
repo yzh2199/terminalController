@@ -1,16 +1,14 @@
 apps:
-  c:
+  g:
     name: "Google Chrome"
     executable:
       darwin: "/Applications/Google Chrome.app"
       linux: "google-chrome"
       windows: "chrome.exe"
-    args:
-      - "-n" # 新窗口打开
     type: "browser"
     description: "Google Chrome browser"
   
-  cur:
+  c:
     name: "Cursor"
     executable:
       darwin: "/Applications/Cursor.app"

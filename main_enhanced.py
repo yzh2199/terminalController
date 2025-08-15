@@ -170,6 +170,7 @@ class TerminalController:
         try:
             # Parse the command
             parsed_cmd = self.command_parser.parse(command)
+            self.logger.info(f"【main】Parsed command: {parsed_cmd}")
             if not parsed_cmd:
                 print(f"{Fore.RED}Invalid command: {command}{Style.RESET_ALL}")
                 return False
@@ -398,11 +399,11 @@ class TerminalController:
             # Open configured website
             website_config = self.config_manager.get_website_config(parsed_cmd.website_id)
             url = website_config.url
-            print(f"{Fore.CYAN}Opening {website_config.name}: {url}{Style.RESET_ALL}")
+            print(f"{Fore.CYAN}【open_url】Opening {website_config.name}: {url}{Style.RESET_ALL}")
         else:
             # Open direct URL
             url = parsed_cmd.url
-            print(f"{Fore.CYAN}Opening URL: {url}{Style.RESET_ALL}")
+            print(f"{Fore.CYAN}【open_url】Opening URL: {url}{Style.RESET_ALL}")
         
         if parsed_cmd.app_id:
             # Use specific browser
