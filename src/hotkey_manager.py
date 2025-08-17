@@ -498,7 +498,7 @@ class HotkeyManager:
         try:
             import time
             
-            # Priority 0: 【hotkey】优先查找活跃的交互会话 - 精确识别运行TC的终端
+            # 【hotkey】查找活跃的交互会话 - 精确识别运行TC的终端
             sessions_start_time = time.time()
             active_sessions = self.config_manager.get_active_interactive_sessions()
             sessions_time = (time.time() - sessions_start_time) * 1000
@@ -519,64 +519,6 @@ class HotkeyManager:
                     if success:
                         logger.debug(f"Focused active interactive session: {session_window_id}")
                         return True
-            
-            # Priority 1: Try to focus TC context terminal (where TC is/was running)
-            context_start_time = time.time()
-            tc_context_window_id = self.config_manager.get_tc_context_window()
-            context_get_time = (time.time() - context_start_time) * 1000
-            logger.info(f"【hotkey_triggered】Get TC context window - {context_get_time:.2f}ms, window_id: {tc_context_window_id}")  # 获取TC上下文窗口耗时
-            
-            if tc_context_window_id:
-                find_start_time = time.time()
-                window = window_manager.find_window_by_id(tc_context_window_id)
-                find_time = (time.time() - find_start_time) * 1000
-                logger.info(f"【hotkey_triggered】Find window by ID - {find_time:.2f}ms, found: {window is not None}")  # 根据ID查找窗口耗时
-                
-                if window and self._is_terminal_window(window, terminal_manager):
-                    activate_start_time = time.time()
-                    success = window_manager.activate_window_by_id(tc_context_window_id)
-                    activate_time = (time.time() - activate_start_time) * 1000
-                    logger.info(f"【hotkey_triggered】Activate TC context window - {activate_time:.2f}ms, success: {success}")  # 激活TC上下文窗口耗时
-                    if success:
-                        logger.debug(f"Focused TC context terminal: {tc_context_window_id}")
-                        return True
-                else:
-                    # TC context window no longer exists, clear it
-                    clear_start_time = time.time()
-                    self.config_manager.clear_tc_context_window()
-                    clear_time = (time.time() - clear_start_time) * 1000
-                    logger.info(f"【hotkey_triggered】Clear TC context window - {clear_time:.2f}ms")  # 清除TC上下文窗口耗时
-                    logger.debug("TC context window no longer exists, clearing")
-            
-            # Priority 2: Try to focus existing terminal using original logic
-            settings_start_time = time.time()
-            settings = self.config_manager.get_settings()
-            default_terminal_id = settings.terminal.default
-            settings_time = (time.time() - settings_start_time) * 1000
-            logger.info(f"【hotkey_triggered】Get settings and default terminal - {settings_time:.2f}ms, terminal: {default_terminal_id}")  # 获取设置和默认终端耗时
-            
-            running_check_start_time = time.time()
-            is_running = terminal_manager.is_terminal_running(default_terminal_id)
-            running_check_time = (time.time() - running_check_start_time) * 1000
-            logger.info(f"【hotkey_triggered】Check terminal running status - {running_check_time:.2f}ms, is_running: {is_running}")  # 检查终端运行状态耗时
-            
-            if is_running:
-                focus_start_time = time.time()
-                success = window_manager.focus_most_recent_window(default_terminal_id)
-                focus_time = (time.time() - focus_start_time) * 1000
-                logger.info(f"【hotkey_triggered】Focus most recent window - {focus_time:.2f}ms, success: {success}")  # 聚焦最近窗口耗时
-                if success:
-                    logger.debug("Focused existing terminal using original logic")
-                    return True
-            
-            # Priority 3: Launch new terminal if no existing one or focus failed
-            launch_start_time = time.time()
-            success = terminal_manager.launch_terminal()
-            launch_time = (time.time() - launch_start_time) * 1000
-            logger.info(f"【hotkey_triggered】Launch new terminal - {launch_time:.2f}ms, success: {success}")  # 启动新终端耗时
-            if success:
-                logger.debug("Launched new terminal")
-                return True
             
             return False
             

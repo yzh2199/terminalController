@@ -36,73 +36,6 @@ class TerminalManager:
         
         logger.info(f"Initialized TerminalManager for platform: {self.current_platform}")
     
-    def launch_terminal(self, startup_command: Optional[str] = None, 
-                       work_directory: Optional[str] = None,
-                       app_id: Optional[str] = None) -> bool:
-        """Launch a terminal application.
-        
-        Args:
-            startup_command: Command to run in the terminal after launch
-            work_directory: Working directory for the terminal
-            app_id: Specific terminal application ID to use
-            
-        Returns:
-            True if terminal was launched successfully, False otherwise
-        """
-        try:
-            settings = self.config_manager.get_settings()
-            
-            # Determine which terminal to use
-            if app_id:
-                terminal_config = self.config_manager.get_app_config(app_id)
-                if not terminal_config:
-                    logger.error(f"Unknown terminal application: {app_id}")
-                    return False
-                
-                if terminal_config.type != "terminal":
-                    logger.warning(f"Application {app_id} is not a terminal")
-                
-                terminal_path = self._get_terminal_executable(terminal_config.executable)
-            else:
-                # Use default terminal
-                default_terminal_id = settings.terminal.default
-                terminal_config = self.config_manager.get_app_config(default_terminal_id)
-                
-                if terminal_config:
-                    terminal_path = self._get_terminal_executable(terminal_config.executable)
-                else:
-                    # Fallback to system default
-                    terminal_path = self.platform_adapter.get_default_terminal()
-            
-            if not terminal_path:
-                logger.error("No suitable terminal found")
-                return False
-            
-            # Prepare working directory
-            if not work_directory:
-                work_directory = settings.terminal.work_directory
-            
-            if work_directory == "~":
-                work_directory = str(Path.home())
-            else:
-                work_directory = os.path.expanduser(work_directory)
-            
-            # Prepare startup command
-            if not startup_command:
-                startup_command = settings.terminal.startup_command
-            
-            # Launch terminal with platform-specific handling
-            return self._launch_platform_terminal(
-                terminal_path, 
-                startup_command, 
-                work_directory,
-                terminal_config if 'terminal_config' in locals() else None
-            )
-            
-        except Exception as e:
-            logger.error(f"Error launching terminal: {e}")
-            return False
-    
     def is_terminal_running(self, app_id: Optional[str] = None) -> bool:
         """Check if a terminal application is currently running.
         
@@ -171,60 +104,6 @@ class TerminalManager:
             logger.error(f"Error getting terminal windows: {e}")
             return []
     
-    def execute_command_in_terminal(self, command: str, 
-                                  app_id: Optional[str] = None,
-                                  work_directory: Optional[str] = None) -> bool:
-        """Execute a command in a new terminal window.
-        
-        Args:
-            command: Command to execute
-            app_id: Specific terminal application ID to use
-            work_directory: Working directory for command execution
-            
-        Returns:
-            True if command was executed successfully, False otherwise
-        """
-        try:
-            # Launch terminal with the command
-            return self.launch_terminal(
-                startup_command=command,
-                work_directory=work_directory,
-                app_id=app_id
-            )
-            
-        except Exception as e:
-            logger.error(f"Error executing command in terminal: {e}")
-            return False
-    
-    def create_terminal_session(self, session_name: str, 
-                              commands: List[str],
-                              app_id: Optional[str] = None) -> bool:
-        """Create a terminal session with multiple commands.
-        
-        Args:
-            session_name: Name for the terminal session
-            commands: List of commands to execute
-            app_id: Specific terminal application ID to use
-            
-        Returns:
-            True if session was created successfully, False otherwise
-        """
-        try:
-            # For now, just launch terminal with first command
-            # TODO: Implement proper session management
-            if commands:
-                startup_command = "; ".join(commands)
-                return self.launch_terminal(
-                    startup_command=startup_command,
-                    app_id=app_id
-                )
-            else:
-                return self.launch_terminal(app_id=app_id)
-            
-        except Exception as e:
-            logger.error(f"Error creating terminal session: {e}")
-            return False
-    
     def get_available_terminals(self) -> List[str]:
         """Get a list of available terminal applications.
         
@@ -247,35 +126,6 @@ class TerminalManager:
         except Exception as e:
             logger.error(f"Error getting available terminals: {e}")
             return []
-    
-    def set_default_terminal(self, app_id: str) -> bool:
-        """Set the default terminal application.
-        
-        Args:
-            app_id: Terminal application ID to set as default
-            
-        Returns:
-            True if default was set successfully, False otherwise
-        """
-        try:
-            terminal_config = self.config_manager.get_app_config(app_id)
-            if not terminal_config:
-                logger.error(f"Unknown terminal application: {app_id}")
-                return False
-            
-            if terminal_config.type != "terminal":
-                logger.error(f"Application {app_id} is not a terminal")
-                return False
-            
-            # Update settings
-            settings = self.config_manager.get_settings()
-            settings.terminal.default = app_id
-            
-            return self.config_manager.update_settings(settings)
-            
-        except Exception as e:
-            logger.error(f"Error setting default terminal: {e}")
-            return False
     
     def _get_terminal_executable(self, executables: Dict[str, str]) -> Optional[str]:
         """Get the platform-specific terminal executable path.
