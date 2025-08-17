@@ -34,6 +34,7 @@ class HotkeyConfig:
     terminal: str = "cmd+shift+t"
     terminal_linux: str = "ctrl+alt+t"
     terminal_windows: str = "ctrl+shift+t"
+    go_back: str = "g+w"
 
 
 @dataclass
@@ -493,7 +494,8 @@ class ConfigManager:
                 hotkeys = HotkeyConfig(
                     terminal=hotkeys_data.get('terminal', 'cmd+shift+t'),
                     terminal_linux=hotkeys_data.get('terminal_linux', 'ctrl+alt+t'),
-                    terminal_windows=hotkeys_data.get('terminal_windows', 'ctrl+shift+t')
+                    terminal_windows=hotkeys_data.get('terminal_windows', 'ctrl+shift+t'),
+                    go_back=hotkeys_data.get('go_back', 'g+w')
                 )
                 
                 # Load behavior
@@ -614,7 +616,8 @@ class ConfigManager:
                 'hotkeys': {
                     'terminal': self._settings.hotkeys.terminal,
                     'terminal_linux': self._settings.hotkeys.terminal_linux,
-                    'terminal_windows': self._settings.hotkeys.terminal_windows
+                    'terminal_windows': self._settings.hotkeys.terminal_windows,
+                    'go_back': self._settings.hotkeys.go_back
                 },
                 'behavior': {
                     'auto_focus': self._settings.behavior.auto_focus,

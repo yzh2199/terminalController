@@ -379,7 +379,7 @@ class HotkeyManager:
                 logger.warning("【hotkey】No terminal hotkey configured")
             
             # TODO: Add more configured hotkeys here
-            # For example, hotkeys for specific applications or actions
+
             
             logger.info(f"Configured hotkeys registration completed. Overall success: {success}")
             return success
@@ -448,42 +448,6 @@ class HotkeyManager:
                 logger.error(f"Error in app hotkey callback for {app_id}: {e}")
         
         return app_callback
-    
-    def register_app_hotkey(self, app_id: str, hotkey: str) -> bool:
-        """Register a hotkey for launching a specific application.
-        
-        Args:
-            app_id: Application identifier
-            hotkey: Hotkey string
-            
-        Returns:
-            True if registration was successful, False otherwise
-        """
-        try:
-            app_config = self.config_manager.get_app_config(app_id)
-            if not app_config:
-                logger.error(f"Unknown application: {app_id}")
-                return False
-            
-            callback = self._create_app_callback(app_id)
-            description = f"Launch {app_config.name}"
-            
-            return self.register_hotkey(f"app_{app_id}", hotkey, callback, description)
-            
-        except Exception as e:
-            logger.error(f"Error registering app hotkey for {app_id}: {e}")
-            return False
-    
-    def unregister_app_hotkey(self, app_id: str) -> bool:
-        """Unregister a hotkey for an application.
-        
-        Args:
-            app_id: Application identifier
-            
-        Returns:
-            True if unregistration was successful, False otherwise
-        """
-        return self.unregister_hotkey(f"app_{app_id}")
     
     def _is_terminal_window(self, window_info, terminal_manager) -> bool:
         """Check if a window belongs to a terminal application.

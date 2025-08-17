@@ -24,12 +24,12 @@ websites:
     url: "https://twitter.com"
     description: "Twitter social media"
   
-  l:
-    name: "LinkedIn"
-    url: "https://www.linkedin.com"
-    description: "LinkedIn professional network"
-  
   r:
     name: "Reddit"
     url: "https://www.reddit.com"
     description: "Reddit community platform"
+
+  ruan:
+    name: "Ruan YiFeng"
+    url: "https://www.ruanyifeng.com/blog/"
+    description: "Ruan YiFeng's blog"

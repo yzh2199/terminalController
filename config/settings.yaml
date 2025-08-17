@@ -2,6 +2,7 @@ hotkeys:
   terminal: "ctrl+;"  # 唤起终端的快捷键 (macOS)
   terminal_linux: "ctrl+;"  # Linux快捷键
   terminal_windows: "ctrl+;"  # Windows快捷键
+  go_back: "g+w"  # 回到上一个非TC运行窗口的快捷键 (macOS)
 
 behavior:
   auto_focus: true         # 自动聚焦到最后使用的窗口
