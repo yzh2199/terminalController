@@ -154,14 +154,13 @@ v                 # 启动VS Code
 **应用启动（推荐使用单字母命令）:**
 ```bash
 # 单字母快捷命令
-c                    # 启动Chrome
-c g                  # 用Chrome打开Google
-c https://github.com # 用Chrome打开GitHub
-c --new             # 强制新窗口启动Chrome
-e                    # 启动Cursor
+g                    # 启动Chrome
+g g                  # 用Chrome打开Google
+g https://github.com # 用Chrome打开GitHub
+g --new             # 强制新窗口启动Chrome
+c                    # 启动Cursor
 t                    # 启动Terminal
 p                    # 启动Postman
-v                    # 启动VS Code
 
 # 完整命令格式（也可使用）
 tc run c             # 启动Chrome
