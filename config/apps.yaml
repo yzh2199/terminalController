@@ -70,3 +70,12 @@ apps:
       windows: "kim.exe"
     type: "chat"
     description: "Kim"
+
+  s:
+    name: "Safari"
+    executable:
+      darwin: "/Applications/Safari.app"
+      linux: "safari"
+      windows: "safari.exe"
+    type: "browser"
+    description: "Safari browser"
