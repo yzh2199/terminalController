@@ -79,3 +79,12 @@ apps:
       windows: "safari.exe"
     type: "browser"
     description: "Safari browser"
+  
+  d:
+    name: "DBeaver"
+    executable:
+      darwin: "/Applications/DBeaver.app"
+      linux: "dbeaver"
+      windows: "dbeaver.exe"
+    type: "database"
+    description: "DBeaver database tool"
